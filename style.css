@@ -204,8 +204,13 @@ a:hover {
     }
 
     .header-left {
-        text-align: center; /* Center-align for larger screens */
+        text-align: left; /* Center-align for larger screens */
         margin-bottom: 0; /* Adjusted margin */
+    }
+
+    .header-left {
+        text-align: center; /* Center-align text */
+        margin-right: auto; /* Push the text to the left */
     }
 
     .profile-container {
