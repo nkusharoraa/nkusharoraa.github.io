@@ -250,6 +250,7 @@ a:hover {
         margin-top: 10px; /* Add some space above the image */
     }
     .header-left {
+        margin-left: 0;
         text-align: center;
     }
 }
