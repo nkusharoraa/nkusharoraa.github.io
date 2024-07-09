@@ -1,7 +1,7 @@
 /* Default to light mode */
 :root {
-    --bg-color: #fff;
-    --text-color: #000;
+    --primary-bg-color: #fff;
+    --text-primary: #000;
     --heading-color: #333;
     --link-color: #1e90ff;
     --container-bg: #f9f9f9;
@@ -18,8 +18,8 @@
 
 /* Dark mode variables */
 body.dark-mode {
-    --bg-color: #000;
-    --text-color: #ccc;
+    --primary-bg-color: #000;
+    --text-primary: #ccc;
     --heading-color: #fff;
     --link-color: #1e90ff;
     --container-bg: #111;
@@ -39,8 +39,8 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: var(--primary-bg-color);
+    color: var(--text-primary);
 }
 
 h1, h2, h3 {
@@ -105,7 +105,6 @@ a:hover {
     border-radius: 8px;
     margin-bottom: 20px;
     height: 300px; /* Adjust the height as per your design */
-    background-image: url('your-cover-svg-url.svg'); /* Replace with your SVG background URL */
     background-size: cover;
     background-position: center;
 }
