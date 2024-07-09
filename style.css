@@ -117,15 +117,18 @@ a:hover {
 .header-content {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensure the content spans the full width */
 }
 
 .header-left {
     text-align: left; /* Left-align text */
-    margin-right: 20px; /* Space between text and image */
+    margin-right: auto; /* Push the text to the left */
 }
 
 .profile-container {
     text-align: right; /* Right-align for image */
+    margin-left: auto; /* Push the image to the right */
 }
 
 .profile-pic {
@@ -220,5 +223,15 @@ a:hover {
         margin-top: 50px; /* Add top margin to prevent overlap with navbar */
         height: 250px; /* Set a fixed height */
         flex-direction: column; /* Stack elements vertically */
+    }
+
+    .header-content {
+        flex-direction: column; /* Stack content vertically on mobile */
+        align-items: center;
+    }
+
+    .profile-container {
+        margin-left: 0; /* Reset margin */
+        margin-top: 10px; /* Add some space above the image */
     }
 }
