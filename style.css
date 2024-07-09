@@ -237,7 +237,6 @@ a:hover {
         margin-top: 100px; /* Add top margin to prevent overlap with navbar */
         height: 250px; /* Set a fixed height */
         flex-direction: column; /* Stack elements vertically */
-        flex-wrap: wrap;
     }
 
     .header-content {
