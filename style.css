@@ -14,6 +14,7 @@
     --toggle-bg: #333;
     --toggle-color: #fff;
     --toggle-hover-bg: #555;
+    --profile-border-color: #000; /* Black border for light mode */
     --font-family: 'Arial', sans-serif; /* Default font family */
 }
 
@@ -33,6 +34,7 @@ body.dark-mode {
     --toggle-bg: #fff;
     --toggle-color: #000;
     --toggle-hover-bg: #ccc;
+    --profile-border-color: #fff; /* White border for dark mode */
 }
 
 body {
@@ -136,7 +138,7 @@ a:hover {
     width: 120px; /* Reduced size for mobile */
     height: 120px; /* Reduced size for mobile */
     border-radius: 50%;
-    border: 4px solid #fff; /* Optional: Add a border to stand out */
+    border: 4px solid var(--profile-border-color); /* Dynamic border color */
 }
 
 .header-text {
