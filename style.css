@@ -122,7 +122,7 @@ a:hover {
 }
 
 .header-left {
-    text-align: left; /* Left-align text */
+    text-align: center; /* Center-align text */
     margin-right: auto; /* Push the text to the left */
 }
 
@@ -141,6 +141,12 @@ a:hover {
 .header-text {
     color: var(--text-primary);
     font-size: 24px; /* Adjusted font size */
+}
+
+.header-title {
+    color: var(--text-primary);
+    font-size: 16px; /* Adjusted font size */
+    margin-top: 10px; /* Space between name and title */
 }
 
 .about-me, .projects, .cv, .contact {
@@ -195,7 +201,7 @@ a:hover {
     }
 
     .header-left {
-        text-align: left; /* Left-align for larger screens */
+        text-align: center; /* Center-align for larger screens */
         margin-bottom: 0; /* Adjusted margin */
     }
 
