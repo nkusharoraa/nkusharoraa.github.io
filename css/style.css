@@ -21,7 +21,7 @@ a:hover {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     background: #fff;
@@ -51,6 +51,10 @@ a:hover {
     display: block;
 }
 
+section {
+    margin-bottom: 40px;
+}
+
 .project {
     margin-bottom: 20px;
 }
@@ -62,4 +66,17 @@ a:hover {
 
 .project-description {
     color: #666;
+}
+
+.info-button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.info-button:hover {
+    background-color: #005f99;
 }
