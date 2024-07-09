@@ -107,13 +107,22 @@ a:hover {
     height: 300px; /* Adjust the height as per your design */
     background-size: cover;
     background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.header-left {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
 }
 
 .profile-container {
-    position: absolute;
-    top: calc(50% - 75px); /* Half of profile pic height */
-    left: calc(50% - 75px); /* Half of profile pic width */
-    z-index: 2;
+    flex: 1;
+    max-width: 50%;
+    text-align: right;
 }
 
 .profile-pic {
@@ -121,6 +130,7 @@ a:hover {
     height: 150px;
     border-radius: 50%;
     border: 4px solid #fff; /* Optional: Add a border to stand out */
+    margin-left: auto; /* Adjust margin as needed to position the picture */
 }
 
 .header-text {
@@ -157,19 +167,24 @@ a:hover {
 
 .mode-toggle img {
     width: 24px;
-    height: 24px;
-    transition: transform 0.3s;
 }
 
-.mode-toggle:hover {
-    background-color: var(--toggle-hover-bg);
-    transform: scale(1.05);
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        height: 250px; /* Adjust height for smaller screens */
+    }
 
-.footer {
-    border-top: 1px solid #333;
-    font-size: 0.9em;
-    color: var(--footer-color);
-    text-align: center;
-    padding: 20px 0;
+    .header-left, .profile-container {
+        max-width: 100%; /* Full width on smaller screens */
+        text-align: center; /* Center-align on smaller screens */
+        margin-right: auto; /* Adjust margin for centering */
+        margin-left: auto; /* Adjust margin for centering */
+        padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+
+    .profile-pic {
+        margin-left: auto; /* Adjust margin for centering */
+        margin-right: auto; /* Adjust margin for centering */
+    }
 }
