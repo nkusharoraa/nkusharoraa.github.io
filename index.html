@@ -5,23 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My GitHub Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
         <div class="header">
             <img src="your-profile-pic-url.jpg" alt="Profile Picture" class="profile-pic">
             <h1>[Your Name]</h1>
             <p>[Your Role] at Bajaj Auto</p>
         </div>
 
-        <section class="about-me">
+        <section id="about" class="about-me">
             <h2>About Me</h2>
             <p>Hello! I am [Your Name], a [Your Role] at Bajaj Auto. I specialize in steering systems and suspension design for commercial vehicles. With experience in Siemens NX and Teamcenter, I optimize steering and suspension hard points, develop innovative mechanisms, and perform ADAMS analysis to ensure top performance and safety.</p>
         </section>
 
-        <section class="projects">
-            <h2>🚗 Steering Systems and Suspension Design</h2>
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
             <div class="project">
                 <div class="project-title">
                     <a href="https://github.com/yourusername/steering-suspension-design">Steering and Suspension Design</a>
@@ -32,7 +41,6 @@
                 <button class="info-button">More Info</button>
             </div>
 
-            <h2>📊 Supply Chain Management</h2>
             <div class="project">
                 <div class="project-title">
                     <a href="https://github.com/yourusername/inventory-management">Inventory Management</a>
@@ -43,7 +51,6 @@
                 <button class="info-button">More Info</button>
             </div>
 
-            <h2>🕹️ Software Testing</h2>
             <div class="project">
                 <div class="project-title">
                     <a href="https://github.com/yourusername/colonist-testing">Colonist.io Testing</a>
@@ -54,7 +61,6 @@
                 <button class="info-button">More Info</button>
             </div>
 
-            <h2>🚚 Transportation Management</h2>
             <div class="project">
                 <div class="project-title">
                     <a href="https://github.com/yourusername/transportation-tools">Transportation Tools</a>
@@ -66,17 +72,13 @@
             </div>
         </section>
 
-        <section class="technologies">
-            <h2>🛠️ Tools and Technologies</h2>
-            <ul>
-                <li>CAD Tools: Siemens NX, Teamcenter</li>
-                <li>Programming Languages: Python</li>
-                <li>Simulation Software: ADAMS</li>
-            </ul>
+        <section id="cv" class="cv">
+            <h2>CV</h2>
+            <p>You can download my CV <a href="your-cv-url.pdf" target="_blank">here</a>.</p>
         </section>
 
-        <section class="contact">
-            <h2>📫 Get in Touch</h2>
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
             <p><a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a> | <a href="mailto:youremail@example.com">Email</a></p>
         </section>
 
@@ -85,6 +87,6 @@
         </div>
     </div>
 
-    <script src="scripts/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
