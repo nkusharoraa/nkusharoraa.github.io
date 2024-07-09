@@ -34,7 +34,7 @@ body.dark-mode {
     --toggle-bg: #fff;
     --toggle-color: #000;
     --toggle-hover-bg: #ccc;
-    --profile-border-color: #f5f4f3; /* White border for dark mode */
+    --profile-border-color: #fff; /* White border for dark mode */
 }
 
 body {
@@ -110,22 +110,22 @@ a:hover {
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: center; /* Center the header content */
+    justify-content: flex-start; /* Align the header content to the left */
     align-items: center; /* Center vertically */
-    padding: 0px;
+    padding-left: 40px; /* Push the header content to the left */
     z-index: 1; /* Ensure header is below navbar */
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Align content to the left */
     width: 100%; /* Ensure the content spans the full width */
+    padding-left: 32px; /* Push the header-left content to the left */
 }
 
 .header-left {
     text-align: center; /* Center-align text */
-    margin-left: auto; /* Center the text */
     margin-right: auto; /* Center the text */
 }
 
@@ -242,6 +242,7 @@ a:hover {
     .header-content {
         flex-direction: column; /* Stack content vertically on mobile */
         align-items: center;
+        padding-left: 0; /* Reset padding for mobile */
     }
 
     .profile-container {
