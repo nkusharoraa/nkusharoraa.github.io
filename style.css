@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #eee;
+    color: #ccc;
     background-color: #121212;
     margin: 0;
     padding: 0;
@@ -24,15 +24,18 @@ a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background: #1e1e1e;
+    background: #1a1a1a;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
 .navbar {
-    background: #333;
+    background: #222;
     padding: 10px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar ul {
@@ -65,11 +68,11 @@ a:hover {
 }
 
 .header {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #333;
 }
 
 .footer {
-    border-top: 1px solid #444;
+    border-top: 1px solid #333;
     font-size: 0.9em;
     color: #bbb;
 }
@@ -106,21 +109,11 @@ section {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.3s;
 }
 
 .info-button:hover {
     background-color: #007acc;
+    transform: scale(1.05);
 }
 
-.about-me, .projects, .cv, .contact {
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s;
-}
-
-.about-me:hover, .projects:hover, .cv:hover, .contact:hover {
-    transform: scale(1.02);
-}
