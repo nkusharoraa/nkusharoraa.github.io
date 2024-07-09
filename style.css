@@ -149,8 +149,11 @@ a:hover {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
     margin-bottom: 20px; /* Add margin between sections */
+}
+
+.about-me:hover, .projects:hover, .cv:hover, .contact:hover {
+    transform: none; /* Remove transform on hover to prevent zoom effect */
 }
 
 .mode-toggle {
