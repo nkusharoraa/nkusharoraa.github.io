@@ -131,7 +131,7 @@ a:hover {
 
 .profile-container {
     text-align: right; /* Right-align for image */
-    margin-right: auto; /* Push the image to the right */
+    margin-left: 40px; /* Push the image to the right */
 }
 
 .profile-pic {
@@ -216,7 +216,7 @@ a:hover {
     }
 
     .profile-container {
-        text-align: right; /* Right-align for larger screens */
+        text-align: left; /* Right-align for larger screens */
     }
 
     .profile-pic {
