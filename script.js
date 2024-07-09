@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const buttons = document.querySelectorAll('.info-button');
+    const modeToggle = document.getElementById('mode-toggle');
     
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            alert('More information about this project.');
-        });
+    modeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
     });
 
     // Smooth scrolling for navbar links
