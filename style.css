@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #ccc;
-    background-color: #121212;
+    background-color: #000;
     margin: 0;
     padding: 0;
 }
@@ -24,7 +24,7 @@ a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background: #1a1a1a;
+    background: #111;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
@@ -117,3 +117,14 @@ section {
     transform: scale(1.05);
 }
 
+.about-me, .projects, .cv, .contact {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.about-me:hover, .projects:hover, .cv:hover, .contact:hover {
+    transform: scale(1.02);
+}
