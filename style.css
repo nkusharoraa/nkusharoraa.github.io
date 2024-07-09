@@ -57,18 +57,21 @@ a:hover {
 }
 
 .cover-photo {
-    position: fixed;
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Ensure the SVG does not exceed the container width */
+    height: 200px; /* Adjust the height as per your design */
+    overflow: hidden;
+}
+
+.cover-photo svg {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-}
-
-.cover-photo svg {
-    width: 100%;
-    height: 100%;
     fill: var(--bg-color);
+    z-index: -1;
 }
 
 .container {
@@ -142,12 +145,27 @@ a:hover {
 
 .header-text {
     position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 20px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
     border-radius: 0 0 8px 8px;
+    padding: 20px;
+    color: #fff; /* Text color for better contrast */
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.project-description {
+    color: var(--project-desc-color);
 }
 
 .about-me, .projects, .cv, .contact {
