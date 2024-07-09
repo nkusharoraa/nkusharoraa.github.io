@@ -201,7 +201,7 @@ a:hover {
 
     .header {
         height: 300px; /* Adjusted height for larger screens */
-        margin-left: 40px;
+        margin-right: auto;
     }
 
     .header-left {
