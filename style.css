@@ -14,6 +14,7 @@
     --toggle-bg: #333;
     --toggle-color: #fff;
     --toggle-hover-bg: #555;
+    --font-family: 'Arial', sans-serif; /* Default font family */
 }
 
 /* Dark mode variables */
@@ -35,7 +36,7 @@ body.dark-mode {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family); /* Apply default font family */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -149,10 +150,7 @@ a:hover {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s;
-}
-
-.about-me:hover, .projects:hover, .cv:hover, .contact:hover {
-    transform: scale(1.02);
+    margin-bottom: 20px; /* Add margin between sections */
 }
 
 .mode-toggle {
@@ -186,5 +184,9 @@ a:hover {
     .profile-pic {
         margin-left: auto; /* Adjust margin for centering */
         margin-right: auto; /* Adjust margin for centering */
+    }
+
+    .about-me, .projects, .cv, .contact {
+        margin-bottom: 15px; /* Reduce margin for smaller screens */
     }
 }
