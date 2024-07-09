@@ -34,7 +34,7 @@ body.dark-mode {
     --toggle-bg: #fff;
     --toggle-color: #000;
     --toggle-hover-bg: #ccc;
-    --profile-border-color: #fff; /* White border for dark mode */
+    --profile-border-color: #f5f4f3; /* White border for dark mode */
 }
 
 body {
