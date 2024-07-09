@@ -127,6 +127,7 @@ a:hover {
     text-align: center; /* Center-align text */
     margin-left: auto; /* Center the text */
     margin-right: auto; /* Center the text */
+    padding: 40px;
 }
 
 .profile-container {
@@ -209,7 +210,7 @@ a:hover {
     }
 
     .header-left {
-        text-align: center; /* Center-align text */
+        text-align: left; /* Center-align text */
         margin-right: auto; /* Push the text to the left */
     }
 
