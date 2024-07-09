@@ -61,7 +61,7 @@ a:hover {
 
 .container {
     max-width: 100%; /* Full width container */
-    padding: 20px; /* Increased padding */
+    padding: 10px; /* Increased padding */
     background: var(--container-bg);
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Reduced shadow */
@@ -112,7 +112,7 @@ a:hover {
     display: flex;
     justify-content: center; /* Center the header content */
     align-items: center; /* Center vertically */
-    padding: 20px;
+    padding: 10px;
     z-index: 1; /* Ensure header is below navbar */
 }
 
