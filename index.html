@@ -3,63 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ankush Arora's Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="https://avatars.githubusercontent.com/u/59050030?v=4" alt="Profile Picture" class="profile-pic">
+    <header>
+        <div class="container">
+            <img src="assets/profile.jpg" alt="Ankush Arora" class="profile-img">
             <h1>Ankush Arora</h1>
-            <p>Assistant Manager at Bajaj Auto</p>
+            <p>Bajaj Auto Ltd | IIT Delhi | MITACS GRI'22 | McGill University</p>
         </div>
+    </header>
 
-        <h2>Steering Systems and Suspension Design</h2>
-        <div class="project">
-            <div class="project-title">
-                <a href="https://github.com/yourusername/steering-suspension-design">Steering and Suspension Design</a>
-            </div>
-            <div class="project-description">
-                Developed a Python class coding the kinematics of steering and suspension hard points, including optimization and ADAMS analysis.
-            </div>
-            <button class="info-button">More Info</button>
-        </div>
-
-        <h2>Supply Chain Management</h2>
-        <div class="project">
-            <div class="project-title">
-                <a href="https://github.com/yourusername/inventory-management">Inventory Management</a>
-            </div>
-            <div class="project-description">
-                Inventory management project focusing on Economic Order Quantity (EOQ), single-period and multi-period inventory models, and stochastic demand analysis.
-            </div>
-            <button class="info-button">More Info</button>
-        </div>
-
-        <h2>Software Testing</h2>
-        <div class="project">
-            <div class="project-title">
-                <a href="https://github.com/yourusername/colonist-testing">Colonist.io Testing</a>
-            </div>
-            <div class="project-description">
-                End-to-end testing on colonist.io, identifying and reporting software defects, and providing feedback on game mechanics and user interface.
-            </div>
-            <button class="info-button">More Info</button>
-        </div>
-
-        <h2>Tools and Technologies</h2>
+    <nav>
         <ul>
-            <li>CAD Tools: Siemens NX, Teamcenter</li>
-            <li>Programming Languages: Python</li>
-            <li>Simulation Software: ADAMS</li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+    </nav>
 
-        <div class="footer">
-            <p>Get in Touch</p>
-            <p><a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a> | <a href="mailto:youremail@example.com">Email</a></p>
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Brief introduction about yourself.</p>
         </div>
-    </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <a href="https://github.com/example/repo1" target="_blank">Project Title 1</a>
+                    <p>Short description of the project.</p>
+                </li>
+                <li>
+                    <a href="https://github.com/example/repo2" target="_blank">Project Title 2</a>
+                    <p>Short description of the project.</p>
+                </li>
+                <li>
+                    <a href="https://drive.google.com/file/d/example" target="_blank">Project Title 3 (Google Drive)</a>
+                    <p>Short description of the project.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Feel free to <a href="mailto:ankush@example.com">email me</a> or connect with me on <a href="https://www.linkedin.com/in/nkusharoraa" target="_blank">LinkedIn</a>.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ankush Arora</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
 </body>
 </html>
