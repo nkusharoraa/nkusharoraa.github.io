@@ -154,11 +154,16 @@ section {
     background-color: var(--toggle-bg);
     color: var(--toggle-color);
     border: none;
-    padding: 10px 20px;
+    padding: 10px;
     cursor: pointer;
     border-radius: 5px;
     margin-left: 20px;
     transition: background 0.3s, transform 0.3s;
+}
+
+.mode-toggle img {
+    width: 24px;
+    height: 24px;
 }
 
 .mode-toggle:hover {
