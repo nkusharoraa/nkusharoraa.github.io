@@ -131,7 +131,7 @@ a:hover {
 
 .profile-container {
     text-align: right; /* Right-align for image */
-    margin-left: auto; /* Push the image to the right */
+    margin-right: auto; /* Push the image to the right */
 }
 
 .profile-pic {
