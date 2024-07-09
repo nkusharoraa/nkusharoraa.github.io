@@ -121,6 +121,13 @@ a:hover {
     display: block;
 }
 
+.profile-pic-about {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
 section {
     margin-bottom: 40px;
 }
@@ -148,6 +155,15 @@ section {
 
 .about-me:hover, .projects:hover, .cv:hover, .contact:hover {
     transform: scale(1.02);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+}
+
+.about-text {
+    max-width: 70%;
 }
 
 .mode-toggle {
