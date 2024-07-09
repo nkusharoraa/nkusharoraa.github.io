@@ -8,6 +8,7 @@ body {
 
 .container {
     width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -26,6 +27,7 @@ header {
     border-radius: 50%;
     width: 150px;
     height: 150px;
+    object-fit: cover;
     margin-right: 20px;
 }
 
@@ -55,6 +57,7 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 10px;
 }
 
 nav ul li a:hover {
