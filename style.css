@@ -1,18 +1,18 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #eee;
+    background-color: #121212;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
 h1, h2, h3 {
-    color: #444;
+    color: #fff;
 }
 
 a {
-    color: #007acc;
+    color: #1e90ff;
     text-decoration: none;
 }
 
@@ -24,24 +24,54 @@ a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #1e1e1e;
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    background: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #eee;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.navbar a:hover {
+    background: #1e90ff;
 }
 
 .header, .footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 .header {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #444;
 }
 
 .footer {
-    border-top: 1px solid #eee;
+    border-top: 1px solid #444;
     font-size: 0.9em;
-    color: #777;
+    color: #bbb;
 }
 
 .profile-pic {
@@ -66,46 +96,31 @@ section {
 }
 
 .project-description {
-    color: #666;
+    color: #bbb;
 }
 
 .info-button {
-    background-color: #007acc;
+    background-color: #1e90ff;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background 0.3s;
 }
 
 .info-button:hover {
-    background-color: #005f99;
+    background-color: #007acc;
 }
 
-.about-me {
-    background-color: #f9f9f9;
+.about-me, .projects, .cv, .contact {
+    background-color: #2a2a2a;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
 }
 
-.projects {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.technologies {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.contact {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+.about-me:hover, .projects:hover, .cv:hover, .contact:hover {
+    transform: scale(1.02);
 }
