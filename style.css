@@ -123,7 +123,8 @@ a:hover {
 
 .header-left {
     text-align: center; /* Center-align text */
-    margin-right: auto; /* Push the text to the left */
+    margin-left: auto; /* Center the text */
+    margin-right: auto; /* Center the text */
 }
 
 .profile-container {
