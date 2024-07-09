@@ -234,7 +234,7 @@ a:hover {
 
 @media (max-width: 767px) {
     .header {
-        margin-top: 100px; /* Add top margin to prevent overlap with navbar */
+        margin-top: 70px; /* Add top margin to prevent overlap with navbar */
         height: 250px; /* Set a fixed height */
         flex-direction: column; /* Stack elements vertically */
     }
