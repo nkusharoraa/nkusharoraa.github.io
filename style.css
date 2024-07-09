@@ -108,8 +108,8 @@ a:hover {
 
 .profile-container {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: calc(50% - 75px); /* Half of profile pic height */
+    left: calc(50% - 75px); /* Half of profile pic width */
     z-index: 2;
 }
 
@@ -157,24 +157,4 @@ a:hover {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.mode-toggle img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s;
-}
-
-.mode-toggle:hover {
-    background-color: var(--toggle-hover-bg);
-    transform: scale(1.05);
-}
-
-.footer {
-    border-top: 1px solid #333;
-    font-size: 0.9em;
-    color: var(--footer-color);
-    text-align: center;
-    padding: 20px 0;
-}
+    transition: background 0.3
