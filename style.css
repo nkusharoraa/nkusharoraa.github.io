@@ -251,4 +251,9 @@ a:hover {
         margin-left: 0; /* Reset margin */
         margin-top: 10px; /* Add some space above the image */
     }
+    .header-left {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
