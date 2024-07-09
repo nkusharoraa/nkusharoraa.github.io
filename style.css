@@ -173,24 +173,3 @@ a:hover {
     text-align: center;
     padding: 20px 0;
 }
-/* Add styles for SVG icons */
-.icon {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin-right: 5px;
-    fill: currentColor; /* Ensures SVG color adapts to text color */
-}
-
-/* Example hover effect for SVG icons */
-.nav-links a:hover .icon {
-    transform: scale(1.2); /* Scale up on hover */
-}
-
-/* Adjustments for specific sections */
-.about-me .icon,
-.projects .icon,
-.cv .icon,
-.contact .icon {
-    margin-right: 10px;
-}
