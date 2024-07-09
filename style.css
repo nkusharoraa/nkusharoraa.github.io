@@ -112,8 +112,9 @@ a:hover {
 
 .profile-container {
     position: absolute;
-    top: calc(50% - 75px); /* Half of profile pic height */
-    left: calc(50% - 75px); /* Half of profile pic width */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
 }
 
