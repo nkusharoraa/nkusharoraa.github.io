@@ -108,18 +108,24 @@ a:hover {
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column-reverse; /* Adjusted for mobile layout */
+    justify-content: center; /* Center the header content */
+    align-items: center; /* Center vertically */
     padding: 20px;
     z-index: 1; /* Ensure header is below navbar */
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
 .header-left {
-    text-align: center; /* Center-align for mobile */
-    margin-bottom: 10px; /* Adjusted margin */
+    text-align: left; /* Left-align text */
+    margin-right: 20px; /* Space between text and image */
 }
 
 .profile-container {
-    text-align: center; /* Center-align for mobile */
+    text-align: right; /* Right-align for image */
 }
 
 .profile-pic {
@@ -127,18 +133,11 @@ a:hover {
     height: 120px; /* Reduced size for mobile */
     border-radius: 50%;
     border: 4px solid #fff; /* Optional: Add a border to stand out */
-    margin-bottom: 10px; /* Adjusted margin */
 }
 
 .header-text {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 10px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
-    border-radius: 8px;
-    margin-top: 10px; /* Adjusted margin */
+    color: var(--text-primary);
+    font-size: 24px; /* Adjusted font size */
 }
 
 .about-me, .projects, .cv, .contact {
@@ -190,7 +189,6 @@ a:hover {
 
     .header {
         height: 300px; /* Adjusted height for larger screens */
-        flex-direction: row; /* Adjusted for larger screens */
     }
 
     .header-left {
@@ -221,5 +219,6 @@ a:hover {
     .header {
         margin-top: 50px; /* Add top margin to prevent overlap with navbar */
         height: 250px; /* Set a fixed height */
+        flex-direction: column; /* Stack elements vertically */
     }
 }
