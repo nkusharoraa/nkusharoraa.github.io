@@ -39,7 +39,7 @@ body.dark-mode {
 
 body {
     font-family: var(--font-family); /* Apply default font family */
-    line-height: 1.6;
+    line-height: 1.4;
     margin: 0;
     padding: 0;
     background-color: var(--primary-bg-color);
