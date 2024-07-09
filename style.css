@@ -121,7 +121,7 @@ a:hover {
     align-items: center;
     justify-content: flex-start; /* Align content to the left */
     width: 100%; /* Ensure the content spans the full width */
-    padding-right: 32px; /* Push the header-left content to the left */
+    padding-left: 32px; /* Push the header-left content to the left */
 }
 
 .header-left {
