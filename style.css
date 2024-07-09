@@ -99,52 +99,43 @@ a:hover {
     background: var(--link-hover-bg);
 }
 
-.header, .footer {
-    text-align: center;
-    padding: 20px 0;
-}
-
 .header {
-    border-bottom: 1px solid #333;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
-.footer {
-    border-top: 1px solid #333;
-    font-size: 0.9em;
-    color: var(--footer-color);
+.profile-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
 }
 
 .profile-pic {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin: 20px auto;
-    display: block;
+    border: 4px solid #fff; /* Optional: Add a border to stand out */
 }
 
 .cover-photo {
-    max-width: auto;
-    height: auto;
+    width: 100%;
+    height: 300px; /* Adjust the height as per your design */
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    object-position: center;
+    filter: brightness(50%); /* Optional: Apply a filter for contrast */
 }
 
-section {
-    margin-bottom: 40px;
-}
-
-.project {
-    margin-bottom: 20px;
-}
-
-.project-title {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-}
-
-.project-description {
-    color: var(--project-desc-color);
+.header-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
+    border-radius: 0 0 8px 8px;
 }
 
 .about-me, .projects, .cv, .contact {
@@ -178,4 +169,12 @@ section {
 .mode-toggle:hover {
     background-color: var(--toggle-hover-bg);
     transform: scale(1.05);
+}
+
+.footer {
+    border-top: 1px solid #333;
+    font-size: 0.9em;
+    color: var(--footer-color);
+    text-align: center;
+    padding: 20px 0;
 }
