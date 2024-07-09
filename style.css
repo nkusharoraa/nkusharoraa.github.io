@@ -152,6 +152,7 @@ a:hover {
     transform: none; /* Remove transform on hover to prevent zoom effect */
 }
 
+/* Mode toggle button with fade effect */
 .mode-toggle {
     background-color: var(--toggle-bg);
     color: var(--toggle-color);
@@ -159,7 +160,7 @@ a:hover {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background 0.3s, transform 0.3s, opacity 0.3s ease-in-out;
+    transition: background 0.3s, transform 0.3s, opacity 0.8s ease-in-out; /* Increased opacity transition time */
     opacity: 1; /* Initially visible */
 }
 
@@ -178,6 +179,7 @@ a:hover {
 body.dark-mode .mode-toggle {
     opacity: 0; /* Fade out when in dark mode */
 }
+
 
 .footer {
     text-align: center;

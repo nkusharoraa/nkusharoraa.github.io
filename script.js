@@ -12,6 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 modeIcon.src = 'toggle-dark-icon.svg';
             }
-        }, 300); // Adjust delay in milliseconds (300ms in this example)
+        }, 800); // Adjust delay in milliseconds (800ms in this example for slower effect)
     });
 });
