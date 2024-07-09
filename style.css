@@ -121,7 +121,7 @@ a:hover {
     align-items: center;
     justify-content: flex-start; /* Align content to the left */
     width: 100%; /* Ensure the content spans the full width */
-    padding-left: 32px; /* Push the header-left content to the left */
+    padding-right: 32px; /* Push the header-left content to the left */
 }
 
 .header-left {
@@ -234,7 +234,7 @@ a:hover {
 
 @media (max-width: 767px) {
     .header {
-        margin-top: 70px; /* Add top margin to prevent overlap with navbar */
+        margin-top: 75px; /* Add top margin to prevent overlap with navbar */
         height: 250px; /* Set a fixed height */
         flex-direction: column; /* Stack elements vertically */
     }
