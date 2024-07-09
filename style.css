@@ -211,6 +211,7 @@ a:hover {
     .header-left {
         text-align: left; /* Center-align text */
         margin-right: auto; /* Push the text to the left */
+        padding-left: 32px;
     }
 
     .profile-container {
