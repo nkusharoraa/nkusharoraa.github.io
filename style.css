@@ -1,3 +1,39 @@
+/* Default to light mode */
+:root {
+    --bg-color: #fff;
+    --text-color: #000;
+    --heading-color: #333;
+    --link-color: #1e90ff;
+    --container-bg: #f9f9f9;
+    --navbar-bg: #eee;
+    --navbar-link-color: #000;
+    --link-hover-bg: #ddd;
+    --footer-color: #333;
+    --project-desc-color: #666;
+    --section-bg: #f2f2f2;
+    --toggle-bg: #333;
+    --toggle-color: #fff;
+    --toggle-hover-bg: #555;
+}
+
+/* Dark mode variables */
+body.dark-mode {
+    --bg-color: #000;
+    --text-color: #ccc;
+    --heading-color: #fff;
+    --link-color: #1e90ff;
+    --container-bg: #111;
+    --navbar-bg: #222;
+    --navbar-link-color: #eee;
+    --link-hover-bg: #1e90ff;
+    --footer-color: #bbb;
+    --project-desc-color: #bbb;
+    --section-bg: #222;
+    --toggle-bg: #fff;
+    --toggle-color: #000;
+    --toggle-hover-bg: #ccc;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -128,40 +164,4 @@ section {
 .mode-toggle:hover {
     background-color: var(--toggle-hover-bg);
     transform: scale(1.05);
-}
-
-/* Light mode variables */
-:root {
-    --bg-color: #fff;
-    --text-color: #000;
-    --heading-color: #333;
-    --link-color: #1e90ff;
-    --container-bg: #f9f9f9;
-    --navbar-bg: #eee;
-    --navbar-link-color: #000;
-    --link-hover-bg: #ddd;
-    --footer-color: #333;
-    --project-desc-color: #666;
-    --section-bg: #f2f2f2;
-    --toggle-bg: #333;
-    --toggle-color: #fff;
-    --toggle-hover-bg: #555;
-}
-
-/* Dark mode variables */
-body.dark-mode {
-    --bg-color: #000;
-    --text-color: #ccc;
-    --heading-color: #fff;
-    --link-color: #1e90ff;
-    --container-bg: #111;
-    --navbar-bg: #222;
-    --navbar-link-color: #eee;
-    --link-hover-bg: #1e90ff;
-    --footer-color: #bbb;
-    --project-desc-color: #bbb;
-    --section-bg: #222;
-    --toggle-bg: #fff;
-    --toggle-color: #000;
-    --toggle-hover-bg: #ccc;
 }
