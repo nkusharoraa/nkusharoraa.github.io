@@ -104,7 +104,7 @@ a:hover {
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 20px;
-    height: 200px; /* Reduced height for mobile */
+    height: 250px; /* Adjust height for mobile */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -176,11 +176,6 @@ a:hover {
     transform: scale(1.05);
 }
 
-/* Fade out effect when toggling */
-body.dark-mode .mode-toggle {
-    opacity: 1; /* No fade out effect */
-}
-
 .footer {
     text-align: center;
     padding: 10px;
@@ -224,6 +219,7 @@ body.dark-mode .mode-toggle {
 
 @media (max-width: 767px) {
     .header {
-        margin-top: 60px; /* Add top margin to prevent overlap with navbar */
+        margin-top: 50px; /* Add top margin to prevent overlap with navbar */
+        height: 250px; /* Set a fixed height */
     }
 }
