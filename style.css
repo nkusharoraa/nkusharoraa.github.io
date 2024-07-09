@@ -68,25 +68,26 @@ a:hover {
 .navbar {
     background: var(--navbar-bg);
     padding: 10px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.navbar ul {
+.navbar .nav-links {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
 }
 
-.navbar li {
+.navbar .nav-links li {
     margin: 0 15px;
 }
 
-.navbar a {
+.navbar .nav-links a {
     color: var(--navbar-link-color);
     font-weight: bold;
     padding: 8px 16px;
@@ -94,7 +95,7 @@ a:hover {
     transition: background 0.3s;
 }
 
-.navbar a:hover {
+.navbar .nav-links a:hover {
     background: var(--link-hover-bg);
 }
 
@@ -119,13 +120,6 @@ a:hover {
     border-radius: 50%;
     margin: 20px auto;
     display: block;
-}
-
-.profile-pic-about {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-right: 20px;
 }
 
 section {
@@ -157,15 +151,6 @@ section {
     transform: scale(1.02);
 }
 
-.about-container {
-    display: flex;
-    align-items: center;
-}
-
-.about-text {
-    max-width: 70%;
-}
-
 .mode-toggle {
     background-color: var(--toggle-bg);
     color: var(--toggle-color);
@@ -173,7 +158,6 @@ section {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
-    margin-left: 20px;
     transition: background 0.3s, transform 0.3s;
 }
 
