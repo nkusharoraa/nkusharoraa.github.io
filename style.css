@@ -16,6 +16,8 @@
     --toggle-hover-bg: #555;
     --profile-border-color: #000;
     --font-family: 'Arial', sans-serif;
+    --mini-heading-color: #c4c3c3;
+    --divider: #ccc;
     --space-xs: 8px;
     --space-sm: 16px;
     --space-md: 24px;
@@ -39,7 +41,9 @@ body.dark-mode {
     --toggle-bg: #fff;
     --toggle-color: #000;
     --toggle-hover-bg: #ccc;
+    --divider: #333;
     --profile-border-color: #fff;
+    --mini-heading-color: #454545;
 }
 
 /* General styles */
@@ -141,6 +145,11 @@ a:hover {
     z-index: 1;
 }
 
+.mini-heading {
+    text-decoration: underline;
+    text-decoration-color: var(--mini-heading-color);
+}
+
 .mode-toggle {
     background-color: var(--toggle-bg);
     color: var(--toggle-color);
@@ -226,7 +235,11 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     font-size: 1.125rem;
     margin-top: var(--space-xs);
 }
-
+.time-period{
+    text-align: right;
+    float: right;
+    padding-right: var(--space-xs);
+}
 .about-me, .projects, .cv, .awards, .skills {
     background-color: var(--section-bg);
     padding: var(--space-md);
@@ -424,15 +437,20 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 .project-divider {
     border: 0;
     height: 1px;
-    background: #ccc;
-    opacity: 0.4;
+    background: var(--divider);
+    opacity: 0.8;
 }
-
+.subproject-divider {
+    border: 0;
+    height: 1px;
+    background: var(--divider);
+    opacity: 0.5;
+}
 .section-divider {
     border: 0;
     height: 1px;
-    background: #ccc;
-    opacity: 0.8;
+    background: var(--divider);
+    opacity: 1;
 }
 
 Ensure that the project descriptions have some padding for better readability
