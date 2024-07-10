@@ -1,4 +1,4 @@
-/* Default to light mode */
+/* Define root variables */
 :root {
     --primary-bg-color: #fff;
     --text-primary: #000;
@@ -14,8 +14,13 @@
     --toggle-bg: #333;
     --toggle-color: #fff;
     --toggle-hover-bg: #555;
-    --profile-border-color: #000; /* Black border for light mode */
-    --font-family: 'Arial', sans-serif; /* Default font family */
+    --profile-border-color: #000;
+    --font-family: 'Arial', sans-serif;
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 40px;
 }
 
 /* Dark mode variables */
@@ -34,25 +39,30 @@ body.dark-mode {
     --toggle-bg: #fff;
     --toggle-color: #000;
     --toggle-hover-bg: #ccc;
-    --profile-border-color: #fff; /* White border for dark mode */
+    --profile-border-color: #fff;
 }
 
+/* General styles */
 body {
-    font-family: var(--font-family); /* Apply default font family */
-    line-height: 1.4;
+    font-family: var(--font-family);
+    line-height: 1.6;
     margin: 0;
     padding: 0;
+    font-size: 16px;
     background-color: var(--primary-bg-color);
     color: var(--text-primary);
 }
 
 h1, h2, h3 {
     color: var(--heading-color);
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-sm);
 }
 
 a {
     color: var(--link-color);
     text-decoration: none;
+    transition: color 0.3s, text-decoration 0.3s;
 }
 
 a:hover {
@@ -60,22 +70,24 @@ a:hover {
 }
 
 .container {
-    max-width: 100%; /* Full width container */
-    padding: 10px; /* Increased padding */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-md);
     background: var(--container-bg);
     border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Reduced shadow */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
     background: var(--navbar-bg);
-    padding: 10px;
+    padding: var(--space-sm);
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .nav-links {
@@ -86,7 +98,7 @@ a:hover {
 }
 
 .navbar .nav-links li {
-    margin: 0 10px; /* Adjusted margin */
+    margin: 0 var(--space-xs);
 }
 
 .navbar .nav-links a {
@@ -105,73 +117,89 @@ a:hover {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    margin-bottom: 20px;
-    height: 250px; /* Adjust height for mobile */
+    margin-bottom: var(--space-lg);
+    padding: var(--space-lg);
+    height: auto;
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: flex-start; /* Align the header content to the left */
-    align-items: center; /* Center vertically */
-    padding-left: 0px; /* Push the header content to the left */
-    z-index: 1; /* Ensure header is below navbar */
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1;
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align content to the left */
-    width: 100%; /* Ensure the content spans the full width */
-}
-
-.header-left {
-    text-align: center; /* Center-align text */
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .profile-container {
-    text-align: right; /* Right-align for image */
-    margin-left: 40px; /* Push the image to the right */
+    display: flex;
+    justify-content: space-between; /* Ensure space between profile pic and icons */
+    align-items: center;
 }
 
 .profile-pic {
-    width: 120px; /* Reduced size for mobile */
-    height: 120px; /* Reduced size for mobile */
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    border: 4px solid var(--profile-border-color); /* Dynamic border color */
+    border: 4px solid var(--profile-border-color);
 }
+
+.social-icons {
+    display: flex;
+    flex-direction: row; /* Display icons vertically */
+    align-items: flex-end; /* Align icons to the right */
+    gap: 10px; /* Adjust spacing between icons */
+    margin-left: auto; /* Add margin to create space between picture and icons */
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2); /* Scale up on hover */
+}
+
 
 .header-text {
     color: var(--text-primary);
-    font-size: 24px; /* Adjusted font size */
+    font-size: 1.5rem;
 }
 
 .header-title {
     color: var(--text-primary);
-    font-size: 16px; /* Adjusted font size */
-    margin-top: 10px; /* Space between name and title */
+    font-size: 1.125rem;
+    margin-top: var(--space-xs);
 }
 
-.about-me, .projects, .cv, .contact {
+.about-me, .projects, .cv, .awards, .skills {
     background-color: var(--section-bg);
-    padding: 20px;
+    padding: var(--space-md);
     border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Reduced shadow */
-    margin-bottom: 20px; /* Add margin between sections */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: var(--space-lg);
 }
 
-.about-me:hover, .projects:hover, .cv:hover, .contact:hover {
-    transform: none; /* Remove transform on hover to prevent zoom effect */
+.about-me:hover, .projects:hover, .cv:hover, .certifications:hover, .skills:hover {
+    transform: none;
 }
 
-/* Mode toggle button with fade effect */
 .mode-toggle {
     background-color: var(--toggle-bg);
     color: var(--toggle-color);
     border: none;
-    padding: 10px;
+    padding: var(--space-xs) var(--space-sm);
     cursor: pointer;
     border-radius: 5px;
-    transition: background 0.6s, transform 0.6s, opacity 1.2s ease-in-out; /* Increased opacity transition time */
-    opacity: 1; /* Initially visible */
+    transition: background 0.6s, transform 0.6s, opacity 1.2s ease-in-out;
+    opacity: 1;
 }
 
 .mode-toggle img {
@@ -187,72 +215,104 @@ a:hover {
 
 .footer {
     text-align: center;
-    padding: 10px;
+    padding: var(--space-sm);
     color: var(--footer-color);
+}
+
+/* Adjustments for social icons */
+.social-icons {
+    display: flex;
+    justify-content: flex-end; /* Align icons to the right */
+    gap: var(--space-sm); /* Add spacing between icons */
+}
+
+.social-icon img {
+    width: 24px; /* Adjust icon size */
+    height: 24px; /* Adjust icon size */
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2); /* Scale up on hover */
 }
 
 /* Responsive adjustments */
 @media (min-width: 768px) {
-    .container {
-        padding: 40px; /* Double padding for larger screens */
-    }
-
     .header {
-        height: 300px; /* Adjusted height for larger screens */
-        margin-right: auto;
-    }
-
-    .header-left {
-        text-align: left; /* Center-align for larger screens */
-        margin-bottom: 0; /* Adjusted margin */
-    }
-
-    .header-left {
-        text-align: left; /* Center-align text */
-        margin-right: auto; /* Push the text to the left */
-        padding-left: 32px;
-    }
-
-    .profile-container {
-        text-align: left; /* Right-align for larger screens */
-    }
-
-    .profile-pic {
-        width: 150px; /* Adjusted size for larger screens */
-        height: 150px; /* Adjusted size for larger screens */
-        margin-bottom: 0; /* Adjusted margin */
-    }
-
-    .header-text {
-        margin-top: 0; /* Adjusted margin */
-    }
-
-    .about-me, .projects, .cv, .contact {
-        margin-bottom: 30px; /* Increased margin for larger screens */
-    }
-}
-
-@media (max-width: 767px) {
-    .header {
-        margin-top: 100px; /* Add top margin to prevent overlap with navbar */
-        height: 250px; /* Set a fixed height */
-        flex-direction: column; /* Stack elements vertically */
+        height: 300px;
+        padding: var(--space-xl);
     }
 
     .header-content {
-        flex-direction: column; /* Stack content vertically on mobile */
-        align-items: center;
-        padding-left: 0; /* Reset padding for mobile */
+        flex-direction: row;
+        justify-content: flex-start;
     }
 
     .profile-container {
-        margin-left: 0; /* Reset margin */
-        margin-top: 10px; /* Add some space above the image */
+        margin-right: var(--space-lg);
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .header-text {
+        font-size: 2rem;
+    }
+
+    .header-title {
+        font-size: 1.25rem;
     }
     .header-left {
-        margin-right: 0;
+        padding-left: 32px;
+    }
+}
+
+/* CSS for smaller screens */
+@media (max-width: 767px) {
+    .nav-links {
+        display: flex;
+        align-items: center; /* Center align links */
+        gap: var(--space-xs); /* Add space between links */
+        padding: var(--space-xs); /* Add padding */
+    }
+
+    .nav-links li {
+        margin: 0 var(--space-xs); /* Adjust margin */
+        border-radius: 5px; /* Rounded corners */
+        background-color: var(--navbar-bg); /* Match navbar background */
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 8px;
+        color: var(--navbar-link-color);
+        font-weight: bold;
         text-align: center;
-        margin-bottom: 20px;
-        text-wrap: wrap;
+        border-radius: 5px; /* Rounded corners */
+        transition: background 0.3s;
+    }
+
+    .nav-links a:hover {
+        background: var(--link-hover-bg);
+    }
+
+    /* Hide the Skills section in smaller screens */
+    .nav-links li:nth-child(5) {
+        display: none;
+    }
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-pic {
+        margin-bottom: var(--space-sm);
+    }
+
+    .header-content {
+        text-align: center;
     }
 }
