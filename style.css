@@ -346,6 +346,9 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img {
     }
 
     /* Hide the Skills section in smaller screens */
+    .nav-links li:nth-child(3) {
+        display: none;
+    }
     .nav-links li:nth-child(5) {
         display: none;
     }
