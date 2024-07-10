@@ -69,6 +69,17 @@ a:hover {
     text-decoration: underline;
 }
 
+#shareButton {
+    background: transparent;
+    border: none;
+}
+
+@media (max-width: 600px) {
+    #shareButton {
+        padding: 0;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -268,6 +279,9 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img {
 }
 
 .social-icon img:hover {
+    transform: scale(1.2); /* Scale up on hover */
+}
+.share-btn img:hover {
     transform: scale(1.2); /* Scale up on hover */
 }
 
