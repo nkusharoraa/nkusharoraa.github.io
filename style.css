@@ -8,6 +8,7 @@
     --navbar-bg: #eee;
     --navbar-link-color: #000;
     --link-hover-bg: #ddd;
+    --link-hover-color: #000;
     --footer-color: #333;
     --project-desc-color: #666;
     --section-bg: #f2f2f2;
@@ -15,7 +16,7 @@
     --toggle-color: #fff;
     --toggle-hover-bg: #555;
     --profile-border-color: #000; /* Black border for light mode */
-    --font-family: 'Arial', sans-serif; /* Default font family */
+    --font-family: 'Roboto', sans-serif; /* Modern font family */
 }
 
 /* Dark mode variables */
@@ -39,7 +40,7 @@ body.dark-mode {
 
 body {
     font-family: var(--font-family); /* Apply default font family */
-    line-height: 1.4;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: var(--primary-bg-color);
@@ -99,6 +100,8 @@ a:hover {
 
 .navbar .nav-links a:hover {
     background: var(--link-hover-bg);
+    color: var(--link-hover-color); /* Add color transition */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
 }
 
 .header {
@@ -129,130 +132,117 @@ a:hover {
 
 .profile-container {
     text-align: right; /* Right-align for image */
-    margin-left: 40px; /* Push the image to the right */
+    margin-left: 40px; /* Push the image to the left */
 }
 
 .profile-pic {
-    width: 120px; /* Reduced size for mobile */
-    height: 120px; /* Reduced size for mobile */
+    width: 130px; /* Adjusted width */
+    height: 130px; /* Adjusted height */
     border-radius: 50%;
-    border: 4px solid var(--profile-border-color); /* Dynamic border color */
+    object-fit: cover;
+    border: 4px solid var(--profile-border-color); /* Add border */
+    transition: transform 0.3s ease-in-out;
 }
 
-.header-text {
-    color: var(--text-primary);
-    font-size: 24px; /* Adjusted font size */
+.profile-pic:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
-.header-title {
-    color: var(--text-primary);
-    font-size: 16px; /* Adjusted font size */
-    margin-top: 10px; /* Space between name and title */
-}
-
-.about-me, .projects, .cv, .contact {
-    background-color: var(--section-bg);
-    padding: 20px;
+.about-me {
+    padding: 40px; /* Increased padding */
+    margin-bottom: 20px;
+    background: var(--section-bg);
     border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Reduced shadow */
-    margin-bottom: 20px; /* Add margin between sections */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
 }
 
-.about-me:hover, .projects:hover, .cv:hover, .contact:hover {
-    transform: none; /* Remove transform on hover to prevent zoom effect */
+.projects {
+    padding: 40px; /* Increased padding */
+    margin-bottom: 20px;
+    background: var(--section-bg);
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
 }
 
-/* Mode toggle button with fade effect */
+.project {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background: var(--container-bg);
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-title a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--link-color);
+}
+
+.project-description {
+    color: var(--project-desc-color);
+}
+
+.cv {
+    padding: 40px; /* Increased padding */
+    margin-bottom: 20px;
+    background: var(--section-bg);
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
+}
+
+.contact {
+    padding: 40px; /* Increased padding */
+    margin-bottom: 20px;
+    background: var(--section-bg);
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
+    text-align: center; /* Center-align text */
+}
+
+.contact img {
+    width: 32px; /* Adjusted width */
+    height: 32px; /* Adjusted height */
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact img:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+footer {
+    background: var(--footer-color);
+    color: var(--text-primary);
+    padding: 20px; /* Adjusted padding */
+    text-align: center;
+}
+
+footer .footer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .mode-toggle {
-    background-color: var(--toggle-bg);
+    background: var(--toggle-bg);
     color: var(--toggle-color);
     border: none;
     padding: 10px;
-    cursor: pointer;
     border-radius: 5px;
-    transition: background 0.6s, transform 0.6s, opacity 1.2s ease-in-out; /* Increased opacity transition time */
-    opacity: 1; /* Initially visible */
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 .mode-toggle img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.6s;
+    width: 20px;
+    height: 20px;
 }
 
 .mode-toggle:hover {
-    background-color: var(--toggle-hover-bg);
-    transform: scale(1.05);
-}
-
-.footer {
-    text-align: center;
-    padding: 10px;
-    color: var(--footer-color);
-}
-
-/* Responsive adjustments */
-@media (min-width: 768px) {
-    .container {
-        padding: 40px; /* Double padding for larger screens */
-    }
-
-    .header {
-        height: 300px; /* Adjusted height for larger screens */
-        margin-right: auto;
-    }
-
-    .header-left {
-        text-align: left; /* Center-align for larger screens */
-        margin-bottom: 0; /* Adjusted margin */
-    }
-
-    .header-left {
-        text-align: left; /* Center-align text */
-        margin-right: auto; /* Push the text to the left */
-        padding-left: 32px;
-    }
-
-    .profile-container {
-        text-align: left; /* Right-align for larger screens */
-    }
-
-    .profile-pic {
-        width: 150px; /* Adjusted size for larger screens */
-        height: 150px; /* Adjusted size for larger screens */
-        margin-bottom: 0; /* Adjusted margin */
-    }
-
-    .header-text {
-        margin-top: 0; /* Adjusted margin */
-    }
-
-    .about-me, .projects, .cv, .contact {
-        margin-bottom: 30px; /* Increased margin for larger screens */
-    }
-}
-
-@media (max-width: 767px) {
-    .header {
-        margin-top: 100px; /* Add top margin to prevent overlap with navbar */
-        height: 250px; /* Set a fixed height */
-        flex-direction: column; /* Stack elements vertically */
-    }
-
-    .header-content {
-        flex-direction: column; /* Stack content vertically on mobile */
-        align-items: center;
-        padding-left: 0; /* Reset padding for mobile */
-    }
-
-    .profile-container {
-        margin-left: 0; /* Reset margin */
-        margin-top: 10px; /* Add some space above the image */
-    }
-    .header-left {
-        margin-right: 0;
-        text-align: center;
-        margin-bottom: 20px;
-        text-wrap: wrap;
-    }
+    background: var(--toggle-hover-bg);
 }

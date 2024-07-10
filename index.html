@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ankush Arora - Portfolio</title>
+    <meta name="description" content="Ankush Arora's Portfolio - Mechanical Engineer specializing in steering systems and suspension design with a passion for coding and data-driven problem-solving.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <header>
         <nav class="navbar">
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
@@ -15,17 +16,20 @@
                 <li><a href="#cv">CV</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button id="mode-toggle" class="mode-toggle">
+            <button id="mode-toggle" class="mode-toggle" aria-label="Toggle Dark/Light Mode">
                 <img id="mode-icon" src="toggle-dark-icon.svg" alt="Toggle Mode">
             </button>
         </nav>
+    </header>
 
+    <main>
         <div class="header">
             <div class="profile-container">
                 <img src="your-profile-pic-url.jpg" alt="Profile Picture" class="profile-pic">
             </div>
             <div class="header-left">
                 <h1>Ankush Arora</h1>
+                <p>Innovative Mechanical Engineer and Aspiring Supply Chain Specialist</p>
                 <p>Assistant Manager, Bajaj Auto Limited</p>
             </div>
         </div>
@@ -33,7 +37,6 @@
         <section id="about" class="about-me">
             <h2>About Me</h2>
             <p>Hello! I am Ankush Arora, a Mechanical Engineer specializing in steering systems and suspension design for commercial vehicles at Bajaj Auto. With expertise in Siemens NX and Teamcenter, I optimize steering and suspension hard points, develop innovative mechanisms, and perform ADAMS analysis to ensure top performance and safety.</p>
-            
             <p>Besides engineering, I have a keen interest in exploring data-driven approaches to problem-solving, including operations research and inventory management. I'm passionate about leveraging technology to drive efficiency and innovation in the automotive industry.</p>
         </section>
 
@@ -44,7 +47,12 @@
                     <a href="https://github.com/yourusername/steering-suspension-design">Steering and Suspension Design</a>
                 </div>
                 <div class="project-description">
-                    Developed a Python class coding the kinematics of steering and suspension hard points, including optimization and ADAMS analysis.
+                    <p>Developed a comprehensive Python class coding the kinematics of steering and suspension hard points, including optimization and ADAMS analysis. This project involved:</p>
+                    <ul>
+                        <li>Kinematic modeling</li>
+                        <li>Optimization of hard points</li>
+                        <li>ADAMS simulation for performance analysis</li>
+                    </ul>
                 </div>
             </div>
 
@@ -53,7 +61,7 @@
                     <a href="https://github.com/yourusername/inventory-management">Inventory Management</a>
                 </div>
                 <div class="project-description">
-                    Inventory management project focusing on Economic Order Quantity (EOQ), single-period and multi-period inventory models, and stochastic demand analysis.
+                    <p>Inventory management project focusing on Economic Order Quantity (EOQ), single-period and multi-period inventory models, and stochastic demand analysis.</p>
                 </div>
             </div>
 
@@ -62,7 +70,7 @@
                     <a href="https://github.com/yourusername/colonist-testing">Colonist.io Testing</a>
                 </div>
                 <div class="project-description">
-                    End-to-end testing on colonist.io, identifying and reporting software defects, and providing feedback on game mechanics and user interface.
+                    <p>End-to-end testing on colonist.io, identifying and reporting software defects, and providing feedback on game mechanics and user interface.</p>
                 </div>
             </div>
 
@@ -71,7 +79,7 @@
                     <a href="https://github.com/yourusername/transportation-tools">Transportation Tools</a>
                 </div>
                 <div class="project-description">
-                    Tools and models related to transportation management, covering key concepts such as mode selection, lead time variability, transportation operations, economic modes, and practical examples.
+                    <p>Tools and models related to transportation management, covering key concepts such as mode selection, lead time variability, transportation operations, economic modes, and practical examples.</p>
                 </div>
             </div>
         </section>
@@ -83,13 +91,18 @@
 
         <section id="contact" class="contact">
             <h2>Contact</h2>
-            <p><a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a> | <a href="mailto:youremail@example.com">Email</a></p>
+            <p>
+                <a href="https://www.linkedin.com/in/yourprofile"><img src="linkedin-icon.svg" alt="LinkedIn"></a>
+                <a href="mailto:youremail@example.com"><img src="email-icon.svg" alt="Email"></a>
+            </p>
         </section>
+    </main>
 
+    <footer>
         <div class="footer">
             <p>Thank you for visiting my portfolio!</p>
         </div>
-    </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
