@@ -55,8 +55,8 @@ body {
 
 h1, h2, h3 {
     color: var(--heading-color);
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-sm);
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 a {
@@ -211,7 +211,7 @@ a:hover {
 .social-icon img:hover {
     transform: scale(1.2); /* Scale up on hover */
 }
-body.dark-mode .social-icon img , body.dark-mode .share-btn img {
+body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode .project-link-icon {
     filter: invert(1); /* Invert the color of SVG to white */
 }
 
@@ -413,3 +413,47 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img {
         text-align: center;
     }
 }
+/* Add styles for the dividers */
+.project-divider {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    opacity: 0.4;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    opacity: 0.8;
+}
+
+Ensure that the project descriptions have some padding for better readability
+.project-description {
+    padding: var(--space-sm) 0;
+}
+.project-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.project-link-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+    margin-bottom: -5px;
+    margin-right: var(--space-sm); /* Adjust margin as needed */
+}
+
+.project-link-icon:hover {
+    transform: scale(1.2); /* Scale up on hover */
+}
+
+ul {
+    list-style-type: none;
+  }
+  
