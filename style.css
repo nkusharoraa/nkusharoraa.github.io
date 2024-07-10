@@ -90,13 +90,13 @@ a:hover {
     padding: var(--space-md);
     background: var(--container-bg);
     border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
     background: var(--navbar-bg);
-    border-radius: 8px;
-    padding: var(--space-sm);
+    border-radius: 2px;
+    padding: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -119,10 +119,13 @@ a:hover {
 
 .navbar .nav-links a {
     color: var(--navbar-link-color);
-    font-weight: bold;
-    padding: 8px;
-    border-radius: 5px;
+    font-weight:lighter;
+    padding: 4px;
+    border-radius: 2px;
     transition: background 0.3s;
+    font-size: small;
+
+
 }
 
 .navbar .nav-links a:hover {
@@ -221,7 +224,7 @@ a:hover {
 .social-icon img:hover {
     transform: scale(1.2); /* Scale up on hover */
 }
-body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode .project-link-icon {
+body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode .project-link-icon, body.dark-mode .nav-icon img {
     filter: invert(1); /* Invert the color of SVG to white */
 }
 
@@ -244,7 +247,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     background-color: var(--section-bg);
     padding: var(--space-md);
     border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
     margin-bottom: var(--space-lg);
 }
 
@@ -286,8 +289,23 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     justify-content: flex-end; /* Align icons to the right */
     gap: var(--space-sm); /* Add spacing between icons */
 }
-
-.social-icon img {
+.nav-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right:20px;
+}
+.nav-icon{
+    width: 50px;
+}
+.nav-icon img {
+    width: 24px;
+    height: 24px;
+}
+.social-icon img{
     width: 24px; /* Adjust icon size */
     height: 24px; /* Adjust icon size */
     transition: transform 0.3s ease;
@@ -308,7 +326,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 .share-btn img {
     width: 24px;
     height: 24px;
-    margin-right: var(--space-sm); /* Adjust margin as needed */
+    margin-right: var(--space-lg); /* Adjust margin as needed */
 }
 #copyNotification {
     visibility: hidden;
@@ -417,7 +435,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         margin-right: auto;
     }
     .share-btn img {
-        margin-right: 12px; /* Adjust margin as needed */
+        margin-right: 32px; /* Adjust margin as needed */
     }
     .profile-pic {
         margin-bottom: var(--space-sm);
