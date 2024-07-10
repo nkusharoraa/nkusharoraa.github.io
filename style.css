@@ -154,7 +154,7 @@ a:hover {
     top: var(--space-sm); /* Adjust as needed */
     right: var(--space-sm); /* Adjust as needed */
     z-index: 10;
-    margin-right: var(--space-xs) ;
+    margin-right: 8px ;
 }
 
 @media (min-width: 768px) {
@@ -402,7 +402,9 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         margin-left: auto;
         margin-right: auto;
     }
-
+    .share-btn img {
+        margin-right: var(--space-xs); /* Adjust margin as needed */
+    }
     .profile-pic {
         margin-bottom: var(--space-sm);
     }
@@ -411,6 +413,9 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     }
     .header-content {
         text-align: center;
+    }
+    .mode-toggle {
+        margin-right: 0 ;
     }
 }
 /* Add styles for the dividers */
