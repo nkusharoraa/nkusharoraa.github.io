@@ -124,10 +124,34 @@ a:hover {
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     z-index: 1;
 }
+
+.mode-toggle {
+    background-color: var(--toggle-bg);
+    color: var(--toggle-color);
+    border: none;
+    padding: var(--space-xs) var(--space-sm);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.6s, transform 0.6s, opacity 1.2s ease-in-out;
+    opacity: 1;
+    position: absolute;
+    top: var(--space-sm); /* Adjust as needed */
+    right: var(--space-sm); /* Adjust as needed */
+    z-index: 10;
+    margin-right: var(--space-xs) ;
+}
+
+@media (min-width: 768px) {
+    .header {
+        height: 300px;
+        padding: var(--space-xl);
+    }
+}
+
 
 .header-content {
     display: flex;
@@ -175,7 +199,9 @@ a:hover {
 .social-icon img:hover {
     transform: scale(1.2); /* Scale up on hover */
 }
-
+body.dark-mode .social-icon img , body.dark-mode .share-btn img {
+    filter: invert(1); /* Invert the color of SVG to white */
+}
 
 .header-text {
     color: var(--text-primary);
@@ -244,6 +270,18 @@ a:hover {
 .social-icon img:hover {
     transform: scale(1.2); /* Scale up on hover */
 }
+
+.share-btn {
+    display: flex;
+    align-items: center;
+}
+
+.share-btn img {
+    width: 24px;
+    height: 24px;
+    margin-right: var(--space-md); /* Adjust margin as needed */
+}
+
 
 /* Responsive adjustments */
 @media (min-width: 768px) {
