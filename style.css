@@ -293,7 +293,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img {
 .share-btn img {
     width: 24px;
     height: 24px;
-    margin-right: var(--space-md); /* Adjust margin as needed */
+    margin-right: var(--space-sm); /* Adjust margin as needed */
 }
 
 
