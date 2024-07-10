@@ -392,7 +392,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     .nav-links li:nth-child(1) {
         display: none;
     }
-    .nav-links li:nth-child(5) {
+    .nav-links li:nth-child(4) {
         display: none;
     }
     .profile-container {
