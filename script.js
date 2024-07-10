@@ -73,13 +73,18 @@ function copyTextToClipboard(text) {
     }
     navigator.clipboard.writeText(text).then(function() {
         console.log('Async: Copying to clipboard was successful!');
-        alert('Link copied to clipboard!');
+        showNotification();
     }, function(err) {
         console.error('Async: Could not copy text: ', err);
     });
 }
 
+function showNotification() {
+    var notification = document.getElementById('copyNotification');
+    notification.className = 'show';
+    setTimeout(function() { notification.className = notification.className.replace('show', ''); }, 3000);
+}
+
 document.getElementById('shareButton').addEventListener('click', function() {
     copyTextToClipboard('https://nkusharoraa.github.io/');
 });
-

@@ -91,6 +91,7 @@ a:hover {
 
 .navbar {
     background: var(--navbar-bg);
+    border-radius: 8px;
     padding: var(--space-sm);
     display: flex;
     justify-content: space-between;
@@ -295,7 +296,35 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img {
     height: 24px;
     margin-right: var(--space-sm); /* Adjust margin as needed */
 }
+#copyNotification {
+    visibility: hidden;
+    min-width: 160px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px; /* Make the corners rounded */
+    padding: 8px;
+    position: fixed;
+    z-index: 1001;
+    bottom: 50px;
+    right: 10px;
+    font-size: 14px;
+}
 
+#copyNotification.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {bottom: 30px; opacity: 0;} 
+    to {bottom: 50px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 50px; opacity: 1;} 
+    to {bottom: 30px; opacity: 0;}
+}
 
 /* Responsive adjustments */
 @media (min-width: 768px) {
