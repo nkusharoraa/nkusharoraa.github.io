@@ -363,6 +363,9 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img {
     .profile-pic {
         margin-bottom: var(--space-sm);
     }
+    .header-left {
+        padding: 0%;
+    }
     .header-content {
         text-align: center;
     }
