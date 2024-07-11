@@ -55,6 +55,7 @@ body {
     font-size: 16px;
     background-color: var(--primary-bg-color);
     color: var(--text-primary);
+    width: 100%;
 }
 
 h1, h2, h3 {
@@ -83,7 +84,9 @@ a:hover {
         padding: 0;
     }
 }
-
+.share-btn{
+    float: right;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -92,35 +95,41 @@ a:hover {
     border-radius: 8px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
-
-.navbar {
+.navbar, .navbar1 {
+    
+    overflow: auto;
     background: var(--navbar-bg);
-    border-radius: 2px;
-    padding: 0;
+    padding-left: var(--space-lg);
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
+    margin-top: -40px;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.navbar .nav-links {
+.navbar1 {
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px var(--mini-heading-color) solid;
+}
+.navbar .nav-links, .navbar1 .nav-links{
+    text-align: center;
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
+    
 }
 
-.navbar .nav-links li {
-    margin: 0 var(--space-xs);
+.navbar .nav-links li, .navbar1 .nav-links li {
+    margin: 0 ;
 }
 
-.navbar .nav-links a {
+.navbar .nav-links a, .navbar1 .nav-links a {
     color: var(--navbar-link-color);
-    font-weight:lighter;
-    padding: 4px;
+    font-weight:normal;
+    padding-top: 4px;
     border-radius: 2px;
     transition: background 0.3s;
     font-size: small;
@@ -128,7 +137,7 @@ a:hover {
 
 }
 
-.navbar .nav-links a:hover {
+.navbar .nav-links a:hover, .navbar1 .nav-links a:hover {
     background: var(--link-hover-bg);
 }
 
@@ -255,6 +264,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     transform: none;
 }
 
+
 .mode-toggle {
     background-color: var(--toggle-bg);
     color: var(--toggle-color);
@@ -289,19 +299,20 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     justify-content: flex-end; /* Align icons to the right */
     gap: var(--space-sm); /* Add spacing between icons */
 }
-.nav-icon{
+.nav-icon, .nav-icon1{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
     justify-content: center;
-    padding-left: 20px;
-    padding-right:20px;
+    
 }
-.nav-icon{
-    width: 50px;
+
+.nav-icon, .nav-icon1{
+    width: 100px;
 }
-.nav-icon img {
+
+.nav-icon img, .nav-icon1 img {
     width: 24px;
     height: 24px;
 }
@@ -319,14 +330,19 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 }
 
 .share-btn {
-    display: flex;
+    display:block;
     align-items: center;
+    float: right;
 }
 
 .share-btn img {
+    float: right;
     width: 24px;
     height: 24px;
     margin-right: var(--space-lg); /* Adjust margin as needed */
+}
+.nav-icon1{
+    visibility: hidden;
 }
 #copyNotification {
     visibility: hidden;
@@ -396,23 +412,52 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     .nav-links {
         display: flex;
         align-items: center; /* Center align links */
-        gap: var(--space-xs); /* Add space between links */
         padding: var(--space-xs); /* Add padding */
     }
-
+    .nav-icon img, .nav-icon1 img {
+        width: 16px;
+        height: 16px;
+    }
     .nav-links li {
-        margin: 0 var(--space-xs); /* Adjust margin */
-        border-radius: 5px; /* Rounded corners */
+        
+        margin: 0 ; /* Adjust margin */
+        border-radius: 2px; /* Rounded corners */
         background-color: var(--navbar-bg); /* Match navbar background */
     }
+    .nav-icon, .nav-icon1{
+        width: 70px;
+    }
+    .navbar, .navbar1 {
 
+        overflow: auto;
+        background: var(--navbar-bg);
+        padding-left: var(--space-xs);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        margin-top: -50px;
+        top: 0;
+        z-index: 1000;
+    }
+    .navbar .nav-links a, .navbar1 .nav-links a {
+        color: var(--navbar-link-color);
+        font-weight:normal;
+        padding-top: 2px;
+        border-radius: 2px;
+        transition: background 0.3s;
+        font-size: x-small;
+    
+    
+
+    }
     .nav-links a {
         display: block;
-        padding: 8px;
+        padding: 0px;
         color: var(--navbar-link-color);
         font-weight: bold;
         text-align: center;
-        border-radius: 5px; /* Rounded corners */
+        border-radius: 2px; /* Rounded corners */
         transition: background 0.3s;
     }
 
@@ -421,18 +466,14 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     }
 
     /* Hide the Skills section in smaller screens */
-    .nav-links li:nth-child(1) {
-        display: none;
-    }
-    .nav-links li:nth-child(4) {
-        display: none;
-    }
+
     .profile-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 32px;
     }
     .share-btn img {
         margin-right: 32px; /* Adjust margin as needed */
@@ -448,7 +489,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     }
     .mode-toggle {
         margin-right: 0 ;
-        margin-top: 16px;
+        margin-top: 40px;
     }
 }
 /* Add styles for the dividers */
@@ -499,4 +540,3 @@ Ensure that the project descriptions have some padding for better readability
 ul {
     list-style-type: none;
   }
-  
