@@ -88,3 +88,30 @@ function showNotification() {
 document.getElementById('shareButton').addEventListener('click', function() {
     copyTextToClipboard('https://nkusharoraa.github.io/');
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('scroll', function() {
+        var scrollPosition = window.scrollY;
+
+        // Adjust this value to determine when the effect triggers
+        var triggerOffset = 100; // Adjust as needed
+
+        var navIconLinks = document.querySelectorAll('.navbar .nav-icon-link, .navbar1 .nav-icon-link');
+
+        navIconLinks.forEach(function(link) {
+            var sectionId = link.getAttribute('href').substring(1); // Get section ID from href
+
+            // Get the corresponding section's offset top
+            var section = document.getElementById(sectionId);
+            var sectionOffset = section.offsetTop;
+
+            // Add a class if scrolled past the section's top offset
+            if (scrollPosition >= sectionOffset - triggerOffset) {
+                link.classList.add('active-link');
+            } else {
+                link.classList.remove('active-link');
+            }
+        });
+    });
+});
+

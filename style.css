@@ -103,12 +103,16 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
     margin-top: -50px;
     top: 0;
     z-index: 1000;
 }
+.navbar{
+    position: sticky;
+}
 .navbar1 {
+    position: fixed;
+    margin-right: ;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-bottom: 1px var(--mini-heading-color) solid;
@@ -177,7 +181,7 @@ a:hover {
     right: var(--space-sm); /* Adjust as needed */
     z-index: 10;
     margin-right: 8px ;
-    margin-top: 32px;
+    margin-top: 48px;
 }
 
 @media (min-width: 768px) {
@@ -230,7 +234,9 @@ a:hover {
     height: 24px;
     transition: transform 0.3s ease;
 }
-
+.navbar1{
+    margin-top: 0;
+}
 .social-icon img:hover {
     transform: scale(1.2); /* Scale up on hover */
 }
@@ -429,7 +435,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         height: 20px;
     }
     .navbar, .navbar1 {
-    
+
         position: fixed;
         margin-left: -20px;
     }
@@ -442,7 +448,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     .nav-icon, .nav-icon1{
         width: 50px;
     }
-    .navbar, .navbar1 {
+    .navbar{
 
         overflow: auto;
         background: var(--navbar-bg);
@@ -462,8 +468,6 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         border-radius: 2px;
         transition: background 0.3s;
         font-size: x-small;
-    
-    
 
     }
     .nav-links a {
