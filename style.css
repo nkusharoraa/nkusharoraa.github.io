@@ -428,6 +428,11 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         width: 20px;
         height: 20px;
     }
+    .navbar, .navbar1 {
+    
+        position: fixed;
+        margin-left: -24px;
+    }
     .nav-links li {
         
         margin: 0 ; /* Adjust margin */
@@ -435,7 +440,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         background-color: var(--navbar-bg); /* Match navbar background */
     }
     .nav-icon, .nav-icon1{
-        width: 60px;
+        width: 50px;
     }
     .navbar, .navbar1 {
 
