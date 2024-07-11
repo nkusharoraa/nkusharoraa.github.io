@@ -434,8 +434,8 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         padding: var(--space-xs); /* Add padding */
     }
     .nav-icon1 img{
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
     }
     .nav-icon img{
         width: 20px;
