@@ -12,8 +12,8 @@
     --project-desc-color: #666;
     --section-bg: #f2f2f2;
     --toggle-bg: #333;
-    --toggle-color: #fff;
-    --toggle-hover-bg: #555;
+    --toggle-color: #ccc;
+    --toggle-hover-bg: #858585;
     --profile-border-color: #000;
     --font-family: 'Arial', sans-serif;
     --mini-heading-color: #c4c3c3;
@@ -38,9 +38,9 @@ body.dark-mode {
     --footer-color: #bbb;
     --project-desc-color: #bbb;
     --section-bg: #222;
-    --toggle-bg: #fff;
-    --toggle-color: #000;
-    --toggle-hover-bg: #ccc;
+    --toggle-bg: #ccc;
+    --toggle-color: #333;
+    --toggle-hover-bg: #858585;
     --divider: #333;
     --profile-border-color: #fff;
     --mini-heading-color: #454545;
@@ -286,7 +286,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 .mode-toggle img {
     width: 24px;
     height: 24px;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease;
 }
 
 .mode-toggle:hover {
@@ -434,6 +434,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     .nav-icon img{
         width: 24px;
         height: 24px;
+        transition: transform 0.3s ease;
     }
     .navbar, .navbar1 {
 
@@ -467,7 +468,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         font-weight:normal;
         padding-top: 4px;
         border-radius: 2px;
-        transition: background 0.3s;
+        transition: background 0.6s ease;
         font-size: x-small;
 
     }
@@ -478,7 +479,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         font-weight: bold;
         text-align: center;
         border-radius: 2px; /* Rounded corners */
-        transition: background 0.3s;
+        transition: background 0.6s ease;
     }
 
     .navbar .nav-links a:hover, .navbar1 .nav-links a:hover {
@@ -530,6 +531,10 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     height: 1px;
     background: var(--divider);
     opacity: 1;
+}
+.navbar .nav-links a.active,
+.navbar1 .nav-links a.active {
+    border-bottom: 2px solid var(--link-color); /* Add a solid border at the bottom */
 }
 
 Ensure that the project descriptions have some padding for better readability
