@@ -286,7 +286,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 .mode-toggle img {
     width: 24px;
     height: 24px;
-    transition: transform 0.6s;
+    transition: transform 0.3s ease;
 }
 
 .mode-toggle:hover {
@@ -352,6 +352,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     width: 24px;
     height: 24px;
     margin-right: var(--space-lg); /* Adjust margin as needed */
+    transition: transform 0.3s ease;
 }
 .nav-icon1{
     visibility: hidden;
@@ -508,7 +509,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     }
     .mode-toggle {
         margin-right: 0 ;
-        margin-top: 44px;
+        margin-top: 32px;
     }
 }
 /* Add styles for the dividers */
