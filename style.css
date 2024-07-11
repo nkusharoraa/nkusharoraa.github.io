@@ -445,7 +445,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     .navbar, .navbar1 {
 
         position: fixed;
-        margin-left: -8px;
+        margin-left: -16px;
     }
     .nav-links li {
         
