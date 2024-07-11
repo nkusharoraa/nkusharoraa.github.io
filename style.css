@@ -112,7 +112,7 @@ a:hover {
 }
 .navbar1 {
     position: fixed;
-    margin-right: ;
+    margin-right: 0;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-bottom: 1px var(--mini-heading-color) solid;
@@ -437,7 +437,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     .navbar, .navbar1 {
 
         position: fixed;
-        margin-left: -24px;
+        margin-left: -16px;
     }
     .nav-links li {
         
