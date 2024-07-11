@@ -316,12 +316,12 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 }
 
 .nav-icon, .nav-icon1{
-    width: 100px;
+    width: 108px;
 }
 
 .nav-icon1 img {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
 }
 
 .nav-icon img{
@@ -464,7 +464,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     .navbar .nav-links a, .navbar1 .nav-links a {
         color: var(--navbar-link-color);
         font-weight:normal;
-        padding-top: 2px;
+        padding-top: 4px;
         border-radius: 2px;
         transition: background 0.3s;
         font-size: x-small;
