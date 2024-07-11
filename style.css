@@ -445,7 +445,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     .navbar, .navbar1 {
 
         position: fixed;
-        margin-left: 0px;
+        margin-left: -8px;
     }
     .nav-links li {
         
@@ -511,7 +511,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 32px;
+        margin-top: 40px;
     }
     .share-btn img {
         margin-right: 32px; /* Adjust margin as needed */
