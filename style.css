@@ -104,7 +104,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    margin-top: -40px;
+    margin-top: -50px;
     top: 0;
     z-index: 1000;
 }
@@ -138,8 +138,9 @@ a:hover {
 }
 
 .navbar .nav-links a:hover, .navbar1 .nav-links a:hover {
-    background: var(--link-hover-bg);
+    border-bottom: 2px solid var(--link-color); /* Add a solid border at the bottom */
 }
+
 
 .header {
     position: relative;
@@ -312,7 +313,12 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     width: 100px;
 }
 
-.nav-icon img, .nav-icon1 img {
+.nav-icon1 img {
+    width: 30px;
+    height: 30px;
+}
+
+.nav-icon img{
     width: 24px;
     height: 24px;
 }
@@ -414,7 +420,11 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         align-items: center; /* Center align links */
         padding: var(--space-xs); /* Add padding */
     }
-    .nav-icon img, .nav-icon1 img {
+    .nav-icon1 img{
+        width: 24px;
+        height: 24px;
+    }
+    .nav-icon img{
         width: 16px;
         height: 16px;
     }
@@ -436,7 +446,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         justify-content: space-between;
         align-items: center;
         position: sticky;
-        margin-top: -50px;
+        margin-top: -55px;
         top: 0;
         z-index: 1000;
     }
@@ -461,8 +471,8 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         transition: background 0.3s;
     }
 
-    .nav-links a:hover {
-        background: var(--link-hover-bg);
+    .navbar .nav-links a:hover, .navbar1 .nav-links a:hover {
+        border-bottom: 2px solid var(--link-color); /* Add a solid border at the bottom */
     }
 
     /* Hide the Skills section in smaller screens */
