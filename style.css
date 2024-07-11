@@ -514,7 +514,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         margin-top: 40px;
     }
     .share-btn img {
-        margin-right: 32px; /* Adjust margin as needed */
+        margin-right: 16px; /* Adjust margin as needed */
     }
     .profile-pic {
         margin-bottom: var(--space-sm);
