@@ -71,9 +71,9 @@ a {
     transition: color 0.3s, text-decoration 0.3s;
 }
 
-a:hover {
+/* .here-link a:hover {
     border-bottom: 2px solid var(--link-color);
-}
+} */
 #shareButtonmob {
     font-size: x-small;
     background: transparent;
@@ -144,7 +144,7 @@ a:hover {
 
 }
 
-.navbar .nav-links a:hover, .navbar1 .nav-links a:hover{
+.navbar .nav-links a:hover, .navbar1 .nav-links a:hover, .here-link a:hover{
     border-bottom: 2px solid var(--link-color); /* Add a solid border at the bottom */
 }
 
@@ -600,3 +600,19 @@ Ensure that the project descriptions have some padding for better readability
 ul {
     list-style-type: none;
   }
+  .nav-item {
+    transition: color 0.3s, font-weight 0.3s;
+}
+  .nav-item.active {
+    font-weight: bold;
+    color: #ff0000; /* example active color */
+}
+html {
+	scroll-behavior:smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}

@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 function fallbackCopyTextToClipboard(text) {
     var textArea = document.createElement("textarea");
     textArea.value = text;
@@ -92,22 +93,26 @@ document.getElementById('shareButtonmob').addEventListener('click', function() {
     copyTextToClipboard('https://nkusharoraa.github.io/');
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    const navItems = document.querySelectorAll(".nav-item");
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-links a");
 
-    function setActiveLink() {
-        let index = sections.length;
+    window.addEventListener("scroll", function () {
+        let currentSection = "";
 
-        while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                currentSection = section.getAttribute("id");
+            }
+        });
 
-        navLinks.forEach((link) => link.classList.remove("active"));
-        if (navLinks[index]) {
-            navLinks[index].classList.add("active");
-        }
-    }
-
-    setActiveLink();
-    window.addEventListener("scroll", setActiveLink);
+        navItems.forEach((item) => {
+            item.classList.remove("active");
+            if (item.getAttribute("href") === "#" + currentSection) {
+                item.classList.add("active");
+            }
+        });
+    });
 });
-
