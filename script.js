@@ -88,7 +88,9 @@ function showNotification() {
 document.getElementById('shareButton').addEventListener('click', function() {
     copyTextToClipboard('https://nkusharoraa.github.io/');
 });
-
+document.getElementById('shareButtonmob').addEventListener('click', function() {
+    copyTextToClipboard('https://nkusharoraa.github.io/');
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     const sections = document.querySelectorAll("section");
