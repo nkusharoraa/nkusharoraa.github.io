@@ -75,7 +75,6 @@ a:hover {
     border-bottom: 2px solid var(--link-color);
 }
 #shareButtonmob {
-    font-weight: normal;
     font-size: x-small;
     background: transparent;
     border: none;
