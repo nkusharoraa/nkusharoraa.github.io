@@ -95,6 +95,7 @@ document.getElementById('shareButtonmob').addEventListener('click', function() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const navItems = document.querySelectorAll(".nav-item");
+    const navIcon = document.querySelectorAll(".nav-icon");
     const sections = document.querySelectorAll("section");
 
     window.addEventListener("scroll", function () {
@@ -114,5 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 item.classList.add("active");
             }
         });
+       
+        
+        
+
     });
 });

@@ -144,8 +144,8 @@ a {
 
 }
 
-.navbar .nav-links a:hover, .navbar1 .nav-links a:hover, .here-link a:hover{
-    border-bottom: 2px solid var(--link-color); /* Add a solid border at the bottom */
+.nav-icon:hover, .navbar1 .nav-links a:hover, .here-link a:hover{
+    border-bottom: 3px solid var(--link-color); /* Add a solid border at the bottom */
 }
 
 
@@ -387,7 +387,9 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     right: 10px;
     font-size: 14px;
 }
-
+.nav-icon{
+    border-bottom: 3px solid var(--link-color) hidden;
+}
 #copyNotification.show {
     visibility: visible;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -397,7 +399,9 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     from {bottom: 30px; opacity: 0;} 
     to {bottom: 50px; opacity: 1;}
 }
-
+.nav-item.active .nav-icon{
+    border-bottom: 3px solid var(--link-color)
+}
 @keyframes fadeout {
     from {bottom: 50px; opacity: 1;} 
     to {bottom: 30px; opacity: 0;}
@@ -514,7 +518,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         transition: background 0.6s ease;
     }
 
-    .navbar .nav-links a:hover, .navbar1 .nav-links a:hover {
+    .nav-icon a.active, .nav-icon a:hover, .navbar1 .nav-links a:hover {
         border-bottom: 2px solid var(--link-color); /* Add a solid border at the bottom */
     }
 
@@ -572,6 +576,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     border-bottom: 2px solid var(--link-color); /* Add a solid border at the bottom */
 }
 
+
 Ensure that the project descriptions have some padding for better readability
 .project-description {
     padding: var(--space-sm) 0;
@@ -600,13 +605,6 @@ Ensure that the project descriptions have some padding for better readability
 ul {
     list-style-type: none;
   }
-  .nav-item {
-    transition: color 0.3s, font-weight 0.3s;
-}
-  .nav-item.active {
-    font-weight: bold;
-    color: #ff0000; /* example active color */
-}
 html {
 	scroll-behavior:smooth;
 }
