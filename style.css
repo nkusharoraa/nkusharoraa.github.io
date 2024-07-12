@@ -91,11 +91,6 @@ a {
     border: none;
 }
 
-@media (max-width: 600px) {
-    #shareButton {
-        padding: 0;
-    }
-}
 .share-btn{
     float: right;
 }
@@ -364,8 +359,12 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     align-items: center;
     float: right;
 }
+.share-btnmob a{
+    margin-top: -2px;
+    margin-bottom: 2px;
+}
 .share-btnmob img{
-    margin-top: -6px;
+    margin-top: -1px;
     padding-bottom: 4px; 
 }
 .share-btn img {
