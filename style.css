@@ -75,7 +75,7 @@ a {
     border-bottom: 2px solid var(--link-color);
 } */
 #shareButtonmob {
-    font-weight: normal;
+    font-weight: lighter;
     font-size: x-small;
     background: transparent;
     border: none;
@@ -365,8 +365,8 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     float: right;
 }
 .share-btnmob img{
-    margin-top: -8px;
-    margin-bottom: 4px; 
+    margin-top: -6px;
+    padding-bottom: 4px; 
 }
 .share-btn img {
     float: right;
