@@ -93,6 +93,7 @@ a:hover {
 }
 
 .share-btn{
+    font-weight: normal;
     float: right;
 }
 .container {
