@@ -17,7 +17,7 @@
     --profile-border-color: #333;
     --font-family: 'Arial', sans-serif;
     --mini-heading-color: #c4c3c3;
-    --highlight-color: #433129;
+    --highlight-color: #714d39;
     --divider: #ccc;
     --space-xs: 8px;
     --space-sm: 16px;
@@ -42,6 +42,7 @@ body.dark-mode {
     --toggle-bg: #ccc;
     --toggle-color: #333;
     --toggle-hover-bg: #858585;
+    --highlight-color: #8eb2c6;
     --divider: #333;
     --profile-border-color: #bbb;
     --mini-heading-color: #454545;
@@ -415,7 +416,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 }
 
 /* Responsive adjustments */
-@media (min-width: 768px) {
+@media (min-width: 841px) {
     .header {
         height: 300px;
         padding: var(--space-xl);
@@ -455,7 +456,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 }
 
 /* CSS for smaller screens */
-@media (max-width: 767px) {
+@media (max-width: 840px) {
     .share-btn{
         visibility: hidden;
     }
