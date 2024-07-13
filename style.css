@@ -453,8 +453,8 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     {
         visibility: hidden;
     }
+    
 }
-
 /* CSS for smaller screens */
 @media (max-width: 840px) {
     .share-btn{
@@ -479,6 +479,8 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         position: fixed;
         margin-left: calc(-100vw/20);
     }
+
+
     .nav-links li {
         
         margin: 0 ; /* Adjust margin */
