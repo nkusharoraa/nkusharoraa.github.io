@@ -95,10 +95,23 @@ document.getElementById('shareButtonmob').addEventListener('click', function() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const navItems = document.querySelectorAll(".nav-item");
-    const navIcon = document.querySelectorAll(".nav-icon");
+    const navIcons = document.querySelectorAll(".nav-icon");
     const sections = document.querySelectorAll("section");
 
-    window.addEventListener("scroll", function () {
+    function setActiveNavItem(currentSectionId) {
+        navItems.forEach((item, index) => {
+            const sectionId = item.getAttribute("href").slice(1); // Remove '#'
+            if (sectionId === currentSectionId) {
+                item.classList.add("active");
+                navIcons[index].classList.add("active-icon");
+            } else {
+                item.classList.remove("active");
+                navIcons[index].classList.remove("active-icon");
+            }
+        });
+    }
+
+    function checkNavItems() {
         let currentSection = "";
 
         sections.forEach((section) => {
@@ -109,15 +122,27 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        navItems.forEach((item) => {
-            item.classList.remove("active");
-            if (item.getAttribute("href") === "#" + currentSection) {
-                item.classList.add("active");
-            }
-        });
-       
-        
-        
+        setActiveNavItem(currentSection);
+    }
 
+    window.addEventListener("scroll", checkNavItems);
+
+    // Click event for nav-icons
+    navIcons.forEach((icon, index) => {
+        icon.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default action
+
+            const sectionId = navItems[index].getAttribute("href").slice(1); // Remove '#'
+            const section = document.getElementById(sectionId);
+            const offsetTop = section.offsetTop;
+
+            window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth" // Smooth scroll
+            });
+        });
     });
+
+    // Initial check on page load
+    checkNavItems();
 });
