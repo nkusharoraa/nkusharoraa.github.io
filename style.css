@@ -1,6 +1,6 @@
 /* Define root variables */
 :root {
-    --primary-bg-color: #bbb;
+    --primary-bg-color: #f9f9f9;
     --text-primary: #333;
     --heading-color: #333;
     --link-color: #1e90ff;
@@ -17,6 +17,7 @@
     --profile-border-color: #333;
     --font-family: 'Arial', sans-serif;
     --mini-heading-color: #c4c3c3;
+    --highlight-color: #433129;
     --divider: #ccc;
     --space-xs: 8px;
     --space-sm: 16px;
@@ -27,7 +28,7 @@
 
 /* Dark mode variables */
 body.dark-mode {
-    --primary-bg-color: #222;
+    --primary-bg-color: #060606;
     --text-primary: #ccc;
     --heading-color: #ccc;
     --link-color: #1e90ff;
@@ -96,7 +97,6 @@ a {
     padding: var(--space-md);
     background: var(--container-bg);
     border-radius: 8px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
 .navbar, .navbar1 {
     
@@ -144,6 +144,10 @@ a {
 
 }
 
+
+.nav-icon:hover {
+    border-bottom: 3px solid var(--heading-color);
+}
 .navbar .nav-links a:hover + .nav-icon, .navbar1 .nav-links a:hover, .here-link a:hover{
     border-bottom: 3px solid var(--link-color); /* Add a solid border at the bottom */
 }
@@ -194,7 +198,9 @@ a {
     }
 }
 
-
+.highlight-text {
+    color: var(--highlight-color);
+}
 .header-content {
     display: flex;
     align-items: center;
