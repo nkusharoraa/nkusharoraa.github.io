@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ankush Arora - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <nav class="navbar1">
         <ul class="nav-links">
             <li><span class="nav-icon1"><a href="#about"><img src="about-icon.svg" alt="About"> <br> About</a></span></li>
-            <li><span class="nav-icon1"><a href="#skills"><img src="skills-icon.svg" alt="Skills"><br> Skills</a></span></li>
             <li><span class="nav-icon1"><a href="#projects"><img src="project-icon.svg" alt="Projects"> <br>Projects</a></span></li>
             <li><span class="nav-icon1"><a href="#awards"><img src="achievements-icon.svg" alt="Awards"><br> Awards</a></span></li>
             <li><span class="nav-icon1"><a href="#cv"><img src="cv-icon.svg" alt="CV"> <br>CV</a></span></li>
@@ -18,13 +19,17 @@
     </nav>
     <div class="container">
         <nav class="navbar">
+
+            <button id="mode-toggle" class="mode-toggle">
+                <img id="mode-icon" src="toggle-dark-icon.svg" alt="Toggle Mode">
+            </button>
             <ul class="nav-links">
                 <li><span class="nav-icon"><a href="#about" class="nav-item"><img src="about-icon.svg" alt="About"> <br><span class="navicon-name">About</span> </a></span></li>
-                <li><span class="nav-icon"><a href="#skills" class="nav-item"><img src="skills-icon.svg" alt="Skills"><br><span class="navicon-name"> Skills</span> </a></span></li>
                 <li><span class="nav-icon"><a href="#projects" class="nav-item"><img src="project-icon.svg" alt="Projects"> <br> <span class="navicon-name"> Projects </span></a></span></li>
+                <li><span class="nav-icon"><a href="#cv" class="nav-item"><img src="cv-icon.svg" alt="CV"> <br> <span class="navicon-name"> Background </span></a></span></li>
                 <li><span class="nav-icon"><a href="#awards" class="nav-item"><img src="achievements-icon.svg" alt="Awards"><br> <span class="navicon-name"> Awards</span></a></span></li>
-                <li><span class="nav-icon"><a href="#cv" class="nav-item"><img src="cv-icon.svg" alt="CV"> <br> <span class="navicon-name"> CV </span></a></span></li>
-                <li><span class="nav-icon"><button id="shareButtonmob" class="share-btnmob"><a href="#"><img src="share-icon.svg" alt="Share"> <br>Share </a></button></span></li>
+                
+                <li><span class="hidepp"><button id="shareButtonmob" class="share-btnmob"><a href="#"><img src="share-icon.svg" alt="Share"> <br>Share </a></button></span></li>
                 <li> <div id="copyNotification">Link copied</div></li>
             </ul>
             <button id="shareButton" class="share-btn">
@@ -32,9 +37,6 @@
             </button>
         </nav>
         <div class="header">
-            <button id="mode-toggle" class="mode-toggle">
-                <img id="mode-icon" src="toggle-dark-icon.svg" alt="Toggle Mode">
-            </button>
             <div class="profile-container">
                 <img src="your-profile-pic-url.jpg" alt="Profile Picture" class="profile-pic">
                 <div class="header-left">
@@ -57,287 +59,514 @@
             </div>
         </div>        
         <section id="about" class="about-me">
-            <h2>About Me</h2>
+            <h2><span class="section-name"> About</span></h2>
             <hr class="section-divider">
-            <p>Hello! I am Ankush Arora, a Mechanical Engineer specializing in steering systems and suspension design for commercial vehicles at Bajaj Auto. With extensive expertise in Siemens NX and Teamcenter, I optimize steering and suspension hard points, develop innovative mechanisms, and perform ADAMS analysis to ensure top performance and safety.</p>
-    
-            <p>In addition to my engineering endeavors, I have a profound interest in data-driven approaches to problem-solving, including operations research and inventory management. I am passionate about leveraging technology to drive efficiency and innovation in the automotive industry.</p>
-            
-            <p>As a results-oriented engineer, I thrive on exploring the intersection of data analysis and machine learning, particularly through my interest in Operations Research. My proficiency in C++, data structures, and algorithms enables me to tackle problems with meticulous attention to detail and efficiency.</p>
-            <hr class="project-divider">
-            <p>Beyond my technical pursuits, I find joy in creative writing, sports like tennis and cricket, and dramatics. These hobbies not only enrich my personal life but also foster a well-rounded perspective that enhances my time management and problem-solving abilities. I believe in the power of teaching to drive personal growth and actively share my knowledge and insights with others.</p>
-            
-            <p>With a data-driven mindset and a passion for solving real-world challenges, I welcome new opportunities to expand my horizons and collaborate with like-minded individuals. I am committed to delivering projects within schedule and making a meaningful impact in the world.</p>
-        </section>
-        <section id="skills" class="skills">
-            <h2>Skills</h2>
-            <hr class="section-divider">
+            <div class="intro">
+            <p> I'm a creative person and I solve the created problems. <br> 
+                I do so by integrating the multidisciplinary aspects of everything I learn. <br>
+                I learn by exploring, studying and teaching. <br>
+                The exploration even leads to building this website from scratch. </p>
+                <p>Professionally, I am a Mechanical Engineer into Vehicle Dynamics.<br>
+                I enjoy Supply Chain Management. </p>
+                <p>
+                Crossing the limit for attention span, please refer tags and click icons.
+                </p>
+              <div class="tag-box-main">
+                <div class="tag-box">
+                Mechanical Engineering
+              </div>
+          </div>
+              <div class="tag-box-main">
+                <div class="tag-box">
+                    Supply Chain Management
+                </div>
+              </div>
+              <div class="tag-box-main">
+                <div class="tag-box">
+                    Sports
+                </div>
+              </div>
+              <div class="tag-box-main">
+                <div class="tag-box">
+                    Programming
+                </div>
+              </div>
+              <div class="tag-box-main">
+                <div class="tag-box">
+                    Multidisciplinary
+                </div>
+              </div>
+              <div class="tag-box-main">
+                <div class="tag-box">
+                Communication
+              </div>
+          </div>
+              <div class="tag-box-main">
+                <div class="tag-box">
+                    Creativity
+                </div>
+              </div>
+              <br>
+              
+          </div>
+        <h2><span class="section-name"> Skills</span></h2>
+        <hr class="section-divider">
+        <div class="skills">
             <div class="project">
                 <div class="project-title">
-                    Computing (Intermediate)
+                    Computing
                 </div>
                 <div class="project-description">
-                    C++, Java, Python, MATLAB, DSA, scikit-learn, Pandas, Tensorflow, Scipy, Numpy
+                    C++, Java, Python, MATLAB, scikit-learn, Pandas, Tensorflow, Scipy
                 </div>
-            </div>
-            <hr class="project-divider">
+            </div>     
+            <hr class="subproject-divider">
             <div class="project">
                 <div class="project-title">
-                    Mechanical (Intermediate)
+                    Mechanical
                 </div>
                 <div class="project-description">
-                    Siemens NX (UG NX), ADAMS Car, Teamcenter, Autodesk Inventor, FluidSIM, VMD, Avogadro,
-                Ansys Mechanical, Automation Studio, PLC Programming
+                    Siemens NX, ADAMS Car, Autodesk Inventor, FluidSIM, VMD, Avogadro,
+                Ansys Mechanical, PLC Programming, Automation Studio
                 </div>
             </div>
-            <hr class="project-divider">
+            <hr class="subproject-divider">
             <div class="project">
                 <div class="project-title">
-                    Graphic (Basics)
+                    Graphic
                 </div>
                 <div class="project-description">
-                    LaTeX, HTML, CSS, Javascript, Microsoft Excel, Microsoft PowerPoint, Adobe Photoshop, Adobe Illustrator, Adobe After Effects, Adobe Premier Pro
+                    LaTeX, HTML, CSS, Javascript, Microsoft Excel and PowerPoint, Adobe Photoshop, Illustrator, After Effects and Premier Pro
                 </div>
             </div>
+            <hr class="subproject-divider">
+            <div class="tag-box-main">
+                <div class="tag-box">
+                    Problem-solving
+                </div>
+              </div>
+              <div class="tag-box-main">
+                <div class="tag-box">
+                    DFMEA
+                </div>
+              </div>
+              <div class="tag-box-main">
+                <div class="tag-box">
+                    Simulation
+                </div>
+              </div>
+              <div class="tag-box-main">
+                <div class="tag-box">
+                    DSA
+                </div>
+              </div>
+              <div class="tag-box-main">
+                <div class="tag-box">
+                    Data-Analysis
+                </div>
+              </div>
+        </div>
         </section>
         <section id="projects" class="projects">
-            <h2>Projects</h2>
+            <h2><span class="section-name"> Projects</span></h2>
             <hr class="section-divider">
-            <div class="project">
-                <div class="project-title">
-                    Steering and Suspension Design
-                    <a href="https://github.com/yourusername/steering-suspension-design" target="_blank">
-                        <img src="drive-icon.svg" alt="Project Link" class="project-link-icon">
-                    </a>
-                </div>
-                <div class="project-description">
-                    Developed a Python class coding the kinematics of steering and suspension hard points, including optimization and ADAMS analysis.
-                </div>
+            <div class="skills">
+                <div class="project">
+                    <div class="project-title">
+                        Steering and Suspension Design
+                        <a href="https://github.com/yourusername/steering-suspension-design" target="_blank">
+                            <img src="drive-icon.svg" alt="Project Link" class="project-link-icon">
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        Developed a Python class coding the kinematics of steering and suspension hard points, including optimization and ADAMS analysis.
+                    </div>
+                    <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                      <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                      <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                      <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                </div>     
             </div>
-            <hr class="project-divider">
-            
-            <div class="project">
-                <div class="project-title">
-                    Inventory Management
-                    <a href="https://nkusharoraa.github.io/InventoryMangement/" target="_blank">
-                        <img src="github-icon.svg" alt="Project Link" class="project-link-icon">
-                    </a>
-                </div>
-                <div class="project-description">
-                    Optimized inventory levels leading to reduced holding and ordering costs.
-                    Improved service levels and reduced stockouts, enhancing customer satisfaction.
-                    Data-driven decision-making for inventory policies and procurement strategies.
-                </div>
+            <div class="skills">
+                <div class="project">
+                    <div class="project-title">
+                        Inventory Management
+                        <a href="https://nkusharoraa.github.io/InventoryMangement/" target="_blank">
+                            <img src="github-icon.svg" alt="Project Link" class="project-link-icon">
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        Optimized inventory levels leading to reduced holding and ordering costs.
+                        Improved service levels and reduced stockouts, enhancing customer satisfaction.
+                        Data-driven decision-making for inventory policies and procurement strategies.
+                    </div>
+                    <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                      <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                      <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                      <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                </div>     
             </div>
-            <hr class="project-divider">
-            
-            <div class="project">
-                <div class="project-title">
-                    Demand Forecasting Using Time Series Analysis and Exponential Smoothing
-                    <a href="https://nkusharoraa.github.io/DemandForecasting/" target="_blank">
-                        <img src="github-icon.svg" alt="Project Link" class="project-link-icon">
-                    </a>
-                </div>
-                <div class="project-description">
-                    Improved accuracy in demand forecasting leading to optimized inventory management and reduced stockouts.
-                    Enhanced decision-making capabilities for supply chain planning and resource allocation.
-                    Scalable model framework applicable to various product categories or markets within the organization.
-                </div>
+            <div class="skills">
+                <div class="project">
+                    <div class="project-title">
+                        Demand Forecasting Using Time Series Analysis and Exponential Smoothing
+                        <a href="https://nkusharoraa.github.io/DemandForecasting/" target="_blank">
+                            <img src="github-icon.svg" alt="Project Link" class="project-link-icon">
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        Improved accuracy in demand forecasting leading to optimized inventory management and reduced stockouts.
+                        Enhanced decision-making capabilities for supply chain planning and resource allocation.
+                    </div>
+                    <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                      <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                      <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                      <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                </div>     
             </div>
-            <hr class="project-divider">
-            
-            <div class="project">
-                <div class="project-title">
-                    Transportation Mode Selection Tool
-                    <a href="https://nkusharoraa.github.io/transportation_tool/" target="_blank">
-                        <img src="github-icon.svg" alt="Project Link" class="project-link-icon">
-                    </a>
-                </div>
-                <div class="project-description">
-                    Tools and models related to transportation management, covering key concepts such as mode selection, lead time variability, transportation operations, economic modes, and practical examples.
-                </div>
+            <div class="skills">
+                <div class="project">
+                    <div class="project-title">
+                        Transportation Mode Selection Tool
+                        <a href="https://nkusharoraa.github.io/transportation_tool/" target="_blank">
+                            <img src="github-icon.svg" alt="Project Link" class="project-link-icon">
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        Tools and models related to transportation management, covering key concepts such as mode selection, lead time variability, transportation operations, economic modes, and practical examples.
+                    </div>
+                    <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                      <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                      <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                      <div class="tag-box-main">
+                        <div class="tag-box">
+                            Problem-solving
+                        </div>
+                      </div>
+                </div>     
             </div>
-        </section>
-        <section id="awards" class="awards">
-            <h2>Awards and Achievements </h2> 
-            <hr class="section-divider">
-            <div class="project">
-                <div class="project-title">
-                    MITx MicroMasters in Supply Chain Management
-                    <a href="https://micromasters.mit.edu/scm/" target="_blank">
-                        <img src="info-icon.svg" alt="Information Link" class="project-link-icon">
-                    </a>
-                </div>
-                <div class="project-description">
-                    <a href="https://credentials.edx.org/records/programs/shared/bec40b57c33d4a708ddad6eb2a164bd5" target="_blank">
-                        <img src="numbers-icon.svg" alt="Marks Link" class="project-link-icon">
-                    </a> Successfully passed (DI) the MicroMasters in Supply Chain Management affiliated to Massachusetts Institute of Technology (MIT). <span class="time-period">[2023-2024]</span>
-                    
-                    <ul>
-                        <li><a href="https://courses.edx.org/certificates/b1ac46147dc64eaaa31189d9d1dca144" target="_blank" >
-                            <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
-                            <span class="mini-heading">SC0x</span>: Supply Chain Analytics <br>
-                            core methodologies used in supply chain analysis and modeling, including statistics, regression, optimization and probability
-                        </li>
-                        <li><a href="https://courses.edx.org/certificates/08cb596c6a38402e9b537c45d4a1c11f" target="_blank" >
-                            <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
-                            <span class="mini-heading">SC1x</span>: Supply Chain Fundamentals <br>
-                            fundamental concepts for logistics and supply chain management from both analytical and practical perspectives
-                        </li>
-                        <li><a href="https://courses.edx.org/certificates/ed14e046cd534f8e8028697b4bac5a76" target="_blank" >
-                            <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
-                            <span class="mini-heading">SC2x</span>: Supply Chain Design <br>
-                            design and optimization of the physical, financial, and information flows of a supply chain to enhance business performance
-                        </li>
-                        <li><a href="https://courses.edx.org/certificates/bc057ef0038a41e387fd2ec03880405c" target="_blank" >
-                            <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
-                            <span class="mini-heading">SC3x</span>: Supply Chain Dynamics <br>
-                            management and harnessing of the dynamics and interactions between firms and entities within a supply chain
-                        </li>
-                        <li><a href="https://courses.edx.org/certificates/9befcdb67caf41ae91d54384c9f37f21" >
-                            <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
-                            <span class="mini-heading">SC4x</span>: Supply Chain Technology and Systems <br>
-                            use of technology in supply chain systems from fundamental concepts to innovative applications
-                        </li>
-                    </ul>
-                </div>
-                <hr class="project-divider">
-                <div class="project-title">
-                    MITACS Globalink Research Internship
-                    <a href="https://www.mitacs.ca/our-programs/globalink-research-internship-students/" target="_blank">
-                        <img src="info-icon.svg" alt="Information Link" class="project-link-icon">
-                    </a>
-                </div>
-                <div class="project-description">
-                    <a href="https://www.mitacs.ca/wp-content/uploads/2023/12/2021-22_ised_annual_report.pdf" target="_blank">
-                        <img src="numbers-icon.svg" alt="Marks Link" class="project-link-icon">
-                    </a>   Selected among top 1% for undergraduate research in Canada with 10000+ eligible applicants. <span class="time-period">[2022]</span>
-                    <ul>
-                        <li><a href="#" target="_blank" >
-                            <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
-                            <span class="mini-heading">GRI</span>: McGill University, Montreal, Quebec, Canada <br>
-                            completion of project in Biomechanical Engineering under the 84 days internship program with regular assessment
-                        </li>
-                    </ul>
-                </div>
-                <hr class="project-divider">
-                <div class="project-title">
-                    Indian Institute of Technology Delhi
-                    <a href="https://home.iitd.ac.in/" target="_blank">
-                        <img src="info-icon.svg" alt="Information Link" class="project-link-icon">
-                    </a>
-                </div>
-                <div class="project-description">
-                    <ul>
-                        <li><a href="https://courses.edx.org/certificates/b1ac46147dc64eaaa31189d9d1dca144" target="_blank" >
-                            <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
-                            <span class="mini-heading">Teaching Assistant at IIT Delhi</span>: Selected as a Teaching Assistant for Material Science on merit basis for a course of 400+ students. <span class="time-period">[2022]</span>
-                        </li>
-                        <li><a href="https://drive.google.com/file/d/1ojUrLtRDxitZ0JNFszTfiSlU7dRb1Qq6/view?usp=sharing" target="_blank" >
-                            <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
-                            <span class="mini-heading">Department Change at IIT Delhi</span>: Secured department change among top 9% in a batch of 1000+ students. <span class="time-period">[2021]</span>
-                        </li>
-                    </ul>
-                </div>
-                <hr class="project-divider">
-                <div class="project-title">
-                    Joint Entrance Examination for Indian Institutes of Technology
-                    <a href="https://jeeadv.ac.in/" target="_blank">
-                        <img src="info-icon.svg" alt="Information Link" class="project-link-icon">
-                    </a>
-                </div>
-                <div class="project-description">
-                    <a href="https://jeeadv.ac.in/reports/2019.pdf" target="_blank">
-                        <img src="numbers-icon.svg" alt="Marks Link" class="project-link-icon">
-                    </a> Written the exam conducted by Indian Institute of Technology Roorkee <span class="time-period">[2019]</span>
-                    <ul>
-                        <li><a href="https://drive.google.com/file/d/1JXWqo0xGmyC9PBBQVQGCXiZJKK9Gsvs-/view?usp=sharing" target="_blank">
-                            <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
-                            <span class="mini-heading">Joint Entrance Examination</span>: Secured All India Rank 67 in JEE Main Paper II. 
-                        </li>
-                        <li><a href="https://drive.google.com/file/d/1aLdH1W9qEiV40QVvvVuoVqiDflJZejGM/view?usp=sharing" target="_blank" >
-                            <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
-                            <span class="mini-heading">Joint Entrance Examination</span>: Secured top 0.2 percentile in JEE Main and Advanced with 1M+ candidates. 
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <p> 
-                
-                
-                </p>
         </section>
         <section id="cv" class="cv">
-            <h2>CV </h2>
+            <h2><span class="section-name"> Background </span></h2>
             <hr class="section-divider">
-            <div class="project-title">
-                Work Experience
-                <a href="https://drive.google.com/file/d/1YsFOrhnpmhjLKzL1oj3UJOsvr4c_XUE8/view?usp=sharing" target="_blank">
-                    <img src="drive-icon.svg" alt="CV Link" class="project-link-icon">
-                </a>
-            </div>
-            <div class="project-description">
-                <ul>
-                    <li>
-                        <a href="https://goo.gl/maps/1soxmusfuke72h1c7" target="_blank">
-                        <img src="location-icon.svg" alt="Location Link" class="project-link-icon">
-                    </a>Bajaj Auto Limited, Pune <span class="time-period">[July 2023 - Present]</span><br>
-                         Assistant Manager, 4Wh Vehicle Design </li>
-                         <hr class="subproject-divider">
-                    <li><a href="#cv" >
-                        <img src="no-location.svg" alt="Location Link" class="project-link-icon">
-                    </a>Colonist LLC, United States (Remote)<span class="time-period">[April 2023 - September 2023]</span><br>
-                         Quality Assurance Tester</li>
-                </ul>
-            </div>
+            
+            <div class="timeline">
+                <!-- Work Experience -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <img src="work-icon.svg" alt="Work Experience Icon">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="skills">
+                            <div class="project-title">
+                                Work Experience
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>
+                                        <a href="https://goo.gl/maps/1soxmusfuke72h1c7" target="_blank">
+                                            <img src="location-icon.svg" alt="Location Link" class="project-link-icon">
+                                        </a>Bajaj Auto Limited, Pune <span class="time-period">[July 2023 - Present]</span><br>
+                                        Assistant Manager, 4Wh Vehicle Design
+                                    </li>
+                                    <hr class="subproject-divider">
+                                    <li>
+                                        <a href="#cv">
+                                            <img src="no-location.svg" alt="Location Link" class="project-link-icon">
+                                        </a>Colonist LLC, United States (Remote)<span class="time-period">[April 2023 - September 2023]</span><br>
+                                        Quality Assurance Tester
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Research Experience -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <img src="research-icon.svg" alt="Research Experience Icon">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="skills">
+                            <div class="project-title">
+                                Research Experience
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>
+                                        <a href="https://maps.app.goo.gl/WatQ4MtUP3b9fmr26" target="_blank">
+                                            <img src="location-icon.svg" alt="Location Link" class="project-link-icon">
+                                        </a>McGill University, Montreal<span class="time-period">[May 2022 - July 2022]</span><br>
+                                        Summer Research Associate under Prof. Adam Hendricks
+                                    </li>
+                                    <hr class="subproject-divider">
+                                    <li>
+                                        <a href="https://maps.app.goo.gl/nyEQw2TR8WudCtD99" target="_blank">
+                                            <img src="no-location.svg" alt="Location Link" class="project-link-icon">
+                                        </a>National Tsing Hua University, Taiwan (Remote)<span class="time-period">[June 2021 - July 2021]</span><br>
+                                        Summer Research Associate under Prof. Lee-Wei Yang
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Education -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <img src="education-icon.svg" alt="Education Icon">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="skills">
+                            <div class="project-title">
+                                Education
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>
+                                        <a href="https://goo.gl/maps/1soxmusfuke72h1c7" target="_blank">
+                                            <img src="location-icon.svg" alt="Location Link" class="project-link-icon">
+                                        </a>Indian Institute of Technology Delhi<span class="time-period">[July 2019 - June 2023]</span><br>
+                                        Bachelor of Technology in Mechanical Engineering
+                                    </li>
+                                    <hr class="subproject-divider">
+                                    <li>
+                                        <a href="https://maps.app.goo.gl/xbk4iF3P7mbHFcEW9" target="_blank">
+                                            <img src="location-icon.svg" alt="Location Link" class="project-link-icon">
+                                        </a>Springfields College, Moradabad<span class="time-period">[July 2016 - May 2018]</span><br>
+                                        Indian School Certificate Examinations
+                                    </li>
+                                    <hr class="subproject-divider">
+                                    <li>
+                                        <a href="https://maps.app.goo.gl/iMTovqCGPJ93eRzj7" target="_blank">
+                                            <img src="location-icon.svg" alt="Location Link" class="project-link-icon">
+                                        </a>Tiny Tots College, Moradabad<span class="time-period">[Apr 2014 - May 2016]</span><br>
+                                        Indian Certificate of Secondary Education
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-icon">
+                        <img src="education-icon.svg" alt="Education Icon">
+                    </div>
+                </div>
 
-            <hr class="project-divider">
-            <div class="project-title">
-                Research Experience
             </div>
-            <div class="project-description">
-                <ul>
-                    <li><a href="https://maps.app.goo.gl/WatQ4MtUP3b9fmr26" target="_blank">
-                        <img src="location-icon.svg" alt="Location Link" class="project-link-icon">
-                    </a>McGill University, Montreal<span class="time-period">[May 2022 - July 2022]</span><br>
-                         Summer Research Associate under Prof. Adam Hendricks
-                         </li>
-                         <hr class="subproject-divider">
-                    <li><a href="https://maps.app.goo.gl/nyEQw2TR8WudCtD99" target="_blank">
-                        <img src="no-location.svg" alt="Location Link" class="project-link-icon">
-                    </a>National Tsing Hua University, Taiwan (Remote)<span class="time-period">[June 2021 - July 2021]</span><br>
-                         Summer Research Associate under Prof. Lee-Wei Yang
-                         </li>
-                </ul>
-            </div>
-            <hr class="project-divider">
-            <div class="project-title">
-                Education
-            </div>
-            <div class="project-description">
-                <ul>
-                    <li><a href="https://goo.gl/maps/1soxmusfuke72h1c7" target="_blank">
-                        <img src="location-icon.svg" alt="Location Link" class="project-link-icon">
-                    </a>Indian Institute of Technology Delhi<span class="time-period">[July 2019 - June 2023]</span><br>
-                         Bachelor of Technology in Mechanical Engineering
-                         </li>
-                         <hr class="subproject-divider">
-                    <li><a href="https://maps.app.goo.gl/xbk4iF3P7mbHFcEW9" target="_blank">
-                        <img src="location-icon.svg" alt="Location Link" class="project-link-icon">
-                    </a>Springfields College, Moradabad<span class="time-period">[July 2016 - May 2018]</span><br>
-                         Indian School Certificate Examinations
-                         </li><hr class="subproject-divider">
-                    <li>
-                        <a href="https://maps.app.goo.gl/iMTovqCGPJ93eRzj7" target="_blank">
-                            <img src="location-icon.svg" alt="Location Link" class="project-link-icon">
-                        </a>Tiny Tots College, Moradabad<span class="time-period">[Apr 2014 - May 2016]</span><br>
-                            Indian Certificate of Secondary Education
-                    </li>
-                </ul>
-            </div>
-            <hr class="project-divider">
-            <p>You can download my CV <span class="here-link"><a href="Ankush_Arora_10-07-2024.pdf" target="_blank">here</span></a>.</p>
+            
+            <p> <span class="cv-drive-icon"> <a href="https://drive.google.com/file/d/1YsFOrhnpmhjLKzL1oj3UJOsvr4c_XUE8/view?usp=sharing" target="_blank">
+                <img src="drive-icon.svg" alt="CV Link" class="project-link-icon">
+            </a> You can download my CV <span class="here-link"><a href="Ankush_Arora_10-07-2024.pdf" target="_blank">here</a>.</span> </span> </p>
         </section>
+        
+        <section id="awards" class="awards">
+            <h2><span class="section-name"> Awards and Recognitions</span></h2>
+            <hr class="section-divider">
+            
+            <div class="timeline">
+                <!-- MITx MicroMasters in Supply Chain Management -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <img src="supply-chain.svg" alt="Award Icon">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="skills">
+                            <div class="project-title">
+                                MITx MicroMasters in Supply Chain Management
+                                <a href="https://micromasters.mit.edu/scm/" target="_blank">
+                                    <img src="info-icon.svg" alt="Information Link" class="project-link-icon">
+                                </a>
+                            </div>
+                            <div class="project-description">
+                                <a href="https://credentials.edx.org/records/programs/shared/bec40b57c33d4a708ddad6eb2a164bd5" target="_blank">
+                                    <img src="numbers-icon.svg" alt="Marks Link" class="project-link-icon">
+                                </a> Successfully passed (DI) the MicroMasters in Supply Chain Management affiliated to Massachusetts Institute of Technology (MIT). <span class="time-period">[2023-2024]</span>
+                                <ul>
+                                    <li><a href="https://courses.edx.org/certificates/b1ac46147dc64eaaa31189d9d1dca144" target="_blank">
+                                        <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
+                                        <span class="mini-heading">SC0x</span>: Supply Chain Analytics <br>
+                                        Core methodologies used in supply chain analysis and modeling, including statistics, regression, optimization and probability.
+                                    </li>
+                                    <li><a href="https://courses.edx.org/certificates/08cb596c6a38402e9b537c45d4a1c11f" target="_blank">
+                                        <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
+                                        <span class="mini-heading">SC1x</span>: Supply Chain Fundamentals <br>
+                                        Fundamental concepts for logistics and supply chain management from both analytical and practical perspectives.
+                                    </li>
+                                    <li><a href="https://courses.edx.org/certificates/ed14e046cd534f8e8028697b4bac5a76" target="_blank">
+                                        <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
+                                        <span class="mini-heading">SC2x</span>: Supply Chain Design <br>
+                                        Design and optimization of the physical, financial, and information flows of a supply chain to enhance business performance.
+                                    </li>
+                                    <li><a href="https://courses.edx.org/certificates/bc057ef0038a41e387fd2ec03880405c" target="_blank">
+                                        <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
+                                        <span class="mini-heading">SC3x</span>: Supply Chain Dynamics <br>
+                                        Management and harnessing of the dynamics and interactions between firms and entities within a supply chain.
+                                    </li>
+                                    <li><a href="https://courses.edx.org/certificates/9befcdb67caf41ae91d54384c9f37f21" target="_blank">
+                                        <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
+                                        <span class="mini-heading">SC4x</span>: Supply Chain Technology and Systems <br>
+                                        Use of technology in supply chain systems from fundamental concepts to innovative applications.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- MITACS Globalink Research Internship -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <img src="flight-icon.svg" alt="Award Icon">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="skills">
+                            <div class="project-title">
+                                MITACS Globalink Research Internship
+                                <a href="https://www.mitacs.ca/our-programs/globalink-research-internship-students/" target="_blank">
+                                    <img src="info-icon.svg" alt="Information Link" class="project-link-icon">
+                                </a>
+                            </div>
+                            <div class="project-description">
+                                <a href="https://www.mitacs.ca/wp-content/uploads/2023/12/2021-22_ised_annual_report.pdf" target="_blank">
+                                    <img src="numbers-icon.svg" alt="Marks Link" class="project-link-icon">
+                                </a> Selected among top 1% for undergraduate research in Canada with 10000+ eligible applicants. <span class="time-period">[2022]</span>
+                                <ul>
+                                    <li><a href="#" target="_blank">
+                                        <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
+                                        <span class="mini-heading">GRI</span>: McGill University, Montreal, Quebec, Canada <br>
+                                        Completion of project in Biomechanical Engineering under the 84 days internship program with regular assessment.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Indian Institute of Technology Delhi -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <img src="education-icon.svg" alt="Award Icon">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="skills">
+                            <div class="project-title">
+                                Indian Institute of Technology Delhi
+                                <a href="https://home.iitd.ac.in/" target="_blank">
+                                    <img src="info-icon.svg" alt="Information Link" class="project-link-icon">
+                                </a>
+                            </div>
+                            <div class="project-description">
+                                <ul>
+                                    <li><a href="https://courses.edx.org/certificates/b1ac46147dc64eaaa31189d9d1dca144" target="_blank">
+                                        <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
+                                        <span class="mini-heading">Teaching Assistant at IIT Delhi</span>: Selected as a Teaching Assistant for Material Science on merit basis for a course of 400+ students. <span class="time-period">[2022]</span>
+                                    </li>
+                                    <li><a href="https://drive.google.com/file/d/1ojUrLtRDxitZ0JNFszTfiSlU7dRb1Qq6/view?usp=sharing" target="_blank">
+                                        <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
+                                        <span class="mini-heading">Department Change at IIT Delhi</span>: Secured department change among top 9% in a batch of 1000+ students. <span class="time-period">[2021]</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Joint Entrance Examination for Indian Institutes of Technology -->
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <img src="math-icon.svg" alt="Award Icon">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="skills">
+                            <div class="project-title">
+                                Joint Entrance Examination for Indian Institutes of Technology
+                                <a href="https://jeeadv.ac.in/" target="_blank">
+                                    <img src="info-icon.svg" alt="Information Link" class="project-link-icon">
+                                </a>
+                            </div>
+                            <div class="project-description">
+                                <a href="https://jeeadv.ac.in/reports/2019.pdf" target="_blank">
+                                    <img src="numbers-icon.svg" alt="Marks Link" class="project-link-icon">
+                                </a> Written the exam conducted by Indian Institute of Technology Roorkee <span class="time-period">[2019]</span>
+                                <ul>
+                                    <li><a href="https://drive.google.com/file/d/1JXWqo0xGmyC9PBBQVQGCXiZJKK9Gsvs-/view?usp=sharing" target="_blank">
+                                        <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
+                                        <span class="mini-heading">Joint Entrance Examination</span>: Secured All India Rank 67 in JEE Main Paper II.
+                                    </li>
+                                    <li><a href="https://drive.google.com/file/d/1aLdH1W9qEiV40QVvvVuoVqiDflJZejGM/view?usp=sharing" target="_blank">
+                                        <img src="certificate-icon.svg" alt="Certificate Link" class="project-link-icon"></a>
+                                        <span class="mini-heading">Joint Entrance Examination</span>: Secured top 0.2 percentile in JEE Main and Advanced with 1M+ candidates.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
 
         <div class="footer">
             <div class="social-icons">
