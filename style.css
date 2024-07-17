@@ -283,6 +283,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     padding: var(--space-md);
     border-radius: 8px;
     margin-bottom: var(--space-sm);
+    z-index: 100;
 }
 .intro {
     padding-top: 10px;
@@ -362,7 +363,18 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     margin: 20px 0;
     padding-left: 40px;
 }
-
+.project-box-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+.project-link-class {
+    display: flex;
+    float: right;
+    position:relative;
+    padding: 24px;
+    z-index: 1000;
+}
 
 .timeline-icon{
     position: absolute;
