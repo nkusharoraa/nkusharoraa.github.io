@@ -87,11 +87,13 @@ a {
     background: transparent;
     border: none;
     color: var(--navbar-link-color);
+    margin-left: auto;
 }
 
-.share-btn{
+.share-btn {
     font-weight: normal;
-    float: right;
+    display: flex;
+    align-items: center;
 }
 .container {
     max-width: 1200px;
@@ -247,6 +249,7 @@ a {
 .social-icon img {
     width: 24px;
     height: 24px;
+    margin-bottom: -4px;
     transition: transform 0.3s ease;
 }
 .navbar1{
@@ -255,7 +258,7 @@ a {
 .social-icon img:hover {
     transform: scale(1.2); /* Scale up on hover */
 }
-body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode .project-link-icon, body.dark-mode .nav-icon img, body.dark-mode .timeline-icon img {
+body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode .project-link-icon, body.dark-mode .nav-icon img {
     filter: invert(1); /* Invert the color of SVG to white */
 }
 
@@ -380,10 +383,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     margin-right: 5px;
 }
 
-.subproject-divider {
-    border: 0.5px solid #ddd;
-    margin: 10px 0;
-}
+
 
 
 .mode-toggle {
@@ -460,7 +460,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 }
 
 .share-btn {
-    display:block;
+    display:flex;
     align-items: center;
     float: right;
     margin-right: 72px;
@@ -655,7 +655,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         margin-top: 40px;
     }
     .share-btn img {
-        margin-right: 8px; /* Adjust margin as needed */
+        margin-right: 0px; /* Adjust margin as needed */
     }
     .profile-pic {
         margin-bottom: var(--space-sm);
@@ -667,7 +667,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         text-align: center;
     }
     .mode-toggle {
-        margin-right: 0px ;
+        margin-right: 10px ;
         margin-top: -10px;
         right: 10px;
         float: right;
