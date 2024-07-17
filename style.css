@@ -380,7 +380,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 .project-link-icon {
     width: 16px;
     height: 16px;
-    margin-right: 5px;
+    margin-right: 0px;
 }
 
 
@@ -655,7 +655,8 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         margin-top: 40px;
     }
     .share-btn img {
-        margin-right: 0px; /* Adjust margin as needed */
+        padding-right: 0px; /* Adjust margin as needed */
+        margin-left: -24px;
     }
     .profile-pic {
         margin-bottom: var(--space-sm);
@@ -667,7 +668,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         text-align: center;
     }
     .mode-toggle {
-        margin-right: 10px ;
+        margin-right: 24px ;
         margin-top: -10px;
         right: 10px;
         float: right;
