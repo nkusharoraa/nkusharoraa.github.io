@@ -275,7 +275,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 .time-period{
     text-align: right;
     float: right;
-    padding-right: var(--space-xs);
+    padding-right: 0;
 }
 .skills, .intro {
     background-color: var(--subsection-bg);
@@ -656,7 +656,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     }
     .share-btn img {
         padding-right: 0px; /* Adjust margin as needed */
-        margin-left: -24px;
+        margin-left: -40px;
     }
     .profile-pic {
         margin-bottom: var(--space-sm);
