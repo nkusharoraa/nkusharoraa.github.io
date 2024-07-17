@@ -724,7 +724,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 }
 .section-divider {
     border: 0;
-    height: 2px;
+    height: 1px;
     background: var(--divider);
     opacity: 1;
     visibility: hidden;
