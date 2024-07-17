@@ -154,21 +154,17 @@ a {
 .nav-icon:hover {
     border-bottom: 3px solid var(--highlight-color);
 }
-.navbar .nav-links a:hover + .nav-icon, .navbar1 .nav-links a:hover, .here-link a:hover, .more-link a:hover {
+.navbar .nav-links a:hover + .nav-icon, .navbar1 .nav-links a:hover, .here-link a:hover{
     border-bottom: 3px solid var(--highlight-color); /* Add a solid border at the bottom */
 }
-.more-link {
-    float: right;
-    margin-right: 8px;
-    margin-top: -8px;
-}
+
 
 .header {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    margin-bottom: 0px;
-    margin-top: 32px;
+    margin-bottom: -48px;
+    margin-top: -16px;
     padding: 0;
     height: auto;
     background-size: cover;
@@ -541,7 +537,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 .home-button-main {
     font-size: small;
     margin-right: 40px;
-    margin-top: 2px;
+    margin-top: 8px;
     color: var(--link-color);
     text-align: center;
 }
@@ -707,9 +703,10 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     }
     .header-left {
         padding: 0%;
+        text-align: left;
     }
     .header-content {
-        text-align: center;
+        text-align: left;
     }
     .mode-toggle {
         margin-right: 32px ;
