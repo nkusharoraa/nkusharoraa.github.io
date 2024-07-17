@@ -609,6 +609,9 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         margin-right: calc(100vw/20);
         font-size: x-small;
     }
+    .section-name, .section-name-hidden {
+        padding-bottom: 4px;
+    }
     .nav-links {
         display: flex;
         align-items: center; /* Center align links */

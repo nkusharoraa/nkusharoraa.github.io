@@ -653,6 +653,9 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         text-align: center;
         margin-bottom: 100px;
     }
+    .section-name, .section-name-hidden {
+        padding-bottom: 4px;
+    }
     .navbar{
 
         overflow: auto;
