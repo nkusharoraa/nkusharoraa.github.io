@@ -277,7 +277,8 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     float: right;
     padding-right: 0;
 }
-.skills, .intro {
+.skills, .intro, .project-box {
+    
     background-color: var(--subsection-bg);
     padding: var(--space-md);
     border-radius: 8px;
@@ -286,11 +287,14 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 .intro {
     padding-top: 10px;
 }
-.section-name {
+.section-name, .section-name-hidden {
     border-bottom: 3px solid var(--divider);
     border-radius: 2px;
     padding-bottom: 8px;
     padding-right: 32px;
+}
+ .section-name-hidden {
+    visibility: hidden;
 }
 .about-me, .projects, .cv, .awards {
     background-color: var(--section-bg);
@@ -326,6 +330,10 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 .about-me:hover, .projects:hover, .cv:hover, .certifications:hover, .skills:hover {
     transform: none;
 }
+.project-box:hover{
+    transform:scale(1.01);
+
+}
 .cv {
     position: relative;
     padding: 20px;
@@ -356,12 +364,21 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 }
 
 
-.timeline-icon {
+.timeline-icon{
     position: absolute;
     left: 8px;
     top: 24px; /* Adjust the position as needed */
     width: 24px;
     height: 24px;
+    text-align: center;
+    background: var(--section-bg);
+    border: 2px solid var(--highlight-color) hidden;
+    border-radius: 50%;
+    z-index: 100;
+}
+.cv-drive-icon {
+    position: relative;
+    left: 32px;
     text-align: center;
     background: var(--section-bg);
     border: 2px solid var(--highlight-color) hidden;
@@ -668,7 +685,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         text-align: center;
     }
     .mode-toggle {
-        margin-right: 24px ;
+        margin-right: 32px ;
         margin-top: -10px;
         right: 10px;
         float: right;
