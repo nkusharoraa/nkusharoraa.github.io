@@ -723,7 +723,7 @@ Ensure that the project descriptions have some padding for better readability
     transition: transform 0.3s ease;
     margin-left: auto;
     margin-bottom: -5px;
-    margin-right: var(--space-xs); /* Adjust margin as needed */
+    margin-right: 0; /* Adjust margin as needed */
 }
 
 .project-link-icon:hover {
