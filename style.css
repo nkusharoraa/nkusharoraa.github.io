@@ -373,7 +373,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     float: right;
     position:relative;
     padding: 24px;
-    z-index: 1000;
+    z-index: 102;
 }
 
 .timeline-icon{
