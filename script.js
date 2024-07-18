@@ -15,7 +15,34 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 800); // Adjust delay in milliseconds (800ms in this example for slower effect)
     });
-    
+// JavaScript to toggle flip class and show custom back content for each tag-box-main click
+const skillsContainer = document.getElementById('skillsContainer');
+const backContentElement = document.getElementById('backContent');
+
+// Event listener for tag-box-main clicks
+document.querySelectorAll('.tag-box-main').forEach(tagBox => {
+    tagBox.addEventListener('click', () => {
+        const backContent = tagBox.getAttribute('data-back-content');
+        const backValue = tagBox.getAttribute('data-back-value');
+        
+        // Update backContentElement with custom back content
+        backContentElement.innerHTML = `
+            <div class="project-title">${backContent}</div>
+            <div class="project-description">${backValue}</div>
+        `;
+        
+        // Toggle flip class on skillsContainer
+        skillsContainer.classList.toggle('flip');
+        backContentElement.style.display = skillsContainer.classList.contains('flip') ? 'block' : 'none';
+    });
+});
+
+// Event listener for clicking anywhere in the back section to flip back
+document.querySelector('.back').addEventListener('click', () => {
+    skillsContainer.classList.remove('flip');
+    backContentElement.style.display = 'none';
+});
+
     shareBtn.addEventListener('click', function(event) {
         event.preventDefault();
         
