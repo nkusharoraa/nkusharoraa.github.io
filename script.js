@@ -15,9 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 800); // Adjust delay in milliseconds (800ms in this example for slower effect)
     });
-// JavaScript to toggle flip class and show custom back content for each tag-box-main click
+// JavaScript to toggle flip class and show custom back content for each tag-box-main and tag-box-main1 click
 const skillsContainer = document.getElementById('skillsContainer');
+const introContainer = document.getElementById('introContainer');
 const backContentElement = document.getElementById('backContent');
+const introbackContentElement = document.getElementById('introbackContent');
 
 // Event listener for tag-box-main clicks
 document.querySelectorAll('.tag-box-main').forEach(tagBox => {
@@ -37,11 +39,36 @@ document.querySelectorAll('.tag-box-main').forEach(tagBox => {
     });
 });
 
-// Event listener for clicking anywhere in the back section to flip back
-document.querySelector('.back').addEventListener('click', () => {
+// Event listener for tag-box-main1 clicks
+document.querySelectorAll('.tag-box-main1').forEach(tagBox => {
+    tagBox.addEventListener('click', () => {
+        const backContent = tagBox.getAttribute('data-back-content');
+        const backValue = tagBox.getAttribute('data-back-value');
+        
+        // Update introbackContentElement with custom back content
+        introbackContentElement.innerHTML = `
+            <div class="project-title">${backContent}</div>
+            <div class="project-description">${backValue}</div>
+        `;
+        
+        // Toggle flip class on introContainer
+        introContainer.classList.toggle('flip');
+        introbackContentElement.style.display = introContainer.classList.contains('flip') ? 'block' : 'none';
+    });
+});
+
+// Event listener for clicking anywhere in the back section to flip back for skillsContainer
+document.querySelector('.skill-back').addEventListener('click', () => {
     skillsContainer.classList.remove('flip');
     backContentElement.style.display = 'none';
 });
+
+// Event listener for clicking anywhere in the back section to flip back for introContainer
+document.querySelector('.intro-back').addEventListener('click', () => {
+    introContainer.classList.remove('flip');
+    introbackContentElement.style.display = 'none';
+});
+
 
     shareBtn.addEventListener('click', function(event) {
         event.preventDefault();

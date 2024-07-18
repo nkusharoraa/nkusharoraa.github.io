@@ -102,6 +102,7 @@ a {
     background: var(--container-bg);
     border-radius: 8px;
 }
+
 .navbar, .navbar1 {
     
     overflow: auto;
@@ -290,6 +291,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     z-index: 100;
 }
 .intro {
+    margin-top: 16px;
     padding-top: 10px;
 }
 .section-name, .section-name-hidden {
@@ -300,6 +302,9 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 }
  .section-name-hidden {
     visibility: hidden;
+}
+.about-me{
+    height: max-content;
 }
 .about-me, .projects, .cv, .awards {
     background-color: var(--section-bg);
@@ -318,7 +323,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     align-items: flex-end;
     justify-content: flex-start;
   }
-  .tag-box-main {
+  .tag-box-main, .tag-box-main1 {
     background: var(--tag-box-color);
     border-radius: 12px;
     padding: 4px 8px 4px 8px;
@@ -603,7 +608,11 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     }
 }
 /* CSS for smaller screens */
+
 @media (max-width: 840px) {
+    .about-me{
+        height: 1600px;
+    }
     .home-button-main {
         margin-left: calc(100vw/20);
         margin-right: calc(100vw/20);
@@ -800,29 +809,39 @@ html {
 .flip-container.flip .flipper {
     transform: rotateY(180deg);
 }
-.flip-container .front, .flip-container .back {
-    position: absolute;
+.flip-container .front, .flip-container .back, .dummy{
+    position:relative;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
 }
-.flip-container .back {
+.flip-container .intro-back {
     transform: rotateY(180deg);
+    margin-top: -380px;
 }
-#skillsContainer {
+.flip-container .skill-back {
+    transform: rotateY(180deg);
+    margin-top: -360px;
+}
+.dummy{
+    height: 300px;
+    visibility: hidden;
+}
+#skillsContainer, #introContainer {
    background:none;
    margin: -20px;
 }
-.back:hover{
+.back:hover, .intro-back:hover, .skill-back:hover{
     scale: 1.01;
     cursor:pointer
 }
-.tag-box-main:hover{
+.tag-box-main:hover, .tag-box-main1:hover{
     scale: 1.02;
     cursor: pointer;
 }
 .inside-image {
     margin-top: 16px;
     margin-left: 16px;
-    width: 300px;
+    margin-bottom: 8px;
+    height: 150px;
 }
