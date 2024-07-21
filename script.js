@@ -39,7 +39,7 @@ document.querySelectorAll('.tag-box-main').forEach(tagBox => {
         skillsContainer.classList.toggle('flip');
         backContentElement.style.display = skillsContainer.classList.contains('flip') ? 'block' : 'none';
         if(introContainer.classList.contains('flip'))
-        {skillscolumncontainer.style.marginTop = '-286px'}
+        {skillscolumncontainer.style.marginTop = '-276px'}
             
     });
 });
@@ -68,6 +68,8 @@ document.querySelectorAll('.tag-box-main1').forEach(tagBox => {
 document.querySelector('.skill-back').addEventListener('click', () => {
     skillsContainer.classList.remove('flip');
     backContentElement.style.display = 'none';
+    if(introContainer.classList.contains('flip'))
+        {skillscolumncontainer.style.marginTop = '-324px'}
 });
 
 // Event listener for clicking anywhere in the back section to flip back for introContainer
