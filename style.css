@@ -101,6 +101,7 @@ a {
     padding: var(--space-md);
     background: var(--container-bg);
     border-radius: 8px;
+    justify-content: space-between;
 }
 
 .navbar, .navbar1 {
@@ -289,6 +290,9 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     border-radius: 8px;
     margin-bottom: var(--space-sm);
     z-index: 100;
+}
+.skills {
+    margin-top: 0;
 }
 .intro {
     margin-top: 16px;
@@ -576,7 +580,13 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     }
     .about-me, .projects {
         column-count: 2;
+        justify-content: space-between ;
        }
+       .column {
+        display: block;
+        flex-direction: column;
+        width: 100%; /* Adjust as needed */
+      }
     .profile-container {
         margin-right: var(--space-lg);
     }
@@ -756,7 +766,10 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     opacity: 1;
     visibility: hidden;
 }
-
+.skillscolumn{
+    margin-top: -425px;
+    position:sticky;
+}
 
 Ensure that the project descriptions have some padding for better readability
 .project-description {
@@ -817,7 +830,6 @@ html {
 }
 .flip-container .intro-back {
     transform: rotateY(180deg);
-    margin-top: -380px;
 }
 .flip-container .skill-back {
     transform: rotateY(180deg);

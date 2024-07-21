@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // JavaScript to toggle flip class and show custom back content for each tag-box-main and tag-box-main1 click
 const skillsContainer = document.getElementById('skillsContainer');
 const introContainer = document.getElementById('introContainer');
+const introfrontContainer = document.getElementById('introfrontContainer');
+const skillscolumncontainer = document.getElementById('skillscolumncontainer');
 const backContentElement = document.getElementById('backContent');
 const introbackContentElement = document.getElementById('introbackContent');
 
@@ -36,6 +38,9 @@ document.querySelectorAll('.tag-box-main').forEach(tagBox => {
         // Toggle flip class on skillsContainer
         skillsContainer.classList.toggle('flip');
         backContentElement.style.display = skillsContainer.classList.contains('flip') ? 'block' : 'none';
+        if(introContainer.classList.contains('flip'))
+        {skillscolumncontainer.style.marginTop = '-286px'}
+            
     });
 });
 
@@ -53,7 +58,9 @@ document.querySelectorAll('.tag-box-main1').forEach(tagBox => {
         
         // Toggle flip class on introContainer
         introContainer.classList.toggle('flip');
+        introfrontContainer.style.display = 'none';
         introbackContentElement.style.display = introContainer.classList.contains('flip') ? 'block' : 'none';
+        skillscolumncontainer.style.marginTop = skillsContainer.classList.contains('flip') ? '-286px' : '-324px';
     });
 });
 
@@ -67,6 +74,8 @@ document.querySelector('.skill-back').addEventListener('click', () => {
 document.querySelector('.intro-back').addEventListener('click', () => {
     introContainer.classList.remove('flip');
     introbackContentElement.style.display = 'none';
+    introfrontContainer.style.display = 'block';
+    skillscolumncontainer.style.marginTop = '-374px';
 });
 
 
