@@ -780,6 +780,13 @@ ul {
 html {
 	scroll-behavior:smooth;
 }
+.project-link-icon2 {
+    width: 16px;
+    height: 16px;
+    margin-left: -24px;
+    margin-right: 8px;
+    margin-bottom: -2px;
+}
 
 @media screen and (prefers-reduced-motion: reduce) {
 	html {

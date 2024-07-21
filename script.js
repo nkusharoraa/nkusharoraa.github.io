@@ -211,3 +211,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial check on page load
     checkNavItems();
 });
+var index = 0; 
+var text = 'Hello Geeks of GeeksforGeeks'; 
+var speed = 50; 
