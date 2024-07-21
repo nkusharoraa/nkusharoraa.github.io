@@ -167,7 +167,7 @@ a {
 .more-link {
     float: right;
     margin-right: 8px;
-    margin-top: -8px;
+    margin-top: 0px;
 }
 
 .header {
@@ -271,7 +271,8 @@ a {
 .social-icon img:hover {
     transform: scale(1.2); /* Scale up on hover */
 }
-body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode .project-link-icon, body.dark-mode .nav-icon img {
+body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode .project-link-icon, body.dark-mode .nav-icon img
+ {
     filter: invert(1); /* Invert the color of SVG to white */
 }
 
@@ -432,7 +433,13 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     margin-right: 0px;
 }
 
-
+.project-link-icon2 {
+    width: 16px;
+    height: 16px;
+    margin-left: -24px;
+    margin-right: 8px;
+    margin-bottom: -2px;
+}
 
 
 .mode-toggle {
