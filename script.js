@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.toggle('dark-mode');
             
             if (document.body.classList.contains('dark-mode')) {
-                modeIcon.src = 'toggle-light-icon.svg';
+                modeIcon.src = 'media/toggle-light-icon.svg';
             } else {
-                modeIcon.src = 'toggle-dark-icon.svg';
+                modeIcon.src = 'media/toggle-dark-icon.svg';
             }
         }, 800); // Adjust delay in milliseconds (800ms in this example for slower effect)
     });
