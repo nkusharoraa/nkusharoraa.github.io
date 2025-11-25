@@ -208,8 +208,8 @@ function initializeFlipCards() {
     const backContentElement = document.getElementById(CONFIG.elements.backContent);
     const introbackContentElement = document.getElementById(CONFIG.elements.introbackContent);
 
-    // Initialize skills tag box interactions
-    document.querySelectorAll('.' + CONFIG.classes.tagBoxMain).forEach(tagBox => {
+    // Initialize skills tag box interactions (only in about section)
+    document.querySelectorAll('#about .' + CONFIG.classes.tagBoxMain).forEach(tagBox => {
         tagBox.addEventListener('click', () => {
             const backContent = tagBox.getAttribute(CONFIG.dataAttributes.backContent);
             const backValue = tagBox.getAttribute(CONFIG.dataAttributes.backValue);
@@ -228,8 +228,8 @@ function initializeFlipCards() {
         });
     });
 
-    // Initialize intro tag box interactions
-    document.querySelectorAll('.' + CONFIG.classes.tagBoxMain1).forEach(tagBox => {
+    // Initialize intro tag box interactions (only in about section)
+    document.querySelectorAll('#about .' + CONFIG.classes.tagBoxMain1).forEach(tagBox => {
         tagBox.addEventListener('click', () => {
             const backContent = tagBox.getAttribute(CONFIG.dataAttributes.backContent);
             const backValue = tagBox.getAttribute(CONFIG.dataAttributes.backValue);
