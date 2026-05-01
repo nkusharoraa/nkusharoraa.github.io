@@ -427,12 +427,6 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     color: var(--highlight-color);
 }
 
-.project-link-icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 0px;
-}
-
 .project-link-icon2 {
     width: 16px;
     height: 16px;
@@ -501,15 +495,6 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 .nav-icon img{
     width: 24px;
     height: 24px;
-}
-.social-icon img{
-    width: 24px; /* Adjust icon size */
-    height: 24px; /* Adjust icon size */
-    transition: transform 0.3s ease;
-}
-
-.social-icon img:hover {
-    transform: scale(1.2); /* Scale up on hover */
 }
 .share-btn img:hover {
     transform: scale(1.2); /* Scale up on hover */
@@ -785,7 +770,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     position:sticky;
 }
 
-Ensure that the project descriptions have some padding for better readability
+/* Ensure that the project descriptions have some padding for better readability */
 .project-description {
     padding: var(--space-sm) 0;
 }
