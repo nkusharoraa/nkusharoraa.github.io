@@ -324,6 +324,10 @@ body.dark-mode .nav-icon img {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
+.project-group {
+    break-inside: avoid;
+}
+
 .intro {
     padding-top: 10px;
 }

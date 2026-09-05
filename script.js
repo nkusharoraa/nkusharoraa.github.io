@@ -153,13 +153,15 @@ function renderProjects(data) {
             ? `+${group.moreCount} more`
             : 'See all';
         return `
-            <h3 class="project-category-title">${group.category}</h3>
-            ${cardsHTML}
-            <div class="see-more-link">
-                <a href="${group.seeMoreUrl}">${seeMoreText} &rarr;</a>
+            <div class="project-group">
+                <h3 class="project-category-title">${group.category}</h3>
+                ${cardsHTML}
+                <div class="see-more-link">
+                    <a href="${group.seeMoreUrl}">${seeMoreText} &rarr;</a>
+                </div>
             </div>
         `;
-    }).join('<h2><span class="section-name-hidden"> Projects </span></h2><hr class="section-divider">');
+    }).join('');
 
     container.insertAdjacentHTML('beforeend', html);
 }
