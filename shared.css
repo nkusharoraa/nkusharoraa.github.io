@@ -614,7 +614,12 @@ body.dark-mode .nav-icon img {
         flex-direction: row;
         justify-content: flex-start;
     }
-    .about-me, .projects {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-md);
+    }
+    .projects {
         column-count: 2;
         justify-content: space-between;
     }

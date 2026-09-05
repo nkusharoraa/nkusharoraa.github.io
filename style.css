@@ -32,7 +32,7 @@
 }
 
 .about-me {
-    height: max-content;
+    height: auto;
 }
 
 .project-box {
@@ -76,6 +76,7 @@
 
 .skillscolumn {
     position: sticky;
+    align-self: start;
 }
 
 /* Flip cards */
@@ -144,15 +145,6 @@
 
 /* Desktop overrides */
 @media (min-width: 841px) {
-    .column {
-        display: block;
-        flex-direction: column;
-        width: 100%;
-        break-inside: avoid;
-    }
-    .skillscolumn {
-        margin-top: -435px;
-    }
     h1 {
         font-size: 2.75rem;
     }
@@ -160,9 +152,6 @@
 
 /* Mobile overrides */
 @media (max-width: 840px) {
-    .about-me {
-        height: 1600px;
-    }
     .header {
         margin-bottom: -84px;
         margin-top: 32px;
