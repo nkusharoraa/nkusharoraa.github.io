@@ -1,0 +1,286 @@
+{
+  "hero": {
+    "name": "Ankush",
+    "tagline": "AI Architect building production LLM systems and intelligent agents.",
+    "profilePic": "photos/your-profile-pic-url.jpg",
+    "social": [
+      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/nkusharoraa", "icon": "media/linkedin-icon.svg" },
+      { "name": "Github", "url": "https://github.com/nkusharoraa", "icon": "media/github-icon.svg" },
+      { "name": "Email", "url": "mailto:nkusharoraa@gmail.com", "icon": "media/email-icon.svg" }
+    ]
+  },
+
+  "about": {
+    "intro": "AI Engineer with 3+ years building production ML/LLM systems across automotive R&D and enterprise recruitment. Currently leading AI initiatives at Dexian — including a 100K+ calls/day MCP server, a 460-user enterprise chatbot, and an AI-driven interview platform. IIT Delhi graduate with deep expertise in RAG architectures, LLM fine-tuning (LoRA), surrogate modelling, and end-to-end MLOps.",
+    "interestTags": [
+      {
+        "label": "RAG Systems",
+        "backTitle": "RAG Systems",
+        "backContent": "<div class='caption-back'>... building retrieval-augmented generation systems at scale.</div><img src='photos/programming.jpg' alt='RAG Image' class='inside-image'> <br> From enterprise chatbots to root cause analysis pipelines — RAG is my go-to architecture for grounding LLMs in domain knowledge."
+      },
+      {
+        "label": "LLM Fine-tuning",
+        "backTitle": "LLM Fine-tuning",
+        "backContent": "<div class='caption-back'>... from fine-tuning CodeLlama for NL-to-code translation at Bajaj Auto.</div><img src='photos/simulation.jpg' alt='LLM Image' class='inside-image'><br> Used LoRA adapters on custom scripting datasets, achieving 40% reduction in simulation automation latency."
+      },
+      {
+        "label": "MCP & Agents",
+        "backTitle": "MCP & AI Agents",
+        "backContent": "<div class='caption-back'>... from the Model Context Protocol server I architected at Dexian.</div><img src='photos/wholesale.jpg' alt='MCP Image' class='inside-image'><br> Exposing recruitment analytics to AI agents via SQL queries, aggregate formulas, and domain wiki — handling 100K+ API calls/day."
+      },
+      {
+        "label": "MLOps",
+        "backTitle": "MLOps & Cloud AI",
+        "backContent": "<div class='caption-back'>... from deploying ML pipelines on Azure, GCP, and AWS.</div><img src='photos/library.jpg' alt='MLOps Image' class='inside-image'> <br> Docker, Kubernetes, CI/CD, MLflow, Weights&amp;Biases — the full production ML stack."
+      },
+      {
+        "label": "Sports",
+        "backTitle": "Sports",
+        "backContent": "<div class='caption-back'>... from the Narendra Modi Stadium, India vs Pakistan CWC 2023. </div><img src='photos/indvpak.jpg' alt='Sport Image' class='inside-image'><br> The tickets were sold out in a few seconds; plug-ins and enthusiasm."
+      },
+      {
+        "label": "Rapport",
+        "backTitle": "Rapport Building",
+        "backContent": "<div class='caption-back'>... from the music festival Osheaga 2022 in Montreal, waiting for Dua Lipa. </div><img src='photos/rapport.jpg' alt='Rapport Image' class='inside-image'><br> Not knowing each other, we are now very good friends post 3 months."
+      },
+      {
+        "label": "Creativity",
+        "backTitle": "Creativity",
+        "backContent": "<div class='caption-back'>... from the year 2020 when Covid days wanted some undiscovered hobbies. </div><img src='photos/creative.jpg' alt='Computing Image' class='inside-image'> <br> The illustration is drawn on Adobe Illustrator. Who does she look like?"
+      }
+    ]
+  },
+
+  "skills": {
+    "categories": [
+      {
+        "title": "Generative AI & LLMs",
+        "items": "RAG (LangChain, LlamaIndex), Fine-tuning (LoRA, QLoRA), Prompt Engineering, Embeddings, MCP, vLLM, ONNX"
+      },
+      {
+        "title": "ML/DL Frameworks",
+        "items": "PyTorch, TensorFlow, scikit-learn, XGBoost, Hugging Face Transformers, FAISS, spaCy, OpenCV"
+      },
+      {
+        "title": "Cloud AI & MLOps",
+        "items": "Azure ML, GCP Vertex AI, AWS SageMaker, Docker, Kubernetes, MLflow, Weights&Biases, CI/CD (Jenkins, GitHub Actions)"
+      },
+      {
+        "title": "Languages & Data",
+        "items": "Python, C++, Java, SQL, FastAPI, MongoDB, Apache Airflow, Spark"
+      }
+    ],
+    "skillTags": [
+      {
+        "label": "Problem-solving",
+        "backTitle": "Problem-solving",
+        "backContent": "<div class='caption-back'>... from the protein ladder I worked with, in my internship at McGill University. </div><img src='photos/problem-solving.jpg' alt='Computing Image' class='inside-image'><br> I always enjoy multidisciplinary projects for problem-solving."
+      },
+      {
+        "label": "Simulation",
+        "backTitle": "Simulation",
+        "backContent": "<div class='caption-back'>... from a project where I used Simulation Optimization. </div><img src='photos/simulation.jpg' alt='Computing Image' class='inside-image'> <br> Here, it was for Hyperparameter Tuning of Machine Learning Models"
+      },
+      {
+        "label": "DSA",
+        "backTitle": "Data Structures and Algorithms",
+        "backContent": "<div class='caption-back'>...  from the year 2022 on geeksforgeeks, leetcode and interviewbit. </div><img src='photos/dsa.jpg' alt='Computing Image' class='inside-image'> <br> I also know basics of Dynamic Programming and Graph Theory."
+      }
+    ]
+  },
+
+  "projects": [
+    {
+      "title": "Analytics MCP Server (Dexian)",
+      "bullets": [
+        { "label": "Architecture", "text": "Architected and deployed a custom Model Context Protocol server on Azure, exposing recruitment analytics (SQL queries, aggregate formula introspection, domain wiki) to AI agents." },
+        { "label": "Scale", "text": "Handling 100K+ API calls/day across the centralized recruitment workspace." }
+      ],
+      "tags": ["MCP", "Azure", "AI Agents", "SQL"]
+    },
+    {
+      "title": "Enterprise RAG Teams Chatbot (Dexian)",
+      "bullets": [
+        { "label": "RAG Pipeline", "text": "Built and deployed a RAG-powered Microsoft Teams chatbot for 460+ users, integrating client SOPs, benefits info, vendor lists, HR-BP mappings, state-wise labour laws, and org hierarchy." },
+        { "label": "Teachable Layer", "text": "Added a per-team wiki layer enabling teams to teach the bot domain-specific knowledge without redeployment." }
+      ],
+      "tags": ["RAG", "LangChain", "Microsoft Teams", "Enterprise AI"]
+    },
+    {
+      "title": "RAG-Based Root Cause Analysis System (Bajaj Auto)",
+      "bullets": [
+        { "label": "Local RAG Stack", "text": "Deployed a Retrieval-Augmented stack (LangChain, Llama-3 vLLM, FAISS) to mine and index a decade of vehicle test, simulation, and inference data for Root Cause Analysis." },
+        { "label": "Impact", "text": "Reduced investigative turnaround time by 20% and improved FMEA closure rates." }
+      ],
+      "tags": ["LangChain", "Llama-3", "vLLM", "FAISS"]
+    },
+    {
+      "title": "LLM-Driven Scripting Automation (Bajaj Auto)",
+      "bullets": [
+        { "label": "Fine-tuning", "text": "Fine-tuned CodeLlama using LoRA adapters on custom Adams scripting datasets for natural-language-to-code translation." },
+        { "label": "Results", "text": "Achieved 40% reduction in end-to-end simulation automation latency." }
+      ],
+      "tags": ["LoRA", "CodeLlama", "NL-to-Code", "Fine-tuning"]
+    },
+    {
+      "title": "AI Interview Screener (Dexian)",
+      "bullets": [
+        { "text": "Developed an autonomous AI-driven interview bot capable of conducting structured technical screens, reducing recruiter screening overhead and standardizing candidate evaluation across roles." }
+      ],
+      "tags": ["LLM Agents", "Prompt Engineering", "Recruitment AI"]
+    },
+    {
+      "title": "Discrete Simulation Optimization for ML HP Tuning",
+      "githubUrl": "https://github.com/nkusharoraa/dissim",
+      "liveUrl": "https://github.com/nkusharoraa/dissim",
+      "bullets": [
+        { "label": "Optimization", "text": "Developed Python-based stochastic optimizers for automated ML hyperparameter tuning, reducing simulation tuning latency by 30% in high-dimensional discrete search spaces (20+ parameters)." },
+        { "label": "Validation", "text": "Validated AHA & SR methods with statistically significant gains over baselines on WDBC (0.89 MCC, p < 0.01)." }
+      ],
+      "tags": ["Hyperparameter Tuning", "Stochastic Optimization", "Python"]
+    },
+    {
+      "title": "BERT Biomedical NER & Protein Similarity (McGill University)",
+      "bullets": [
+        { "label": "Embeddings", "text": "Applied SBERT sentence-transformers to semantic protein similarity search pipelines, improving match accuracy by 15% over baseline sequence alignment." },
+        { "label": "NER", "text": "Fine-tuned domain-specific Hugging Face BERT, achieving precision/recall of 88%/85% on labeled biomedical text." }
+      ],
+      "tags": ["SBERT", "Hugging Face", "NER", "Embeddings"]
+    },
+    {
+      "title": "Markowitz Portfolio Optimization System",
+      "githubUrl": "https://nkusharoraa.github.io/Markowitz-Portfolio-Optimization/",
+      "liveUrl": "https://nkusharoraa.github.io/Markowitz-Portfolio-Optimization/",
+      "bullets": [
+        { "label": "Optimization Engine", "text": "Designed mean-variance optimization engine using Markowitz Theory and convex programming, achieving up to 20% portfolio risk reduction at targeted returns." },
+        { "label": "Web Platform", "text": "Deployed interactive web platform with 100+ automated time-series analyses, efficient frontier plotting, and Sharpe ratio benchmarking." }
+      ],
+      "tags": ["CVXPY", "Time Series", "Convex Optimization"]
+    }
+  ],
+
+  "experience": {
+    "industry": [
+      {
+        "company": "Dexian",
+        "location": "Pune, Maharashtra, India",
+        "url": "https://www.dexian.com/",
+        "hasLocationIcon": true,
+        "period": "March 2026 - Present",
+        "role": "AI Architect, Manager - AI Initiatives"
+      },
+      {
+        "company": "Bajaj Auto Limited",
+        "location": "Pune, Maharashtra, India",
+        "url": "https://www.bajajauto.com/about-us/the-world-favourite-indian",
+        "hasLocationIcon": true,
+        "period": "July 2023 - February 2026",
+        "role": "Assistant Manager, AI & Vehicle Dynamics, R&D"
+      },
+      {
+        "company": "Colonist LLC",
+        "location": "United States (Remote)",
+        "url": "https://colonist.io/about",
+        "hasLocationIcon": false,
+        "period": "January 2023 - June 2023",
+        "role": "QA Automation Engineer (Part-time)"
+      }
+    ],
+    "research": [
+      {
+        "institution": "McGill University",
+        "location": "Montreal, Quebec, Canada",
+        "url": "https://www.mcgill.ca/",
+        "hasLocationIcon": true,
+        "period": "May 2022 - July 2022",
+        "role": "Summer Research Associate under Prof. Adam Hendricks"
+      },
+      {
+        "institution": "National Tsing Hua University",
+        "location": "Taiwan (Remote)",
+        "url": "https://nthu-en.site.nthu.edu.tw/",
+        "hasLocationIcon": false,
+        "period": "June 2021 - July 2021",
+        "role": "Summer Research Associate under Prof. Lee-Wei Yang"
+      }
+    ],
+    "education": [
+      {
+        "institution": "Indian Institute of Technology Delhi",
+        "location": "Hauz Khas, New Delhi, India",
+        "url": "https://home.iitd.ac.in/",
+        "hasLocationIcon": true,
+        "period": "July 2019 - June 2023",
+        "degree": "Bachelor of Technology in Mechanical Engineering"
+      },
+      {
+        "institution": "Springfields College",
+        "location": "Moradabad, Uttar Pradesh, India",
+        "url": "https://www.springfieldscollege.com/",
+        "hasLocationIcon": true,
+        "period": "July 2016 - May 2018",
+        "degree": "Indian School Certificate Examinations"
+      },
+      {
+        "institution": "Tiny Tots College",
+        "location": "Moradabad, Uttar Pradesh, India",
+        "url": "https://ttcpareekh.com/",
+        "hasLocationIcon": true,
+        "period": "Apr 2014 - May 2016",
+        "degree": "Indian Certificate of Secondary Education"
+      }
+    ],
+    "cvLinks": {
+      "driveUrl": "https://drive.google.com/file/d/1YsFOrhnpmhjLKzL1oj3UJOsvr4c_XUE8/view?usp=sharing",
+      "downloadUrl": "Ankush_Arora_latest_CV.pdf"
+    }
+  },
+
+  "awards": [
+    {
+      "title": "MITx MicroMasters in Supply Chain Management",
+      "icon": "media/supply-chain.svg",
+      "infoUrl": "https://micromasters.mit.edu/scm/",
+      "description": "Successfully passed (DI) the MicroMasters in Supply Chain Management affiliated to Massachusetts Institute of Technology (MIT).",
+      "marksUrl": "https://credentials.edx.org/records/programs/shared/bec40b57c33d4a708ddad6eb2a164bd5",
+      "period": "2023-2024",
+      "certificates": [
+        { "code": "SC0x", "name": "Supply Chain Analytics", "description": "Core methodologies used in supply chain analysis and modeling, including statistics, regression, optimization and probability.", "url": "https://courses.edx.org/certificates/b1ac46147dc64eaaa31189d9d1dca144" },
+        { "code": "SC1x", "name": "Supply Chain Fundamentals", "description": "Fundamental concepts for logistics and supply chain management from both analytical and practical perspectives.", "url": "https://courses.edx.org/certificates/08cb596c6a38402e9b537c45d4a1c11f" },
+        { "code": "SC2x", "name": "Supply Chain Design", "description": "Design and optimization of the physical, financial, and information flows of a supply chain to enhance business performance.", "url": "https://courses.edx.org/certificates/ed14e046cd534f8e8028697b4bac5a76" },
+        { "code": "SC3x", "name": "Supply Chain Dynamics", "description": "Management and harnessing of the dynamics and interactions between firms and entities within a supply chain.", "url": "https://courses.edx.org/certificates/bc057ef0038a41e387fd2ec03880405c" },
+        { "code": "SC4x", "name": "Supply Chain Technology and Systems", "description": "Use of technology in supply chain systems from fundamental concepts to innovative applications.", "url": "https://courses.edx.org/certificates/9befcdb67caf41ae91d54384c9f37f21" }
+      ]
+    },
+    {
+      "title": "MITACS Globalink Research Internship",
+      "icon": "media/flight-icon.svg",
+      "infoUrl": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/",
+      "description": "Selected among top 1% for undergraduate research in Canada with 10000+ eligible applicants.",
+      "period": "2022",
+      "certificates": [
+        { "code": "GRI", "name": "McGill University, Montreal, Quebec, Canada", "description": "Completion of project in Biomechanical Engineering under the 84 days internship program with regular assessment.", "url": "https://drive.google.com/file/d/1anWPWrOP4eN4jM9P_8XevEj8Ucm7PU9i/view?usp=sharing" }
+      ]
+    },
+    {
+      "title": "Indian Institute of Technology Delhi",
+      "icon": "media/education-icon.svg",
+      "infoUrl": "https://home.iitd.ac.in/",
+      "certificates": [
+        { "code": "Teaching Assistant at IIT Delhi", "description": "Selected as a Teaching Assistant for Material Science on merit basis for a course of 400+ students.", "period": "2022", "url": "https://courses.edx.org/certificates/b1ac46147dc64eaaa31189d9d1dca144" },
+        { "code": "Department Change at IIT Delhi", "description": "Secured department change among top 9% in a batch of 1000+ students.", "period": "2021", "url": "https://drive.google.com/file/d/1ojUrLtRDxitZ0JNFszTfiSlU7dRb1Qq6/view?usp=sharing" }
+      ]
+    },
+    {
+      "title": "Joint Entrance Examination for Indian Institutes of Technology",
+      "icon": "media/math-icon.svg",
+      "infoUrl": "https://jeeadv.ac.in/",
+      "description": "Written the exam conducted by Indian Institute of Technology Roorkee",
+      "period": "2019",
+      "certificates": [
+        { "code": "Joint Entrance Examination", "description": "Secured All India Rank 67 in JEE Main Paper II.", "url": "https://drive.google.com/file/d/1JXWqo0xGmyC9PBBQVQGCXiZJKK9Gsvs-/view?usp=sharing" },
+        { "code": "Joint Entrance Examination", "description": "Secured top 0.2 percentile in JEE Main and Advanced with 1M+ candidates.", "url": "https://drive.google.com/file/d/1aLdH1W9qEiV40QVvvVuoVqiDflJZejGM/view?usp=sharing" }
+      ]
+    }
+  ]
+}

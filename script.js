@@ -1,20 +1,7 @@
-// ============================================================================
-// CONFIGURATION
-// ============================================================================
-
-/**
- * Central configuration object for the portfolio website
- * All hardcoded values are stored here for easy modification
- */
 const CONFIG = {
-    // URLs
     shareUrl: 'https://nkusharoraa.github.io/',
-
-    // Animation timings (in milliseconds)
     darkModeDelay: 800,
     notificationDuration: 3000,
-
-    // Element IDs
     elements: {
         modeToggle: 'mode-toggle',
         modeIcon: 'mode-icon',
@@ -28,8 +15,6 @@ const CONFIG = {
         backContent: 'backContent',
         introbackContent: 'introbackContent'
     },
-
-    // CSS classes
     classes: {
         darkMode: 'dark-mode',
         flip: 'flip',
@@ -43,14 +28,10 @@ const CONFIG = {
         skillBack: 'skill-back',
         introBack: 'intro-back'
     },
-
-    // Icon paths
     icons: {
         darkMode: 'media/toggle-dark-icon.svg',
         lightMode: 'media/toggle-light-icon.svg'
     },
-
-    // Layout adjustments
     layout: {
         skillsColumnMargins: {
             default: '-374px',
@@ -59,8 +40,6 @@ const CONFIG = {
             bothFlipped: '-276px'
         }
     },
-
-    // Data attributes
     dataAttributes: {
         backContent: 'data-back-content',
         backValue: 'data-back-value'
@@ -68,64 +47,300 @@ const CONFIG = {
 };
 
 // ============================================================================
+// RENDERING FROM DATA.JSON
+// ============================================================================
+
+function renderHero(data) {
+    const container = document.getElementById('heroContainer');
+    if (!container || !data.hero) return;
+
+    const socialHTML = data.hero.social.map(s =>
+        `<a href="${s.url}" target="_blank" class="social-icon">
+            <img src="${s.icon}" alt="${s.name}">
+        </a>`
+    ).join('');
+
+    container.innerHTML = `
+        <img src="${data.hero.profilePic}" alt="Profile Picture" class="profile-pic">
+        <div class="header-left">
+            <h1>Hi! I'm <span class="highlight-text">${data.hero.name}</span></h1>
+            <h3>${data.hero.tagline}</h3>
+            <div class="social-icons-beside">${socialHTML}</div>
+        </div>
+    `;
+}
+
+function renderAbout(data) {
+    const container = document.getElementById('aboutIntroContent');
+    if (!container || !data.about) return;
+
+    const tagsHTML = data.about.interestTags.map(tag =>
+        `<div class="tag-box-main1" data-back-content="${tag.backTitle}" data-back-value="${tag.backContent}">
+            <div class="tag-box">${tag.label}</div>
+        </div>`
+    ).join('');
+
+    container.innerHTML = `
+        <p>${data.about.intro}</p>
+        <p>Click any tag below to see what's behind each interest.</p>
+        ${tagsHTML}
+        <br>
+    `;
+}
+
+function renderSkills(data) {
+    const container = document.getElementById('skillsFrontContent');
+    if (!container || !data.skills) return;
+
+    const categoriesHTML = data.skills.categories.map((cat, i) => {
+        const divider = i < data.skills.categories.length - 1
+            ? '<hr class="subproject-divider">' : '';
+        return `
+            <div class="project">
+                <div class="project-title">${cat.title}</div>
+                <div class="project-description">${cat.items}</div>
+            </div>
+            ${divider}
+        `;
+    }).join('');
+
+    const tagsHTML = data.skills.skillTags.map(tag =>
+        `<div class="tag-box-main" data-back-content="${tag.backTitle}" data-back-value="${tag.backContent}">
+            <div class="tag-box">${tag.label}</div>
+        </div>`
+    ).join('');
+
+    container.innerHTML = categoriesHTML + '<hr class="subproject-divider">' + tagsHTML;
+}
+
+function renderProjects(data) {
+    const container = document.getElementById('projectsContainer');
+    if (!container || !data.projects) return;
+
+    const html = data.projects.map((proj, i) => {
+        const bulletItems = proj.bullets.map(b => {
+            const labelHTML = b.label ? `<strong>${b.label}:</strong> ` : '';
+            return `<li>
+                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
+                ${labelHTML}${b.text}
+            </li>`;
+        }).join('');
+
+        const tagsHTML = proj.tags.map(t =>
+            `<div class="tag-box-main"><div class="tag-box">${t}</div></div>`
+        ).join('');
+
+        let linkHTML = '';
+        if (proj.githubUrl) {
+            linkHTML = `
+                <div class="project-link-class">
+                    <a href="${proj.githubUrl}" target="_blank">
+                        <img src="media/github-icon.svg" alt="Project Link" class="project-link-icon">
+                    </a>
+                </div>
+                <a href="${proj.liveUrl || proj.githubUrl}" target="_blank" class="project-box-link"></a>
+            `;
+        }
+
+        const separator = (i > 0 && i % 2 === 0)
+            ? '<h2><span class="section-name-hidden"> Projects </span></h2><hr class="section-divider">'
+            : '';
+
+        return `
+            ${separator}
+            ${linkHTML}
+            <div class="project-box">
+                <div class="project">
+                    <div class="project-title">${proj.title}</div>
+                    <div class="project-description"><ul>${bulletItems}</ul></div>
+                    ${tagsHTML}
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    container.innerHTML = html;
+}
+
+function renderExperience(data) {
+    const container = document.getElementById('cvTimeline');
+    if (!container || !data.experience) return;
+
+    const exp = data.experience;
+
+    const industryItems = exp.industry.map((job, i) => {
+        const icon = job.hasLocationIcon ? 'media/location-icon.svg' : 'media/no-location.svg';
+        const divider = i < exp.industry.length - 1 ? '<hr class="subproject-divider">' : '';
+        return `
+            <li>
+                <a href="${job.url}" target="_blank">
+                    <img src="${icon}" alt="Location Link" class="project-link-icon">
+                </a><b>${job.company}, ${job.location}</b>
+                <span class="time-period">[${job.period}]</span><br>
+                ${job.role}
+            </li>
+            ${divider}
+        `;
+    }).join('');
+
+    const researchItems = exp.research.map((r, i) => {
+        const icon = r.hasLocationIcon ? 'media/location-icon.svg' : 'media/no-location.svg';
+        const divider = i < exp.research.length - 1 ? '<hr class="subproject-divider">' : '';
+        return `
+            <li>
+                <a href="${r.url}" target="_blank">
+                    <img src="${icon}" alt="Location Link" class="project-link-icon">
+                </a><b>${r.institution}, ${r.location}</b>
+                <span class="time-period">[${r.period}]</span><br>
+                ${r.role}
+            </li>
+            ${divider}
+        `;
+    }).join('');
+
+    const educationItems = exp.education.map((e, i) => {
+        const icon = e.hasLocationIcon ? 'media/location-icon.svg' : 'media/no-location.svg';
+        const divider = i < exp.education.length - 1 ? '<hr class="subproject-divider">' : '';
+        return `
+            <li>
+                <a href="${e.url}" target="_blank">
+                    <img src="${icon}" alt="Location Link" class="project-link-icon">
+                </a><b>${e.institution}, ${e.location}</b>
+                <span class="time-period">[${e.period}]</span><br>
+                ${e.degree}
+            </li>
+            ${divider}
+        `;
+    }).join('');
+
+    container.innerHTML = `
+        <div class="timeline-item">
+            <div class="timeline-icon"><img src="media/work-icon.svg" alt="Work Experience Icon"></div>
+            <div class="timeline-content">
+                <div class="skills">
+                    <div class="project-title">Industry Experience</div>
+                    <div class="project-description"><ul>${industryItems}</ul></div>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-icon"><img src="media/research-icon.svg" alt="Research Experience Icon"></div>
+            <div class="timeline-content">
+                <div class="skills">
+                    <div class="project-title">Research Experience</div>
+                    <div class="project-description"><ul>${researchItems}</ul></div>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-icon"><img src="media/education-icon.svg" alt="Education Icon"></div>
+            <div class="timeline-content">
+                <div class="skills">
+                    <div class="project-title">Education</div>
+                    <div class="project-description"><ul>${educationItems}</ul></div>
+                </div>
+            </div>
+        </div>
+        <p><span class="cv-drive-icon">
+            <a href="${exp.cvLinks.driveUrl}" target="_blank">
+                <img src="media/drive-icon.svg" alt="CV Link" class="project-link-icon">
+            </a> You can download my CV <span class="here-link"><a href="${exp.cvLinks.downloadUrl}" target="_blank">here</a>.</span>
+        </span></p>
+    `;
+}
+
+function renderAwards(data) {
+    const container = document.getElementById('awardsTimeline');
+    if (!container || !data.awards) return;
+
+    const html = data.awards.map(award => {
+        const certsHTML = award.certificates.map(cert => {
+            const certPeriod = cert.period
+                ? ` <span class="time-period">[${cert.period}]</span>` : '';
+            const certName = cert.name
+                ? `: ${cert.name} <br>` : '';
+            return `
+                <li>
+                    <a href="${cert.url}" target="_blank">
+                        <img src="media/certificate-icon.svg" alt="Certificate Link" class="project-link-icon">
+                    </a>
+                    <span class="mini-heading">${cert.code}</span>${certName}
+                    ${cert.description}${certPeriod}
+                </li>
+            `;
+        }).join('');
+
+        const descHTML = award.description
+            ? `${award.marksUrl ? `<a href="${award.marksUrl}" target="_blank"><img src="media/numbers-icon.svg" alt="Marks Link" class="project-link-icon"></a> ` : ''}${award.description} ${award.period ? `<span class="time-period">[${award.period}]</span>` : ''}`
+            : (award.period ? `<span class="time-period">[${award.period}]</span>` : '');
+
+        return `
+            <div class="timeline-item">
+                <div class="timeline-icon"><img src="${award.icon}" alt="Award Icon"></div>
+                <div class="timeline-content">
+                    <div class="skills">
+                        <div class="project-title">
+                            ${award.title}
+                            <a href="${award.infoUrl}" target="_blank">
+                                <img src="media/info-icon.svg" alt="Information Link" class="project-link-icon">
+                            </a>
+                        </div>
+                        <div class="project-description">
+                            ${descHTML}
+                            <ul>${certsHTML}</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    container.innerHTML = html;
+}
+
+function renderFooter(data) {
+    const container = document.getElementById('footerSocial');
+    if (!container || !data.hero) return;
+
+    container.innerHTML = data.hero.social.map(s =>
+        `<a href="${s.url}" target="_blank" class="social-icon">
+            <img src="${s.icon}" alt="${s.name}">
+        </a>`
+    ).join('');
+}
+
+// ============================================================================
 // UTILITY FUNCTIONS
 // ============================================================================
 
-/**
- * Copies text to clipboard with fallback for older browsers
- * @param {string} text - The text to copy to clipboard
- * @returns {Promise<void>}
- */
 function copyToClipboard(text) {
     if (!navigator.clipboard) {
         return fallbackCopyTextToClipboard(text);
     }
-
     return navigator.clipboard.writeText(text).then(
-        function () {
-            console.log('Async: Copying to clipboard was successful!');
-            showNotification();
-        },
-        function (err) {
-            console.error('Async: Could not copy text: ', err);
-        }
+        function () { showNotification(); },
+        function (err) { console.error('Could not copy text: ', err); }
     );
 }
 
-/**
- * Fallback method for copying text to clipboard (for older browsers)
- * @param {string} text - The text to copy
- */
 function fallbackCopyTextToClipboard(text) {
     const textArea = document.createElement("textarea");
     textArea.value = text;
-
-    // Avoid scrolling to bottom
     textArea.style.top = "0";
     textArea.style.left = "0";
     textArea.style.position = "fixed";
-
     document.body.appendChild(textArea);
     textArea.focus();
     textArea.select();
-
     try {
         const successful = document.execCommand('copy');
-        const msg = successful ? 'successful' : 'unsuccessful';
-        console.log('Fallback: Copying text command was ' + msg);
-        if (successful) {
-            showNotification();
-        }
+        if (successful) showNotification();
     } catch (err) {
-        console.error('Fallback: Oops, unable to copy', err);
+        console.error('Fallback: Unable to copy', err);
     }
-
     document.body.removeChild(textArea);
 }
 
-/**
- * Shows the copy notification for a specified duration
- */
 function showNotification() {
     const notification = document.getElementById(CONFIG.elements.copyNotification);
     notification.className = CONFIG.classes.show;
@@ -134,32 +349,6 @@ function showNotification() {
     }, CONFIG.notificationDuration);
 }
 
-/**
- * Updates the skills column margin based on flip states
- * @param {boolean} isIntroFlipped - Whether intro container is flipped
- * @param {boolean} isSkillsFlipped - Whether skills container is flipped
- */
-function updateSkillsColumnMargin(isIntroFlipped, isSkillsFlipped) {
-    const skillsColumn = document.getElementById(CONFIG.elements.skillscolumncontainer);
-    const margins = CONFIG.layout.skillsColumnMargins;
-
-    if (isIntroFlipped && isSkillsFlipped) {
-        skillsColumn.style.marginTop = margins.bothFlipped;
-    } else if (isIntroFlipped) {
-        skillsColumn.style.marginTop = margins.introFlipped;
-    } else if (isSkillsFlipped) {
-        skillsColumn.style.marginTop = margins.skillsFlipped;
-    } else {
-        skillsColumn.style.marginTop = margins.default;
-    }
-}
-
-/**
- * Creates HTML content for flip card back
- * @param {string} title - The title content
- * @param {string} description - The description content
- * @returns {string} HTML string
- */
 function createFlipCardBackContent(title, description) {
     return `
         <div class="project-title">${title}</div>
@@ -168,27 +357,17 @@ function createFlipCardBackContent(title, description) {
 }
 
 // ============================================================================
-// DARK MODE FUNCTIONALITY
+// DARK MODE
 // ============================================================================
 
-/**
- * Initializes dark mode toggle functionality
- */
 function initializeDarkMode() {
     const modeToggle = document.getElementById(CONFIG.elements.modeToggle);
     const modeIcon = document.getElementById(CONFIG.elements.modeIcon);
-
     modeToggle.addEventListener('click', function () {
-        // Add a delay before toggling dark mode for smooth transition
         setTimeout(function () {
             document.body.classList.toggle(CONFIG.classes.darkMode);
-
-            // Update icon based on current mode
-            if (document.body.classList.contains(CONFIG.classes.darkMode)) {
-                modeIcon.src = CONFIG.icons.lightMode;
-            } else {
-                modeIcon.src = CONFIG.icons.darkMode;
-            }
+            modeIcon.src = document.body.classList.contains(CONFIG.classes.darkMode)
+                ? CONFIG.icons.lightMode : CONFIG.icons.darkMode;
         }, CONFIG.darkModeDelay);
     });
 }
@@ -197,9 +376,6 @@ function initializeDarkMode() {
 // FLIP CARD INTERACTIONS
 // ============================================================================
 
-/**
- * Initializes flip card functionality for skills and intro sections
- */
 function initializeFlipCards() {
     const skillsContainer = document.getElementById(CONFIG.elements.skillsContainer);
     const introContainer = document.getElementById(CONFIG.elements.introContainer);
@@ -208,58 +384,41 @@ function initializeFlipCards() {
     const backContentElement = document.getElementById(CONFIG.elements.backContent);
     const introbackContentElement = document.getElementById(CONFIG.elements.introbackContent);
 
-    // Initialize skills tag box interactions (only in about section)
     document.querySelectorAll('#about .' + CONFIG.classes.tagBoxMain).forEach(tagBox => {
         tagBox.addEventListener('click', () => {
             const backContent = tagBox.getAttribute(CONFIG.dataAttributes.backContent);
             const backValue = tagBox.getAttribute(CONFIG.dataAttributes.backValue);
-
-            // Update back content
             backContentElement.innerHTML = createFlipCardBackContent(backContent, backValue);
-
-            // Toggle flip class
             skillsContainer.classList.toggle(CONFIG.classes.flip);
             backContentElement.style.display = skillsContainer.classList.contains(CONFIG.classes.flip) ? 'block' : 'none';
-
-            // Update margin if intro is also flipped
             if (introContainer.classList.contains(CONFIG.classes.flip)) {
                 skillscolumncontainer.style.marginTop = CONFIG.layout.skillsColumnMargins.bothFlipped;
             }
         });
     });
 
-    // Initialize intro tag box interactions (only in about section)
     document.querySelectorAll('#about .' + CONFIG.classes.tagBoxMain1).forEach(tagBox => {
         tagBox.addEventListener('click', () => {
             const backContent = tagBox.getAttribute(CONFIG.dataAttributes.backContent);
             const backValue = tagBox.getAttribute(CONFIG.dataAttributes.backValue);
-
-            // Update back content
             introbackContentElement.innerHTML = createFlipCardBackContent(backContent, backValue);
-
-            // Toggle flip class
             introContainer.classList.toggle(CONFIG.classes.flip);
             introfrontContainer.style.display = 'none';
             introbackContentElement.style.display = introContainer.classList.contains(CONFIG.classes.flip) ? 'block' : 'none';
-
-            // Update margin based on skills flip state
             skillscolumncontainer.style.marginTop = skillsContainer.classList.contains(CONFIG.classes.flip)
                 ? CONFIG.layout.skillsColumnMargins.skillsFlipped
                 : CONFIG.layout.skillsColumnMargins.introFlipped;
         });
     });
 
-    // Click to flip back - Skills
     document.querySelector('.' + CONFIG.classes.skillBack).addEventListener('click', () => {
         skillsContainer.classList.remove(CONFIG.classes.flip);
         backContentElement.style.display = 'none';
-
         if (introContainer.classList.contains(CONFIG.classes.flip)) {
             skillscolumncontainer.style.marginTop = CONFIG.layout.skillsColumnMargins.introFlipped;
         }
     });
 
-    // Click to flip back - Intro
     document.querySelector('.' + CONFIG.classes.introBack).addEventListener('click', () => {
         introContainer.classList.remove(CONFIG.classes.flip);
         introbackContentElement.style.display = 'none';
@@ -269,37 +428,21 @@ function initializeFlipCards() {
 }
 
 // ============================================================================
-// SHARE FUNCTIONALITY
+// SHARE & NAVIGATION
 // ============================================================================
 
-/**
- * Initializes share button functionality
- */
 function initializeShareButtons() {
-    // Desktop share button
     document.getElementById(CONFIG.elements.shareButton).addEventListener('click', function () {
         copyToClipboard(CONFIG.shareUrl);
     });
-
-    // Mobile share button
     document.getElementById(CONFIG.elements.shareButtonMob).addEventListener('click', function () {
         copyToClipboard(CONFIG.shareUrl);
     });
 }
 
-// ============================================================================
-// NAVIGATION FUNCTIONALITY
-// ============================================================================
-
-/**
- * Sets the active navigation item based on current section
- * @param {string} currentSectionId - The ID of the current section
- * @param {NodeList} navItems - List of navigation item elements
- * @param {NodeList} navIcons - List of navigation icon elements
- */
 function setActiveNavItem(currentSectionId, navItems, navIcons) {
     navItems.forEach((item, index) => {
-        const sectionId = item.getAttribute("href").slice(1); // Remove '#'
+        const sectionId = item.getAttribute("href").slice(1);
         if (sectionId === currentSectionId) {
             item.classList.add(CONFIG.classes.active);
             navIcons[index].classList.add(CONFIG.classes.activeIcon);
@@ -310,15 +453,8 @@ function setActiveNavItem(currentSectionId, navItems, navIcons) {
     });
 }
 
-/**
- * Checks which section is currently in view and updates navigation
- * @param {NodeList} sections - List of section elements
- * @param {NodeList} navItems - List of navigation item elements
- * @param {NodeList} navIcons - List of navigation icon elements
- */
 function checkNavItems(sections, navItems, navIcons) {
     let currentSection = "";
-
     sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -326,38 +462,22 @@ function checkNavItems(sections, navItems, navIcons) {
             currentSection = section.getAttribute("id");
         }
     });
-
     setActiveNavItem(currentSection, navItems, navIcons);
 }
 
-/**
- * Initializes navigation highlighting and smooth scrolling
- */
 function initializeNavigation() {
     const navItems = document.querySelectorAll("." + CONFIG.classes.navItem);
     const navIcons = document.querySelectorAll("." + CONFIG.classes.navIcon);
     const sections = document.querySelectorAll("section");
-
-    // Scroll event listener
     window.addEventListener("scroll", () => checkNavItems(sections, navItems, navIcons));
-
-    // Click event for nav icons - smooth scroll
     navIcons.forEach((icon, index) => {
         icon.addEventListener("click", function (event) {
             event.preventDefault();
-
             const sectionId = navItems[index].getAttribute("href").slice(1);
             const section = document.getElementById(sectionId);
-            const offsetTop = section.offsetTop;
-
-            window.scrollTo({
-                top: offsetTop,
-                behavior: "smooth"
-            });
+            window.scrollTo({ top: section.offsetTop, behavior: "smooth" });
         });
     });
-
-    // Initial check on page load
     checkNavItems(sections, navItems, navIcons);
 }
 
@@ -365,15 +485,22 @@ function initializeNavigation() {
 // INITIALIZATION
 // ============================================================================
 
-/**
- * Main initialization function
- * Called when DOM is fully loaded
- */
 document.addEventListener('DOMContentLoaded', function () {
-    initializeDarkMode();
-    initializeFlipCards();
-    initializeShareButtons();
-    initializeNavigation();
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            renderHero(data);
+            renderAbout(data);
+            renderSkills(data);
+            renderProjects(data);
+            renderExperience(data);
+            renderAwards(data);
+            renderFooter(data);
 
-    console.log('Portfolio website initialized successfully');
+            initializeDarkMode();
+            initializeFlipCards();
+            initializeShareButtons();
+            initializeNavigation();
+        })
+        .catch(err => console.error('Failed to load data.json:', err));
 });

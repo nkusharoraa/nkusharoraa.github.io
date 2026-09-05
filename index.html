@@ -56,34 +56,13 @@
             </button>
         </nav>
 
-        <!-- ========================================== -->
-        <!-- HEADER / HERO SECTION                      -->
-        <!-- ========================================== -->
+        <!-- HEADER / HERO - rendered from data.json -->
         <div class="header">
-            <div class="profile-container">
-                <img src="photos/your-profile-pic-url.jpg" alt="Profile Picture" class="profile-pic">
-                <div class="header-left">
-                    <h1>Hi! I'm <span class="highlight-text">Ankush</span></h1>
-                    <h3>AI Architect building production LLM systems and intelligent agents.
-                    </h3>
-                    <div class="social-icons-beside">
-                        <a href="https://www.linkedin.com/in/nkusharoraa" target="_blank" class="social-icon">
-                            <img src="media/linkedin-icon.svg" alt="LinkedIn">
-                        </a>
-                        <a href="https://github.com/nkusharoraa" target="_blank" class="social-icon">
-                            <img src="media/github-icon.svg" alt="Github">
-                        </a>
-                        <a href="mailto:nkusharoraa@gmail.com" target="_blank" class="social-icon">
-                            <img src="media/email-icon.svg" alt="Email">
-                        </a>
-                    </div>
-                </div>
+            <div class="profile-container" id="heroContainer">
             </div>
         </div>
 
-        <!-- ========================================== -->
-        <!-- ABOUT SECTION                              -->
-        <!-- ========================================== -->
+        <!-- ABOUT SECTION - rendered from data.json -->
         <section id="about" class="about-me">
             <div class="column">
                 <h2><span class="section-name"> About</span></h2>
@@ -91,84 +70,22 @@
                 <div class="intro flip-container" id="introContainer">
                     <div class="flipper">
                         <div id="introfrontContainer" class="front">
-                            <div class="intro">
-                                <p>AI Engineer with 3+ years building production ML/LLM systems
-                                    across automotive R&D and enterprise recruitment.
-                                    Currently leading AI initiatives at Dexian — including a 100K+ calls/day
-                                    MCP server, a 460-user enterprise chatbot, and an AI-driven interview platform.
-                                    IIT Delhi graduate with deep expertise in RAG architectures,
-                                    LLM fine-tuning (LoRA), surrogate modelling, and end-to-end MLOps.
-                                </p>
-
-                                <p>
-                                    Click any tag below to see what's behind each interest.
-                                </p>
-                                <div class="tag-box-main1" data-back-content="RAG Systems"
-                                    data-back-value="<div class = 'caption-back'>... building retrieval-augmented generation systems at scale.</div><img src='photos/programming.jpg' alt='RAG Image' class='inside-image'> <br> From enterprise chatbots to root cause analysis pipelines — RAG is my go-to architecture for grounding LLMs in domain knowledge.">
-                                    <div class="tag-box">
-                                        RAG Systems
-                                    </div>
-                                </div>
-                                <div class="tag-box-main1" data-back-content="LLM Fine-tuning"
-                                    data-back-value="<div class = 'caption-back'>... from fine-tuning CodeLlama for NL-to-code translation at Bajaj Auto.</div><img src='photos/simulation.jpg' alt='LLM Image' class='inside-image'><br> Used LoRA adapters on custom scripting datasets, achieving 40% reduction in simulation automation latency.">
-                                    <div class="tag-box">
-                                        LLM Fine-tuning
-                                    </div>
-                                </div>
-                                <div class="tag-box-main1" data-back-content="MCP & AI Agents"
-                                    data-back-value="<div class = 'caption-back'>... from the Model Context Protocol server I architected at Dexian.</div><img src='photos/wholesale.jpg' alt='MCP Image' class='inside-image'><br> Exposing recruitment analytics to AI agents via SQL queries, aggregate formulas, and domain wiki — handling 100K+ API calls/day.">
-                                    <div class="tag-box">
-                                        MCP & Agents
-                                    </div>
-                                </div>
-                                <div class="tag-box-main1" data-back-content="MLOps & Cloud AI"
-                                    data-back-value="<div class = 'caption-back'>... from deploying ML pipelines on Azure, GCP, and AWS.</div><img src='photos/library.jpg' alt='MLOps Image' class='inside-image'> <br> Docker, Kubernetes, CI/CD, MLflow, Weights&amp;Biases — the full production ML stack.">
-                                    <div class="tag-box">
-                                        MLOps
-                                    </div>
-                                </div>
-                                <div class="tag-box-main1" data-back-content="Sports"
-                                    data-back-value="<div class = 'caption-back'>... from the Narendra Modi Stadium, India vs Pakistan CWC 2023. </div><img src='photos/indvpak.jpg' alt='Sport Image' class='inside-image'><br> The tickets were sold out in a few seconds; plug-ins and enthusiasm.">
-                                    <div class="tag-box">
-                                        Sports
-                                    </div>
-                                </div>
-                                <div class="tag-box-main1" data-back-content="Rapport Building"
-                                    data-back-value="<div class = 'caption-back'>... from the music festival Osheaga 2022 in Montreal, waiting for Dua Lipa. </div><img src='photos/rapport.jpg' alt='Rapport Image' class='inside-image'><br> Not knowing each other, we are now very good friends post 3 months.">
-                                    <div class="tag-box">
-                                        Rapport
-                                    </div>
-                                </div>
-                                <div class="tag-box-main1" data-back-content="Creativity"
-                                    data-back-value="<div class = 'caption-back'>... from the year 2020 when Covid days wanted some undiscovered hobbies. </div><img src='photos/creative.jpg' alt='Computing Image' class='inside-image'> <br> The illustration is drawn on Adobe Illustrator. Who does she look like?">
-                                    <div class="tag-box">
-                                        Creativity
-                                    </div>
-                                </div>
-                                <br>
+                            <div class="intro" id="aboutIntroContent">
                             </div>
                         </div>
                         <div class="back intro-back">
                             <div class="intro">
                                 <div id="introbackContent" class="project">
-                                    <div class="project-title">
-                                        Placeholder Title
-                                    </div>
-                                    <div class="project-description">
-                                        Placeholder description content.
-                                    </div>
+                                    <div class="project-title">Placeholder Title</div>
+                                    <div class="project-description">Placeholder description content.</div>
                                 </div>
                             </div>
                         </div>
                         <div class="dummy">
                             <div class="intro">
                                 <div id="intro-dummy-content" class="project">
-                                    <div class="project-title">
-                                        Placeholder Title
-                                    </div>
-                                    <div class="project-description">
-                                        Placeholder description content.
-                                    </div>
+                                    <div class="project-title">Placeholder Title</div>
+                                    <div class="project-description">Placeholder description content.</div>
                                 </div>
                             </div>
                         </div>
@@ -181,72 +98,14 @@
                 <div class="skills flip-container" id="skillsContainer">
                     <div class="flipper">
                         <div class="front">
-                            <div class="skills">
-                                <div class="project">
-                                    <div class="project-title">
-                                        Generative AI & LLMs
-                                    </div>
-                                    <div class="project-description">
-                                        RAG (LangChain, LlamaIndex), Fine-tuning (LoRA, QLoRA), Prompt Engineering, Embeddings, MCP, vLLM, ONNX
-                                    </div>
-                                </div>
-                                <hr class="subproject-divider">
-                                <div class="project">
-                                    <div class="project-title">
-                                        ML/DL Frameworks
-                                    </div>
-                                    <div class="project-description">
-                                        PyTorch, TensorFlow, scikit-learn, XGBoost, Hugging Face Transformers, FAISS, spaCy, OpenCV
-                                    </div>
-                                </div>
-                                <hr class="subproject-divider">
-                                <div class="project">
-                                    <div class="project-title">
-                                        Cloud AI & MLOps
-                                    </div>
-                                    <div class="project-description">
-                                        Azure ML, GCP Vertex AI, AWS SageMaker, Docker, Kubernetes, MLflow, Weights&Biases, CI/CD (Jenkins, GitHub Actions)
-                                    </div>
-                                </div>
-                                <hr class="subproject-divider">
-                                <div class="project">
-                                    <div class="project-title">
-                                        Languages & Data
-                                    </div>
-                                    <div class="project-description">
-                                        Python, C++, Java, SQL, FastAPI, MongoDB, Apache Airflow, Spark
-                                    </div>
-                                </div>
-                                <hr class="subproject-divider">
-                                <div class="tag-box-main" data-back-content="Problem-solving"
-                                    data-back-value="<div class = 'caption-back'>... from the protein ladder I worked with, in my internship at McGill University. </div><img src='photos/problem-solving.jpg' alt='Computing Image' class='inside-image'><br> I always enjoy multidisciplinary projects for problem-solving.">
-                                    <div class="tag-box">
-                                        Problem-solving
-                                    </div>
-                                </div>
-                                <div class="tag-box-main" data-back-content="Simulation"
-                                    data-back-value="<div class = 'caption-back'>... from a project where I used Simulation Optimization. </div><img src='photos/simulation.jpg' alt='Computing Image' class='inside-image'> <br> Here, it was for Hyperparameter Tuning of Machine Learning Models">
-                                    <div class="tag-box">
-                                        Simulation
-                                    </div>
-                                </div>
-                                <div class="tag-box-main" data-back-content="Data Structures and Algorithms"
-                                    data-back-value="<div class = 'caption-back'>...  from the year 2022 on geeksforgeeks, leetcode and interviewbit. </div><img src='photos/dsa.jpg' alt='Computing Image' class='inside-image'> <br> I also know basics of Dynamic Programming and Graph Theory.">
-                                    <div class="tag-box">
-                                        DSA
-                                    </div>
-                                </div>
+                            <div class="skills" id="skillsFrontContent">
                             </div>
                         </div>
                         <div class="back skill-back">
                             <div class="skills">
                                 <div id="backContent" class="project">
-                                    <div class="project-title">
-                                        Placeholder Title
-                                    </div>
-                                    <div class="project-description">
-                                        Placeholder description content.
-                                    </div>
+                                    <div class="project-title">Placeholder Title</div>
+                                    <div class="project-description">Placeholder description content.</div>
                                 </div>
                             </div>
                         </div>
@@ -255,619 +114,32 @@
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- PROJECTS SECTION                           -->
-        <!-- ========================================== -->
+        <!-- PROJECTS SECTION - rendered from data.json -->
         <section id="projects" class="projects">
             <h2><span class="section-name"> Projects</span></h2>
             <hr class="section-divider">
-
-            <div class="project-box">
-                <div class="project">
-                    <div class="project-title">
-                        Analytics MCP Server (Dexian)
-                    </div>
-                    <div class="project-description">
-                        <ul>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>Architecture:</strong> Architected and deployed a custom Model Context Protocol server on Azure, exposing recruitment analytics (SQL queries, aggregate formula introspection, domain wiki) to AI agents.
-                            </li>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>Scale:</strong> Handling 100K+ API calls/day across the centralized recruitment workspace.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">MCP</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Azure</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">AI Agents</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">SQL</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-box">
-                <div class="project">
-                    <div class="project-title">
-                        Enterprise RAG Teams Chatbot (Dexian)
-                    </div>
-                    <div class="project-description">
-                        <ul>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>RAG Pipeline:</strong> Built and deployed a RAG-powered Microsoft Teams chatbot for 460+ users, integrating client SOPs, benefits info, vendor lists, HR-BP mappings, state-wise labour laws, and org hierarchy.
-                            </li>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>Teachable Layer:</strong> Added a per-team wiki layer enabling teams to teach the bot domain-specific knowledge without redeployment.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">RAG</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">LangChain</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Microsoft Teams</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Enterprise AI</div>
-                    </div>
-                </div>
-            </div>
-
-            <h2><span class="section-name-hidden"> Projects </span></h2>
-            <h2><span class="section-name-hidden"> Projects </span></h2>
-            <hr class="section-divider">
-
-            <div class="project-box">
-                <div class="project">
-                    <div class="project-title">
-                        RAG-Based Root Cause Analysis System (Bajaj Auto)
-                    </div>
-                    <div class="project-description">
-                        <ul>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>Local RAG Stack:</strong> Deployed a Retrieval-Augmented stack (LangChain, Llama-3 vLLM, FAISS) to mine and index a decade of vehicle test, simulation, and inference data for Root Cause Analysis.
-                            </li>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>Impact:</strong> Reduced investigative turnaround time by 20% and improved FMEA closure rates.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">LangChain</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Llama-3</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">vLLM</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">FAISS</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-box">
-                <div class="project">
-                    <div class="project-title">
-                        LLM-Driven Scripting Automation (Bajaj Auto)
-                    </div>
-                    <div class="project-description">
-                        <ul>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>Fine-tuning:</strong> Fine-tuned CodeLlama using LoRA adapters on custom Adams scripting datasets for natural-language-to-code translation.
-                            </li>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>Results:</strong> Achieved 40% reduction in end-to-end simulation automation latency.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">LoRA</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">CodeLlama</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">NL-to-Code</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Fine-tuning</div>
-                    </div>
-                </div>
-            </div>
-
-            <h2><span class="section-name-hidden"> Projects </span></h2>
-            <hr class="section-divider">
-
-            <div class="project-box">
-                <div class="project">
-                    <div class="project-title">
-                        AI Interview Screener (Dexian)
-                    </div>
-                    <div class="project-description">
-                        <ul>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                Developed an autonomous AI-driven interview bot capable of conducting structured technical screens, reducing recruiter screening overhead and standardizing candidate evaluation across roles.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">LLM Agents</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Prompt Engineering</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Recruitment AI</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-link-class"> <a href="https://github.com/nkusharoraa/dissim" target="_blank">
-                    <img src="media/github-icon.svg" alt="Project Link" class="project-link-icon">
-                </a></div>
-            <a href="https://github.com/nkusharoraa/dissim" target="_blank" class="project-box-link">
-            </a>
-            <div class="project-box">
-                <div class="project">
-                    <div class="project-title">
-                        Discrete Simulation Optimization for ML HP Tuning
-                    </div>
-                    <div class="project-description">
-                        <ul>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>Optimization:</strong> Developed Python-based stochastic optimizers for automated ML hyperparameter tuning, reducing simulation tuning latency by 30% in high-dimensional discrete search spaces (20+ parameters).
-                            </li>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>Validation:</strong> Validated AHA & SR methods with statistically significant gains over baselines on WDBC (0.89 MCC, p < 0.01).
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Hyperparameter Tuning</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Stochastic Optimization</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Python</div>
-                    </div>
-                </div>
-            </div>
-
-            <h2><span class="section-name-hidden"> Projects </span></h2>
-            <hr class="section-divider">
-
-            <div class="project-box">
-                <div class="project">
-                    <div class="project-title">
-                        BERT Biomedical NER & Protein Similarity (McGill University)
-                    </div>
-                    <div class="project-description">
-                        <ul>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>Embeddings:</strong> Applied SBERT sentence-transformers to semantic protein similarity search pipelines, improving match accuracy by 15% over baseline sequence alignment.
-                            </li>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>NER:</strong> Fine-tuned domain-specific Hugging Face BERT, achieving precision/recall of 88%/85% on labeled biomedical text.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">SBERT</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Hugging Face</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">NER</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Embeddings</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-link-class"> <a href="https://nkusharoraa.github.io/Markowitz-Portfolio-Optimization/"
-                    target="_blank">
-                    <img src="media/github-icon.svg" alt="Project Link" class="project-link-icon">
-                </a></div>
-            <a href="https://nkusharoraa.github.io/Markowitz-Portfolio-Optimization/" target="_blank"
-                class="project-box-link">
-            </a>
-            <div class="project-box">
-                <div class="project">
-                    <div class="project-title">
-                        Markowitz Portfolio Optimization System
-                    </div>
-                    <div class="project-description">
-                        <ul>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>Optimization Engine:</strong> Designed mean-variance optimization engine using Markowitz Theory and convex programming, achieving up to 20% portfolio risk reduction at targeted returns.
-                            </li>
-                            <li>
-                                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                                <strong>Web Platform:</strong> Deployed interactive web platform with 100+ automated time-series analyses, efficient frontier plotting, and Sharpe ratio benchmarking.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">CVXPY</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Time Series</div>
-                    </div>
-                    <div class="tag-box-main">
-                        <div class="tag-box">Convex Optimization</div>
-                    </div>
-                </div>
-            </div>
+            <div id="projectsContainer"></div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- BACKGROUND / CV SECTION                    -->
-        <!-- ========================================== -->
+        <!-- BACKGROUND / CV SECTION - rendered from data.json -->
         <section id="cv" class="cv">
             <h2><span class="section-name"> Background </span></h2>
             <hr class="section-divider">
-
-            <div class="timeline">
-                <!-- Work Experience -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="media/work-icon.svg" alt="Work Experience Icon">
-                    </div>
-                    <div class="timeline-content">
-                        <div class="skills">
-                            <div class="project-title">
-                                Industry Experience
-                            </div>
-                            <div class="project-description">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.dexian.com/" target="_blank">
-                                            <img src="media/location-icon.svg" alt="Location Link"
-                                                class="project-link-icon">
-                                        </a><b>Dexian, Pune, Maharashtra, India</b> <span
-                                            class="time-period">[March 2026 - Present]</span><br>
-                                        AI Architect, Manager - AI Initiatives
-                                    </li>
-                                    <hr class="subproject-divider">
-                                    <li>
-                                        <a href="https://www.bajajauto.com/about-us/the-world-favourite-indian"
-                                            target="_blank">
-                                            <img src="media/location-icon.svg" alt="Location Link"
-                                                class="project-link-icon">
-                                        </a><b>Bajaj Auto Limited, Pune, Maharashtra, India</b> <span
-                                            class="time-period">[July 2023 - February 2026]</span><br>
-                                        Assistant Manager, AI & Vehicle Dynamics, R&D
-                                    </li>
-                                    <hr class="subproject-divider">
-                                    <li>
-                                        <a href="https://colonist.io/about" target="_blank">
-                                            <img src="media/no-location.svg" alt="Location Link"
-                                                class="project-link-icon">
-                                        </a><b>Colonist LLC, United States (Remote)</b><span class="time-period">[January
-                                            2023 - June 2023]</span><br>
-                                        QA Automation Engineer (Part-time)
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Research Experience -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="media/research-icon.svg" alt="Research Experience Icon">
-                    </div>
-                    <div class="timeline-content">
-                        <div class="skills">
-                            <div class="project-title">
-                                Research Experience
-                            </div>
-                            <div class="project-description">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.mcgill.ca/" target="_blank">
-                                            <img src="media/location-icon.svg" alt="Location Link"
-                                                class="project-link-icon">
-                                        </a><b>McGill University, Montreal, Quebec, Canada</b><span
-                                            class="time-period">[May 2022 - July 2022]</span><br>
-                                        Summer Research Associate under Prof. Adam Hendricks
-                                    </li>
-                                    <hr class="subproject-divider">
-                                    <li>
-                                        <a href="https://nthu-en.site.nthu.edu.tw/" target="_blank">
-                                            <img src="media/no-location.svg" alt="Location Link"
-                                                class="project-link-icon">
-                                        </a><b>National Tsing Hua University, Taiwan (Remote)</b><span
-                                            class="time-period">[June 2021 - July 2021]</span><br>
-                                        Summer Research Associate under Prof. Lee-Wei Yang
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="media/education-icon.svg" alt="Education Icon">
-                    </div>
-                    <div class="timeline-content">
-                        <div class="skills">
-                            <div class="project-title">
-                                Education
-                            </div>
-                            <div class="project-description">
-                                <ul>
-                                    <li>
-                                        <a href="https://home.iitd.ac.in/" target="_blank">
-                                            <img src="media/location-icon.svg" alt="Location Link"
-                                                class="project-link-icon">
-                                        </a><b>Indian Institute of Technology Delhi, Hauz Khas, New Delhi,
-                                            India</b><span class="time-period">[July 2019 - June 2023]</span><br>
-                                        Bachelor of Technology in Mechanical Engineering
-                                    </li>
-                                    <hr class="subproject-divider">
-                                    <li>
-                                        <a href="https://www.springfieldscollege.com/" target="_blank">
-                                            <img src="media/location-icon.svg" alt="Location Link"
-                                                class="project-link-icon">
-                                        </a><b>Springfields College, Moradabad, Uttar Pradesh, India</b><span
-                                            class="time-period">[July 2016 - May 2018]</span><br>
-                                        Indian School Certificate Examinations
-                                    </li>
-                                    <hr class="subproject-divider">
-                                    <li>
-                                        <a href="https://ttcpareekh.com/" target="_blank">
-                                            <img src="media/location-icon.svg" alt="Location Link"
-                                                class="project-link-icon">
-                                        </a><b>Tiny Tots College, Moradabad, Uttar Pradesh, India</b><span
-                                            class="time-period">[Apr 2014 - May 2016]</span><br>
-                                        Indian Certificate of Secondary Education
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p> <span class="cv-drive-icon"> <a
-                            href="https://drive.google.com/file/d/1YsFOrhnpmhjLKzL1oj3UJOsvr4c_XUE8/view?usp=sharing"
-                            target="_blank">
-                            <img src="media/drive-icon.svg" alt="CV Link" class="project-link-icon">
-                        </a> You can download my CV <span class="here-link"><a href="Ankush_Arora_latest_CV.pdf"
-                                target="_blank">here</a>.</span> </span> </p>
+            <div class="timeline" id="cvTimeline">
             </div>
-
-
         </section>
 
-        <!-- ========================================== -->
-        <!-- AWARDS AND RECOGNITIONS SECTION            -->
-        <!-- ========================================== -->
+        <!-- AWARDS SECTION - rendered from data.json -->
         <section id="awards" class="awards">
             <h2><span class="section-name"> Awards and Recognitions</span></h2>
             <hr class="section-divider">
-
-            <div class="timeline">
-                <!-- MITx MicroMasters in Supply Chain Management -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="media/supply-chain.svg" alt="Award Icon">
-                    </div>
-                    <div class="timeline-content">
-                        <div class="skills">
-                            <div class="project-title">
-                                MITx MicroMasters in Supply Chain Management
-                                <a href="https://micromasters.mit.edu/scm/" target="_blank">
-                                    <img src="media/info-icon.svg" alt="Information Link" class="project-link-icon">
-                                </a>
-                            </div>
-                            <div class="project-description">
-                                <a href="https://credentials.edx.org/records/programs/shared/bec40b57c33d4a708ddad6eb2a164bd5"
-                                    target="_blank">
-                                    <img src="media/numbers-icon.svg" alt="Marks Link" class="project-link-icon">
-                                </a> Successfully passed (DI) the MicroMasters in Supply Chain Management affiliated to
-                                Massachusetts Institute of Technology (MIT). <span
-                                    class="time-period">[2023-2024]</span>
-                                <ul>
-                                    <li><a href="https://courses.edx.org/certificates/b1ac46147dc64eaaa31189d9d1dca144"
-                                            target="_blank">
-                                            <img src="media/certificate-icon.svg" alt="Certificate Link"
-                                                class="project-link-icon"></a>
-                                        <span class="mini-heading">SC0x</span>: Supply Chain Analytics <br>
-                                        Core methodologies used in supply chain analysis and modeling, including
-                                        statistics, regression, optimization and probability.
-                                    </li>
-                                    <li><a href="https://courses.edx.org/certificates/08cb596c6a38402e9b537c45d4a1c11f"
-                                            target="_blank">
-                                            <img src="media/certificate-icon.svg" alt="Certificate Link"
-                                                class="project-link-icon"></a>
-                                        <span class="mini-heading">SC1x</span>: Supply Chain Fundamentals <br>
-                                        Fundamental concepts for logistics and supply chain management from both
-                                        analytical and practical perspectives.
-                                    </li>
-                                    <li><a href="https://courses.edx.org/certificates/ed14e046cd534f8e8028697b4bac5a76"
-                                            target="_blank">
-                                            <img src="media/certificate-icon.svg" alt="Certificate Link"
-                                                class="project-link-icon"></a>
-                                        <span class="mini-heading">SC2x</span>: Supply Chain Design <br>
-                                        Design and optimization of the physical, financial, and information flows of a
-                                        supply chain to enhance business performance.
-                                    </li>
-                                    <li><a href="https://courses.edx.org/certificates/bc057ef0038a41e387fd2ec03880405c"
-                                            target="_blank">
-                                            <img src="media/certificate-icon.svg" alt="Certificate Link"
-                                                class="project-link-icon"></a>
-                                        <span class="mini-heading">SC3x</span>: Supply Chain Dynamics <br>
-                                        Management and harnessing of the dynamics and interactions between firms and
-                                        entities within a supply chain.
-                                    </li>
-                                    <li><a href="https://courses.edx.org/certificates/9befcdb67caf41ae91d54384c9f37f21"
-                                            target="_blank">
-                                            <img src="media/certificate-icon.svg" alt="Certificate Link"
-                                                class="project-link-icon"></a>
-                                        <span class="mini-heading">SC4x</span>: Supply Chain Technology and Systems <br>
-                                        Use of technology in supply chain systems from fundamental concepts to
-                                        innovative applications.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MITACS Globalink Research Internship -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="media/flight-icon.svg" alt="Award Icon">
-                    </div>
-                    <div class="timeline-content">
-                        <div class="skills">
-                            <div class="project-title">
-                                MITACS Globalink Research Internship
-                                <a href="https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
-                                    target="_blank">
-                                    <img src="media/info-icon.svg" alt="Information Link" class="project-link-icon">
-                                </a>
-                            </div>
-                            <div class="project-description">
-                                Selected among top 1% for undergraduate research in Canada with 10000+ eligible
-                                applicants. <span class="time-period">[2022]</span>
-                                <ul>
-                                    <li><a href="https://drive.google.com/file/d/1anWPWrOP4eN4jM9P_8XevEj8Ucm7PU9i/view?usp=sharing"
-                                            target="_blank">
-                                            <img src="media/certificate-icon.svg" alt="Certificate Link"
-                                                class="project-link-icon"></a>
-                                        <span class="mini-heading">GRI</span>: McGill University, Montreal, Quebec,
-                                        Canada <br>
-                                        Completion of project in Biomechanical Engineering under the 84 days internship
-                                        program with regular assessment.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Indian Institute of Technology Delhi -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="media/education-icon.svg" alt="Award Icon">
-                    </div>
-                    <div class="timeline-content">
-                        <div class="skills">
-                            <div class="project-title">
-                                Indian Institute of Technology Delhi
-                                <a href="https://home.iitd.ac.in/" target="_blank">
-                                    <img src="media/info-icon.svg" alt="Information Link" class="project-link-icon">
-                                </a>
-                            </div>
-                            <div class="project-description">
-                                <ul>
-                                    <li><a href="https://courses.edx.org/certificates/b1ac46147dc64eaaa31189d9d1dca144"
-                                            target="_blank">
-                                            <img src="media/certificate-icon.svg" alt="Certificate Link"
-                                                class="project-link-icon"></a>
-                                        <span class="mini-heading">Teaching Assistant at IIT Delhi</span>: Selected as a
-                                        Teaching Assistant for Material Science on merit basis for a course of 400+
-                                        students. <span class="time-period">[2022]</span>
-                                    </li>
-                                    <li><a href="https://drive.google.com/file/d/1ojUrLtRDxitZ0JNFszTfiSlU7dRb1Qq6/view?usp=sharing"
-                                            target="_blank">
-                                            <img src="media/certificate-icon.svg" alt="Certificate Link"
-                                                class="project-link-icon"></a>
-                                        <span class="mini-heading">Department Change at IIT Delhi</span>: Secured
-                                        department change among top 9% in a batch of 1000+ students. <span
-                                            class="time-period">[2021]</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Joint Entrance Examination for Indian Institutes of Technology -->
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="media/math-icon.svg" alt="Award Icon">
-                    </div>
-                    <div class="timeline-content">
-                        <div class="skills">
-                            <div class="project-title">
-                                Joint Entrance Examination for Indian Institutes of Technology
-                                <a href="https://jeeadv.ac.in/" target="_blank">
-                                    <img src="media/info-icon.svg" alt="Information Link" class="project-link-icon">
-                                </a>
-                            </div>
-                            <div class="project-description">
-                                Written the exam conducted by Indian Institute of Technology Roorkee <span
-                                    class="time-period">[2019]</span>
-                                <ul>
-                                    <li><a href="https://drive.google.com/file/d/1JXWqo0xGmyC9PBBQVQGCXiZJKK9Gsvs-/view?usp=sharing"
-                                            target="_blank">
-                                            <img src="media/certificate-icon.svg" alt="Certificate Link"
-                                                class="project-link-icon"></a>
-                                        <span class="mini-heading">Joint Entrance Examination</span>: Secured All India
-                                        Rank 67 in JEE Main Paper II.
-                                    </li>
-                                    <li><a href="https://drive.google.com/file/d/1aLdH1W9qEiV40QVvvVuoVqiDflJZejGM/view?usp=sharing"
-                                            target="_blank">
-                                            <img src="media/certificate-icon.svg" alt="Certificate Link"
-                                                class="project-link-icon"></a>
-                                        <span class="mini-heading">Joint Entrance Examination</span>: Secured top 0.2
-                                        percentile in JEE Main and Advanced with 1M+ candidates.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="timeline" id="awardsTimeline">
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- FOOTER                                     -->
-        <!-- ========================================== -->
+        <!-- FOOTER - rendered from data.json -->
         <div class="footer">
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/nkusharoraa" target="_blank" class="social-icon">
-                    <img src="media/linkedin-icon.svg" alt="LinkedIn">
-                </a>
-                <a href="https://github.com/nkusharoraa" target="_blank" class="social-icon">
-                    <img src="media/github-icon.svg" alt="Github">
-                </a>
-                <a href="mailto:nkusharoraa@gmail.com" target="_blank" class="social-icon">
-                    <img src="media/email-icon.svg" alt="Email">
-                </a>
+            <div class="social-icons" id="footerSocial">
             </div>
         </div>
     </div>
