@@ -21,7 +21,7 @@
       {
         "label": "LLM Fine-tuning",
         "backTitle": "LLM Fine-tuning",
-        "backContent": "<div class='caption-back'>... from fine-tuning CodeLlama for NL-to-code translation at Bajaj Auto.</div><img src='photos/simulation.jpg' alt='LLM Image' class='inside-image'><br> Used LoRA adapters on custom scripting datasets, achieving 40% reduction in simulation automation latency."
+        "backContent": "<div class='caption-back'>... from fine-tuning CodeLlama for NL-to-code translation.</div><img src='photos/simulation.jpg' alt='LLM Image' class='inside-image'><br> Used LoRA adapters on custom scripting datasets, achieving 40% reduction in simulation automation latency."
       },
       {
         "label": "MCP & Agents",
