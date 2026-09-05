@@ -11,7 +11,7 @@
   },
 
   "about": {
-    "intro": "AI Engineer with 3+ years building production ML/LLM systems across automotive R&D and enterprise recruitment. Currently leading AI initiatives at Dexian — including a 100K+ calls/day MCP server, a 460-user enterprise chatbot, and an AI-driven interview platform. IIT Delhi graduate with deep expertise in RAG architectures, LLM fine-tuning (LoRA), surrogate modelling, and end-to-end MLOps.",
+    "intro": "AI Engineer with 3+ years building production ML/LLM systems — from fine-tuning CodeLlama and deploying RAG pipelines to architecting a 100K+ calls/day MCP server, a 460-user enterprise chatbot, and an AI-driven interview platform. IIT Delhi graduate with deep expertise in RAG architectures, LLM fine-tuning (LoRA), agentic AI, and end-to-end MLOps.",
     "interestTags": [
       {
         "label": "RAG Systems",
@@ -26,7 +26,7 @@
       {
         "label": "MCP & Agents",
         "backTitle": "MCP & AI Agents",
-        "backContent": "<div class='caption-back'>... from the Model Context Protocol server I architected at Dexian.</div><img src='photos/wholesale.jpg' alt='MCP Image' class='inside-image'><br> Exposing recruitment analytics to AI agents via SQL queries, aggregate formulas, and domain wiki — handling 100K+ API calls/day."
+        "backContent": "<div class='caption-back'>... from the Model Context Protocol server I architected.</div><img src='photos/wholesale.jpg' alt='MCP Image' class='inside-image'><br> Exposing recruitment analytics to AI agents via SQL queries, aggregate formulas, and domain wiki — handling 100K+ API calls/day."
       },
       {
         "label": "MLOps",
@@ -103,17 +103,17 @@
       "seeMoreUrl": "projects/index.html#ml",
       "featured": [
         {
-          "title": "RAG-Based Root Cause Analysis System",
+          "title": "ML Surrogate Models for MBD",
           "bullets": [
-            { "label": "Local RAG Stack", "text": "Deployed a Retrieval-Augmented stack (LangChain, Llama-3 vLLM, FAISS) to mine and index a decade of vehicle test, simulation, and inference data for Root Cause Analysis." },
-            { "label": "Impact", "text": "Reduced investigative turnaround time by 20% and improved FMEA closure rates." }
+            { "label": "Approach", "text": "Built regression-based ML surrogates (scikit-learn, PyTorch) to emulate multibody dynamics outputs, accelerating parameter sweeps and DOE." },
+            { "label": "Results", "text": "Enabled near-instant chassis, steering, and suspension optimization (33% faster loops)." }
           ],
-          "tags": ["LangChain", "Llama-3", "vLLM", "FAISS"]
+          "tags": ["PyTorch", "scikit-learn", "Surrogate Modelling"]
         },
         {
           "title": "LLM-Driven Scripting Automation",
           "bullets": [
-            { "label": "Fine-tuning", "text": "Fine-tuned CodeLlama using LoRA adapters on custom Adams scripting datasets for natural-language-to-code translation." },
+            { "label": "Fine-tuning", "text": "Fine-tuned CodeLlama using LoRA adapters on custom scripting datasets for natural-language-to-code translation." },
             { "label": "Results", "text": "Achieved 40% reduction in end-to-end simulation automation latency." }
           ],
           "tags": ["LoRA", "CodeLlama", "Fine-tuning"]
