@@ -32,14 +32,6 @@ const CONFIG = {
         darkMode: 'media/toggle-dark-icon.svg',
         lightMode: 'media/toggle-light-icon.svg'
     },
-    layout: {
-        skillsColumnMargins: {
-            default: '-374px',
-            introFlipped: '-324px',
-            skillsFlipped: '-286px',
-            bothFlipped: '-276px'
-        }
-    },
     dataAttributes: {
         backContent: 'data-back-content',
         backValue: 'data-back-value'
@@ -393,8 +385,6 @@ function isMobile() {
 function initializeFlipCards() {
     const skillsContainer = document.getElementById(CONFIG.elements.skillsContainer);
     const introContainer = document.getElementById(CONFIG.elements.introContainer);
-    const introfrontContainer = document.getElementById(CONFIG.elements.introfrontContainer);
-    const skillscolumncontainer = document.getElementById(CONFIG.elements.skillscolumncontainer);
     const backContentElement = document.getElementById(CONFIG.elements.backContent);
     const introbackContentElement = document.getElementById(CONFIG.elements.introbackContent);
 
@@ -404,10 +394,6 @@ function initializeFlipCards() {
             const backValue = tagBox.getAttribute(CONFIG.dataAttributes.backValue);
             backContentElement.innerHTML = createFlipCardBackContent(backContent, backValue);
             skillsContainer.classList.toggle(CONFIG.classes.flip);
-            backContentElement.style.display = skillsContainer.classList.contains(CONFIG.classes.flip) ? 'block' : 'none';
-            if (isMobile() && introContainer.classList.contains(CONFIG.classes.flip)) {
-                skillscolumncontainer.style.marginTop = CONFIG.layout.skillsColumnMargins.bothFlipped;
-            }
         });
     });
 
@@ -417,31 +403,15 @@ function initializeFlipCards() {
             const backValue = tagBox.getAttribute(CONFIG.dataAttributes.backValue);
             introbackContentElement.innerHTML = createFlipCardBackContent(backContent, backValue);
             introContainer.classList.toggle(CONFIG.classes.flip);
-            introfrontContainer.style.display = 'none';
-            introbackContentElement.style.display = introContainer.classList.contains(CONFIG.classes.flip) ? 'block' : 'none';
-            if (isMobile()) {
-                skillscolumncontainer.style.marginTop = skillsContainer.classList.contains(CONFIG.classes.flip)
-                    ? CONFIG.layout.skillsColumnMargins.skillsFlipped
-                    : CONFIG.layout.skillsColumnMargins.introFlipped;
-            }
         });
     });
 
     document.querySelector('.' + CONFIG.classes.skillBack).addEventListener('click', () => {
         skillsContainer.classList.remove(CONFIG.classes.flip);
-        backContentElement.style.display = 'none';
-        if (isMobile() && introContainer.classList.contains(CONFIG.classes.flip)) {
-            skillscolumncontainer.style.marginTop = CONFIG.layout.skillsColumnMargins.introFlipped;
-        }
     });
 
     document.querySelector('.' + CONFIG.classes.introBack).addEventListener('click', () => {
         introContainer.classList.remove(CONFIG.classes.flip);
-        introbackContentElement.style.display = 'none';
-        introfrontContainer.style.display = 'block';
-        if (isMobile()) {
-            skillscolumncontainer.style.marginTop = CONFIG.layout.skillsColumnMargins.default;
-        }
     });
 }
 
