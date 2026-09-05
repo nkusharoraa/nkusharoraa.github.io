@@ -57,19 +57,29 @@
     ],
     "skillTags": [
       {
-        "label": "Problem-solving",
-        "backTitle": "Problem-solving",
-        "backContent": "<div class='caption-back'>... from the protein ladder I worked with, in my internship at McGill University. </div><img src='photos/problem-solving.jpg' alt='Computing Image' class='inside-image'><br> I always enjoy multidisciplinary projects for problem-solving."
+        "label": "System Design",
+        "backTitle": "System Design",
+        "backContent": "<div class='caption-back'>... from architecting a production MCP server handling 100K+ API calls/day.</div><img src='photos/programming.jpg' alt='System Design' class='inside-image'><br> Designing scalable AI systems — from RAG pipelines to agentic tool-serving architectures."
       },
       {
-        "label": "Simulation",
-        "backTitle": "Simulation",
-        "backContent": "<div class='caption-back'>... from a project where I used Simulation Optimization. </div><img src='photos/simulation.jpg' alt='Computing Image' class='inside-image'> <br> Here, it was for Hyperparameter Tuning of Machine Learning Models"
+        "label": "ML Evaluation",
+        "backTitle": "ML Evaluation & Benchmarking",
+        "backContent": "<div class='caption-back'>... from validating ML models with statistical rigour.</div><img src='photos/dfmea.jpg' alt='ML Evaluation' class='inside-image'><br> FMEA closure rates, MCC scores, p-value thresholds — every model needs a honest scorecard."
       },
       {
-        "label": "DSA",
-        "backTitle": "Data Structures and Algorithms",
-        "backContent": "<div class='caption-back'>...  from the year 2022 on geeksforgeeks, leetcode and interviewbit. </div><img src='photos/dsa.jpg' alt='Computing Image' class='inside-image'> <br> I also know basics of Dynamic Programming and Graph Theory."
+        "label": "Agentic AI",
+        "backTitle": "Agentic AI",
+        "backContent": "<div class='caption-back'>... from building AI agents that act autonomously.</div><img src='photos/wholesale.jpg' alt='Agentic AI' class='inside-image'><br> MCP tool servers, autonomous interview bots, and AI-driven analytics — agents that do, not just answer."
+      },
+      {
+        "label": "Research",
+        "backTitle": "Research",
+        "backContent": "<div class='caption-back'>... from the protein ladder I worked with at McGill University.</div><img src='photos/problem-solving.jpg' alt='Research' class='inside-image'><br> From biomedical NER to protein similarity search — research sharpens how I approach production AI."
+      },
+      {
+        "label": "Optimization",
+        "backTitle": "Optimization",
+        "backContent": "<div class='caption-back'>... from stochastic optimization for hyperparameter tuning.</div><img src='photos/simulation.jpg' alt='Optimization' class='inside-image'><br> Markowitz portfolios, surrogate models, discrete simulation — finding the best solution in high-dimensional spaces."
       }
     ]
   },
