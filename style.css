@@ -410,6 +410,29 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
     margin: 20px 0;
     padding-left: 40px;
 }
+.project-category-title {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--highlight-color);
+    margin-bottom: var(--space-xs);
+    margin-top: var(--space-sm);
+    letter-spacing: 0.02em;
+}
+.see-more-link {
+    text-align: right;
+    padding: var(--space-xs) 0;
+    margin-bottom: var(--space-xs);
+}
+.see-more-link a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--highlight-color);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.see-more-link a:hover {
+    opacity: 0.7;
+}
 .project-box-link {
     display: block;
     text-decoration: none;

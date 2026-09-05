@@ -113,51 +113,61 @@ function renderSkills(data) {
     container.innerHTML = categoriesHTML + '<hr class="subproject-divider">' + tagsHTML;
 }
 
+function renderProjectCard(proj) {
+    const bulletItems = proj.bullets.map(b => {
+        const labelHTML = b.label ? `<strong>${b.label}:</strong> ` : '';
+        return `<li>
+            <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
+            ${labelHTML}${b.text}
+        </li>`;
+    }).join('');
+
+    const tagsHTML = proj.tags.map(t =>
+        `<div class="tag-box-main"><div class="tag-box">${t}</div></div>`
+    ).join('');
+
+    let linkHTML = '';
+    if (proj.githubUrl || proj.liveUrl) {
+        const url = proj.githubUrl || proj.liveUrl;
+        linkHTML = `
+            <div class="project-link-class">
+                <a href="${url}" target="_blank">
+                    <img src="media/github-icon.svg" alt="Project Link" class="project-link-icon">
+                </a>
+            </div>
+            <a href="${url}" target="_blank" class="project-box-link"></a>
+        `;
+    }
+
+    return `
+        ${linkHTML}
+        <div class="project-box">
+            <div class="project">
+                <div class="project-title">${proj.title}</div>
+                <div class="project-description"><ul>${bulletItems}</ul></div>
+                ${tagsHTML}
+            </div>
+        </div>
+    `;
+}
+
 function renderProjects(data) {
     const container = document.getElementById('projects');
     if (!container || !data.projects) return;
 
-    const html = data.projects.map((proj, i) => {
-        const bulletItems = proj.bullets.map(b => {
-            const labelHTML = b.label ? `<strong>${b.label}:</strong> ` : '';
-            return `<li>
-                <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-                ${labelHTML}${b.text}
-            </li>`;
-        }).join('');
-
-        const tagsHTML = proj.tags.map(t =>
-            `<div class="tag-box-main"><div class="tag-box">${t}</div></div>`
-        ).join('');
-
-        let linkHTML = '';
-        if (proj.githubUrl) {
-            linkHTML = `
-                <div class="project-link-class">
-                    <a href="${proj.githubUrl}" target="_blank">
-                        <img src="media/github-icon.svg" alt="Project Link" class="project-link-icon">
-                    </a>
-                </div>
-                <a href="${proj.liveUrl || proj.githubUrl}" target="_blank" class="project-box-link"></a>
-            `;
-        }
-
-        const separator = (i > 0 && i % 2 === 0)
-            ? '<h2><span class="section-name-hidden"> Projects </span></h2><hr class="section-divider">'
-            : '';
-
+    const html = data.projects.map(group => {
+        const cardsHTML = group.featured.map(proj => renderProjectCard(proj)).join('');
+        const seeMoreText = group.moreCount > 0
+            ? `+${group.moreCount} more`
+            : 'See all';
         return `
-            ${separator}
-            ${linkHTML}
-            <div class="project-box">
-                <div class="project">
-                    <div class="project-title">${proj.title}</div>
-                    <div class="project-description"><ul>${bulletItems}</ul></div>
-                    ${tagsHTML}
-                </div>
+            <h3 class="project-category-title">${group.category}</h3>
+            ${cardsHTML}
+            <div class="see-more-link">
+                <a href="${group.seeMoreUrl}">${seeMoreText} &rarr;</a>
             </div>
         `;
-    }).join('');
+    }).join('<h2><span class="section-name-hidden"> Projects </span></h2><hr class="section-divider">');
 
     container.insertAdjacentHTML('beforeend', html);
 }
