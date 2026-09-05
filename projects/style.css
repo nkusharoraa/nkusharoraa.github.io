@@ -16,7 +16,17 @@
 /* Mobile overrides */
 @media (max-width: 840px) {
     .nav-icon, .nav-icon1 {
-        width: calc(100vw / 6);
+        width: auto;
+        padding: 0 6px;
+    }
+    .navicon-name {
+        font-size: 0.55rem;
+        white-space: nowrap;
+    }
+    .navbar .nav-links {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
     .header {
         margin-bottom: -84px;
