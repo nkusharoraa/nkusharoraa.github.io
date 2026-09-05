@@ -398,10 +398,16 @@ function initializeFlipCards() {
     const backContentElement = document.getElementById(CONFIG.elements.backContent);
     const introbackContentElement = document.getElementById(CONFIG.elements.introbackContent);
 
+    const skillsFront = skillsContainer.querySelector('.front .skills');
+    const skillsBackInner = skillsContainer.querySelector('.skill-back .skills');
+    const introFront = introfrontContainer.querySelector('.intro');
+    const introBackInner = introContainer.querySelector('.intro-back .intro');
+
     document.querySelectorAll('#about .' + CONFIG.classes.tagBoxMain).forEach(tagBox => {
         tagBox.addEventListener('click', () => {
             const backContent = tagBox.getAttribute(CONFIG.dataAttributes.backContent);
             const backValue = tagBox.getAttribute(CONFIG.dataAttributes.backValue);
+            if (skillsFront) skillsBackInner.style.minHeight = skillsFront.offsetHeight + 'px';
             backContentElement.innerHTML = createFlipCardBackContent(backContent, backValue);
             skillsContainer.classList.toggle(CONFIG.classes.flip);
             backContentElement.style.display = skillsContainer.classList.contains(CONFIG.classes.flip) ? 'block' : 'none';
@@ -415,6 +421,7 @@ function initializeFlipCards() {
         tagBox.addEventListener('click', () => {
             const backContent = tagBox.getAttribute(CONFIG.dataAttributes.backContent);
             const backValue = tagBox.getAttribute(CONFIG.dataAttributes.backValue);
+            if (introFront) introBackInner.style.minHeight = introFront.offsetHeight + 'px';
             introbackContentElement.innerHTML = createFlipCardBackContent(backContent, backValue);
             introContainer.classList.toggle(CONFIG.classes.flip);
             introfrontContainer.style.display = 'none';
