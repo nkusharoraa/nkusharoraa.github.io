@@ -228,7 +228,7 @@
       "id": "llm",
       "name": "LLM & Generative AI",
       "navLabel": "LLM",
-      "icon": "../media/about-icon.svg",
+      "icon": "../media/llm-icon.svg",
       "projects": [
         {
           "title": "Analytics MCP Server",
@@ -282,7 +282,7 @@
       "id": "ml",
       "name": "ML Engineering & MLOps",
       "navLabel": "MLOps",
-      "icon": "../media/project-icon.svg",
+      "icon": "../media/mlops-icon.svg",
       "projects": [
         {
           "title": "ML Surrogate Models for MBD",
