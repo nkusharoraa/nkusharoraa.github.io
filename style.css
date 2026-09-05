@@ -94,10 +94,17 @@
     transform: rotateY(180deg);
 }
 
-.flip-container .front, .flip-container .back, .dummy {
+.flip-container .front {
     position: relative;
     width: 100%;
-    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-container .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     backface-visibility: hidden;
 }
 
@@ -107,12 +114,10 @@
 
 .flip-container .skill-back {
     transform: rotateY(180deg);
-    margin-top: -360px;
 }
 
 .dummy {
-    height: 300px;
-    visibility: hidden;
+    display: none;
 }
 
 #skillsContainer, #introContainer {
