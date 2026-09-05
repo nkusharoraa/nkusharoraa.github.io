@@ -114,7 +114,7 @@ function renderSkills(data) {
 }
 
 function renderProjects(data) {
-    const container = document.getElementById('projectsContainer');
+    const container = document.getElementById('projects');
     if (!container || !data.projects) return;
 
     const html = data.projects.map((proj, i) => {
@@ -159,7 +159,7 @@ function renderProjects(data) {
         `;
     }).join('');
 
-    container.innerHTML = html;
+    container.insertAdjacentHTML('beforeend', html);
 }
 
 function renderExperience(data) {
