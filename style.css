@@ -164,7 +164,7 @@
         margin-top: 32px;
     }
     .nav-icon, .nav-icon1 {
-        width: calc(100vw / 7);
+        width: calc(100vw / 6);
     }
     .header-content {
         text-align: center;

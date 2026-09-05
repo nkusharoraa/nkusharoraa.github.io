@@ -725,10 +725,6 @@ body.dark-mode .nav-icon img {
         margin-right: auto;
         margin-top: 40px;
     }
-    .share-btn {
-        margin-right: 8px;
-        margin-left: 0;
-    }
     .share-btn img {
         padding-right: 0px;
         margin-left: -40px;
@@ -740,9 +736,9 @@ body.dark-mode .nav-icon img {
         padding: 0%;
     }
     .mode-toggle {
-        margin-right: 8px;
+        margin-right: 32px;
         margin-top: -10px;
-        right: 4px;
+        right: 10px;
         float: right;
     }
     ul {
