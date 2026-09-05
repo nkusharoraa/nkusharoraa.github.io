@@ -75,7 +75,6 @@
 }
 
 .skillscolumn {
-    margin-top: -435px;
     position: sticky;
 }
 
@@ -152,7 +151,7 @@
         break-inside: avoid;
     }
     .skillscolumn {
-        margin-top: 0;
+        margin-top: -435px;
     }
     h1 {
         font-size: 2.75rem;
