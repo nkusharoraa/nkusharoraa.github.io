@@ -104,9 +104,24 @@
             { "label": "Teachable Layer", "text": "Added a per-team wiki layer enabling teams to teach the bot domain-specific knowledge without redeployment." }
           ],
           "tags": ["RAG", "LangChain", "Microsoft Teams"]
+        },
+        {
+          "title": "AI Interview Screener",
+          "bullets": [
+            { "label": "Platform", "text": "Developed an autonomous AI-driven interview bot for conducting structured technical screens, reducing recruiter screening overhead and standardizing candidate evaluation across roles." }
+          ],
+          "tags": ["LLM Agents", "Prompt Engineering"]
+        },
+        {
+          "title": "RAG Root Cause Analysis System",
+          "bullets": [
+            { "label": "Architecture", "text": "Deployed a local RAG stack (LangChain, Llama-3 vLLM, FAISS) to mine and index a decade of vehicle test, simulation, and inference data for root cause analysis." },
+            { "label": "Results", "text": "Reduced investigative turnaround time by 20% and improved FMEA closure." }
+          ],
+          "tags": ["Llama-3", "vLLM", "FAISS"]
         }
       ],
-      "moreCount": 4
+      "moreCount": 2
     },
     {
       "category": "ML Engineering & MLOps",
