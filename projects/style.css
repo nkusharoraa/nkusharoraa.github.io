@@ -13,6 +13,14 @@
     margin-top: 8px;
 }
 
+.navbar .nav-links, .navbar1 .nav-links {
+    flex: 1;
+}
+
+.nav-icon, .nav-icon1 {
+    flex: 1;
+}
+
 /* Mobile overrides */
 @media (max-width: 840px) {
     .nav-icon, .nav-icon1 {
