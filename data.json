@@ -32,21 +32,6 @@
         "label": "MLOps",
         "backTitle": "MLOps & Cloud AI",
         "backContent": "<div class='caption-back'>... from deploying ML pipelines on Azure, GCP, and AWS.</div><img src='photos/library.jpg' alt='MLOps Image' class='inside-image'> <br> Docker, Kubernetes, CI/CD, MLflow, Weights&amp;Biases — the full production ML stack."
-      },
-      {
-        "label": "Sports",
-        "backTitle": "Sports",
-        "backContent": "<div class='caption-back'>... from the Narendra Modi Stadium, India vs Pakistan CWC 2023. </div><img src='photos/indvpak.jpg' alt='Sport Image' class='inside-image'><br> The tickets were sold out in a few seconds; plug-ins and enthusiasm."
-      },
-      {
-        "label": "Rapport",
-        "backTitle": "Rapport Building",
-        "backContent": "<div class='caption-back'>... from the music festival Osheaga 2022 in Montreal, waiting for Dua Lipa. </div><img src='photos/rapport.jpg' alt='Rapport Image' class='inside-image'><br> Not knowing each other, we are now very good friends post 3 months."
-      },
-      {
-        "label": "Creativity",
-        "backTitle": "Creativity",
-        "backContent": "<div class='caption-back'>... from the year 2020 when Covid days wanted some undiscovered hobbies. </div><img src='photos/creative.jpg' alt='Computing Image' class='inside-image'> <br> The illustration is drawn on Adobe Illustrator. Who does she look like?"
       }
     ]
   },
