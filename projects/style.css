@@ -17,8 +17,12 @@
     flex: 1;
 }
 
-.nav-icon, .nav-icon1 {
+.navbar .nav-links li, .navbar1 .nav-links li {
     flex: 1;
+}
+
+.nav-icon, .nav-icon1 {
+    width: auto;
 }
 
 /* Mobile overrides */
