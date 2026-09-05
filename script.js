@@ -376,6 +376,10 @@ function initializeDarkMode() {
 // FLIP CARD INTERACTIONS
 // ============================================================================
 
+function isMobile() {
+    return window.innerWidth <= 840;
+}
+
 function initializeFlipCards() {
     const skillsContainer = document.getElementById(CONFIG.elements.skillsContainer);
     const introContainer = document.getElementById(CONFIG.elements.introContainer);
@@ -391,7 +395,7 @@ function initializeFlipCards() {
             backContentElement.innerHTML = createFlipCardBackContent(backContent, backValue);
             skillsContainer.classList.toggle(CONFIG.classes.flip);
             backContentElement.style.display = skillsContainer.classList.contains(CONFIG.classes.flip) ? 'block' : 'none';
-            if (introContainer.classList.contains(CONFIG.classes.flip)) {
+            if (isMobile() && introContainer.classList.contains(CONFIG.classes.flip)) {
                 skillscolumncontainer.style.marginTop = CONFIG.layout.skillsColumnMargins.bothFlipped;
             }
         });
@@ -405,16 +409,18 @@ function initializeFlipCards() {
             introContainer.classList.toggle(CONFIG.classes.flip);
             introfrontContainer.style.display = 'none';
             introbackContentElement.style.display = introContainer.classList.contains(CONFIG.classes.flip) ? 'block' : 'none';
-            skillscolumncontainer.style.marginTop = skillsContainer.classList.contains(CONFIG.classes.flip)
-                ? CONFIG.layout.skillsColumnMargins.skillsFlipped
-                : CONFIG.layout.skillsColumnMargins.introFlipped;
+            if (isMobile()) {
+                skillscolumncontainer.style.marginTop = skillsContainer.classList.contains(CONFIG.classes.flip)
+                    ? CONFIG.layout.skillsColumnMargins.skillsFlipped
+                    : CONFIG.layout.skillsColumnMargins.introFlipped;
+            }
         });
     });
 
     document.querySelector('.' + CONFIG.classes.skillBack).addEventListener('click', () => {
         skillsContainer.classList.remove(CONFIG.classes.flip);
         backContentElement.style.display = 'none';
-        if (introContainer.classList.contains(CONFIG.classes.flip)) {
+        if (isMobile() && introContainer.classList.contains(CONFIG.classes.flip)) {
             skillscolumncontainer.style.marginTop = CONFIG.layout.skillsColumnMargins.introFlipped;
         }
     });
@@ -423,7 +429,9 @@ function initializeFlipCards() {
         introContainer.classList.remove(CONFIG.classes.flip);
         introbackContentElement.style.display = 'none';
         introfrontContainer.style.display = 'block';
-        skillscolumncontainer.style.marginTop = CONFIG.layout.skillsColumnMargins.default;
+        if (isMobile()) {
+            skillscolumncontainer.style.marginTop = CONFIG.layout.skillsColumnMargins.default;
+        }
     });
 }
 

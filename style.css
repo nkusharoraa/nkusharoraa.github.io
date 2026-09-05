@@ -614,8 +614,12 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
        .column {
         display: block;
         flex-direction: column;
-        width: 100%; /* Adjust as needed */
+        width: 100%;
+        break-inside: avoid;
       }
+    .skillscolumn {
+        margin-top: 0;
+    }
     .profile-container {
         margin-right: var(--space-lg);
     }
