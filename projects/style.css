@@ -15,18 +15,6 @@
 
 /* Mobile overrides */
 @media (max-width: 840px) {
-    .nav-icon, .nav-icon1 {
-        width: auto;
-        padding: 0 6px;
-    }
-    .navicon-name {
-        font-size: 0.55rem;
-    }
-    .navbar .nav-links {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
     .header {
         margin-bottom: -84px;
         margin-top: 32px;
