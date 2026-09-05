@@ -16,7 +16,7 @@
 /* Mobile overrides */
 @media (max-width: 840px) {
     .nav-icon, .nav-icon1 {
-        width: calc(100vw / 6);
+        width: calc(100vw / 7);
     }
     .header {
         margin-bottom: -84px;
