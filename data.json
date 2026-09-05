@@ -281,7 +281,7 @@
     {
       "id": "ml",
       "name": "ML Engineering & MLOps",
-      "navLabel": "ML",
+      "navLabel": "MLOps",
       "icon": "../media/project-icon.svg",
       "projects": [
         {
