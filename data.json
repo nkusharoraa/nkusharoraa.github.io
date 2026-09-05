@@ -242,6 +242,7 @@
     {
       "id": "llm",
       "name": "LLM & Generative AI",
+      "navLabel": "LLM & GenAI",
       "icon": "../media/about-icon.svg",
       "projects": [
         {
@@ -295,6 +296,7 @@
     {
       "id": "ml",
       "name": "ML Engineering & MLOps",
+      "navLabel": "ML & MLOps",
       "icon": "../media/project-icon.svg",
       "projects": [
         {
@@ -334,6 +336,7 @@
     {
       "id": "misc",
       "name": "Other Projects",
+      "navLabel": "Other",
       "icon": "../media/misc-icon.svg",
       "projects": [
         {

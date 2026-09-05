@@ -455,11 +455,16 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 .nav-icon, .nav-icon1{
     display: flex;
     flex-direction: row;
-    
     align-items: center;
     text-align: center;
     justify-content: center;
-    
+}
+
+.navicon-name {
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .nav-icon, .nav-icon1{
@@ -640,7 +645,11 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
         background-color: var(--navbar-bg); /* Match navbar background */
     }
     .nav-icon, .nav-icon1{
-        width: calc(100vw/6);
+        width: calc(100vw/5);
+    }
+    .navicon-name {
+        font-size: 0.6rem;
+        white-space: nowrap;
     }
     .social-icons-beside {
         display: flex;
@@ -746,7 +755,7 @@ body.dark-mode .social-icon img , body.dark-mode .share-btn img, body.dark-mode 
 }
 
 
-Ensure that the project descriptions have some padding for better readability
+/* Ensure that the project descriptions have some padding for better readability */
 .project-description {
     padding: var(--space-sm) 0;
 }

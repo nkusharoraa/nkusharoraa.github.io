@@ -14,14 +14,16 @@ function renderNav(categories) {
     const mobileNav = document.getElementById('mobileNav');
     const desktopNav = document.getElementById('desktopNav');
 
-    const mobileItems = categories.map(cat =>
-        `<li><span class="nav-icon1"><a href="#${cat.id}"><img src="${cat.icon}" alt="${cat.name}"> <br> ${cat.name}</a></span></li>`
-    ).join('');
+    const mobileItems = categories.map(cat => {
+        const label = cat.navLabel || cat.name;
+        return `<li><span class="nav-icon1"><a href="#${cat.id}"><img src="${cat.icon}" alt="${cat.name}"> <br> ${label}</a></span></li>`;
+    }).join('');
     mobileNav.innerHTML = mobileItems;
 
-    const desktopItems = categories.map(cat =>
-        `<li><span class="nav-icon"><a href="#${cat.id}" class="nav-item"><img src="${cat.icon}" alt="${cat.name}"> <br><span class="navicon-name">${cat.name}</span> </a></span></li>`
-    ).join('');
+    const desktopItems = categories.map(cat => {
+        const label = cat.navLabel || cat.name;
+        return `<li><span class="nav-icon"><a href="#${cat.id}" class="nav-item"><img src="${cat.icon}" alt="${cat.name}"> <br><span class="navicon-name">${label}</span> </a></span></li>`;
+    }).join('');
     desktopNav.innerHTML = desktopItems +
         `<li><span class="hidepp"><button id="shareButtonmob" class="share-btnmob"><a href="#"><img src="../media/share-icon.svg" alt="Share"> <br>Share </a></button></span></li>` +
         `<li><div id="copyNotification">Link copied</div></li>`;
