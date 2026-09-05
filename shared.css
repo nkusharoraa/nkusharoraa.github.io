@@ -678,9 +678,6 @@ body.dark-mode .nav-icon img {
         border-radius: 2px;
         background-color: var(--navbar-bg);
     }
-    .nav-icon, .nav-icon1 {
-        width: calc(100vw / 6);
-    }
     .social-icons-beside {
         display: flex;
         flex-direction: row;
