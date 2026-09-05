@@ -236,6 +236,135 @@
     }
   },
 
+  "projectCategories": [
+    {
+      "id": "llm",
+      "name": "LLM & Generative AI",
+      "icon": "../media/about-icon.svg",
+      "projects": [
+        {
+          "title": "Analytics MCP Server",
+          "bullets": [
+            "Architected and deployed a custom Model Context Protocol server on Azure, exposing recruitment analytics (SQL queries, aggregate formula introspection, domain wiki) to AI agents.",
+            "Handling 100K+ API calls/day across the centralized recruitment workspace."
+          ],
+          "tags": ["MCP", "Azure", "AI Agents"]
+        },
+        {
+          "title": "Enterprise RAG Teams Chatbot",
+          "bullets": [
+            "Built and deployed a RAG-powered Microsoft Teams chatbot for 460+ users, integrating client SOPs, benefits info, vendor lists, HR-BP mappings, state-wise labour laws, and org hierarchy.",
+            "Added a teachable per-team wiki layer enabling domain-specific knowledge without redeployment."
+          ],
+          "tags": ["RAG", "LangChain", "Microsoft Teams"]
+        },
+        {
+          "title": "AI Interview Screener",
+          "bullets": [
+            "Developed an autonomous AI-driven interview bot for conducting structured technical screens, reducing recruiter screening overhead and standardizing candidate evaluation across roles."
+          ],
+          "tags": ["LLM Agents", "Prompt Engineering"]
+        },
+        {
+          "title": "RAG-Based Root Cause Analysis System",
+          "bullets": [
+            "Deployed a local Retrieval-Augmented stack (LangChain, Llama-3 vLLM, FAISS) to mine and index a decade of vehicle test, simulation, and inference data for Root Cause Analysis.",
+            "Reduced investigative turnaround time by 20% and improved FMEA closure."
+          ],
+          "tags": ["Llama-3", "vLLM", "FAISS"]
+        },
+        {
+          "title": "LLM-Driven Scripting Automation",
+          "bullets": [
+            "Fine-tuned CodeLlama using LoRA adapters on custom Adams scripting datasets for NL-to-code translation, achieving 40% reduction in end-to-end simulation automation latency."
+          ],
+          "tags": ["LoRA", "CodeLlama", "Fine-tuning"]
+        },
+        {
+          "title": "BERT Biomedical NER & Protein Similarity",
+          "bullets": [
+            "Applied SBERT sentence-transformers to semantic protein similarity search, improving match accuracy by 15% over baseline sequence alignment.",
+            "Fine-tuned domain-specific Hugging Face BERT, achieving precision/recall of 88%/85% on labeled biomedical text."
+          ],
+          "tags": ["SBERT", "Hugging Face", "NER"]
+        }
+      ]
+    },
+    {
+      "id": "ml",
+      "name": "ML Engineering & MLOps",
+      "icon": "../media/project-icon.svg",
+      "projects": [
+        {
+          "title": "ML Surrogate Models for MBD",
+          "bullets": [
+            "Built regression-based ML surrogates (scikit-learn, PyTorch) to emulate Adams MBD outputs, accelerating parameter sweeps and DOE.",
+            "Enabled near-instant chassis, steering, and suspension optimization (33% faster loops)."
+          ],
+          "tags": ["PyTorch", "scikit-learn", "Surrogate Modelling"]
+        },
+        {
+          "title": "Automated Outlier Detection in V&V Pipelines",
+          "bullets": [
+            "Deployed semantic similarity search (FAISS), text embeddings (Hugging Face), and RAG analytics to flag anomalous results during virtual verification.",
+            "Elevated defect detectability by 18%."
+          ],
+          "tags": ["FAISS", "Embeddings", "Anomaly Detection"]
+        },
+        {
+          "title": "Candidate Matching Enhancements",
+          "bullets": [
+            "Improved the in-house AI candidate-sourcing engine by refining ranking logic, building a cost-estimation framework, and benchmarking match quality to strengthen sourcing accuracy."
+          ],
+          "tags": ["Ranking", "Benchmarking", "Search Quality"]
+        },
+        {
+          "title": "Discrete Simulation Optimization for ML HP Tuning",
+          "githubUrl": "https://github.com/nkusharoraa/dissim",
+          "bullets": [
+            "Developed Python-based stochastic optimizers for automated ML hyperparameter tuning, reducing simulation tuning latency by 30% in high-dimensional discrete search spaces (20+ parameters).",
+            "Validated AHA & SR methods with statistically significant gains over baselines on WDBC (0.89 MCC, p < 0.01)."
+          ],
+          "tags": ["Hyperparameter Tuning", "Stochastic Optimization"]
+        }
+      ]
+    },
+    {
+      "id": "misc",
+      "name": "Other Projects",
+      "icon": "../media/misc-icon.svg",
+      "projects": [
+        {
+          "title": "Markowitz Portfolio Optimization System",
+          "liveUrl": "https://nkusharoraa.github.io/Markowitz-Portfolio-Optimization/",
+          "bullets": [
+            "Designed mean-variance optimization engine using Markowitz Theory and convex programming, achieving up to 20% portfolio risk reduction at targeted returns.",
+            "Deployed interactive web platform with 100+ automated time-series analyses, efficient frontier plotting, and Sharpe ratio benchmarking."
+          ],
+          "tags": ["CVXPY", "Time Series", "Convex Optimization"]
+        },
+        {
+          "title": "Demand Forecasting and Exponential Smoothing",
+          "liveUrl": "https://nkusharoraa.github.io/DemandForecasting/",
+          "bullets": [
+            "Improved accuracy in demand forecasting leading to optimized inventory management and reduced stockouts.",
+            "Enhanced decision-making capabilities for supply chain planning using time-series analysis."
+          ],
+          "tags": ["Demand Forecasting", "Time-series", "Exponential Smoothing"]
+        },
+        {
+          "title": "4-Wheeler Steering System Design",
+          "liveUrl": "https://nkusharoraa.github.io/SteeringDesign/",
+          "bullets": [
+            "Developed the kinematics of steering and suspension hard points, optimized position validating ADAMS analysis.",
+            "Evaluated Kingpin moment for various contact patch geometry, transmission ratio, and steering effort."
+          ],
+          "tags": ["ADAMS", "Python", "Mechanical Design"]
+        }
+      ]
+    }
+  ],
+
   "awards": [
     {
       "title": "MITx MicroMasters in Supply Chain Management",

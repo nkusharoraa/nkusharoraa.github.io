@@ -1,69 +1,158 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const modeToggle = document.getElementById('mode-toggle');
-    const modeIcon = document.getElementById('mode-icon');
-    const shareBtn = document.getElementById('share-btn');
-    
-    modeToggle.addEventListener('click', function() {
-        // Add a delay before toggling dark mode
-        setTimeout(function() {
-            document.body.classList.toggle('dark-mode');
-            
-            if (document.body.classList.contains('dark-mode')) {
-                modeIcon.src = '../media/toggle-light-icon.svg';
-            } else {
-                modeIcon.src = '../media/toggle-dark-icon.svg';
-            }
-        }, 800); // Adjust delay in milliseconds (800ms in this example for slower effect)
-    });
-    
-    shareBtn.addEventListener('click', function(event) {
-        event.preventDefault();
-        
-        const linkToCopy = 'https://nkusharoraa.github.io/';
-        
-        if (navigator.clipboard) {
-            navigator.clipboard.writeText(linkToCopy).then(function() {
-                console.log('Link copied to clipboard: ' + linkToCopy);
-                alert('Link copied to clipboard: ' + linkToCopy);
-            }).catch(function(err) {
-                console.error('Failed to copy text: ', err);
-                alert('Failed to copy text: ' + err);
-            });
-        } else {
-            // Fallback for older browsers
-            console.log('Clipboard API not supported, using fallback.');
-            const dummy = document.createElement('input');
-            document.body.appendChild(dummy);
-            dummy.value = linkToCopy;
-            dummy.select();
-            document.execCommand('copy');
-            document.body.removeChild(dummy);
-            alert('Link copied to clipboard: ' + linkToCopy);
-        }
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    fetch('../data.json')
+        .then(r => r.json())
+        .then(data => {
+            renderNav(data.projectCategories);
+            renderHeader(data.hero);
+            renderProjectSections(data.projectCategories);
+            renderFooter(data.hero.social);
+            initInteractivity();
+        });
 });
 
-function fallbackCopyTextToClipboard(text) {
-    var textArea = document.createElement("textarea");
-    textArea.value = text;
-  
-    // Avoid scrolling to bottom
-    textArea.style.top = "0";
-    textArea.style.left = "0";
-    textArea.style.position = "fixed";
+function renderNav(categories) {
+    const mobileNav = document.getElementById('mobileNav');
+    const desktopNav = document.getElementById('desktopNav');
 
+    const mobileItems = categories.map(cat =>
+        `<li><span class="nav-icon1"><a href="#${cat.id}"><img src="${cat.icon}" alt="${cat.name}"> <br> ${cat.name}</a></span></li>`
+    ).join('');
+    mobileNav.innerHTML = mobileItems;
+
+    const desktopItems = categories.map(cat =>
+        `<li><span class="nav-icon"><a href="#${cat.id}" class="nav-item"><img src="${cat.icon}" alt="${cat.name}"> <br><span class="navicon-name">${cat.name}</span> </a></span></li>`
+    ).join('');
+    desktopNav.innerHTML = desktopItems +
+        `<li><span class="hidepp"><button id="shareButtonmob" class="share-btnmob"><a href="#"><img src="../media/share-icon.svg" alt="Share"> <br>Share </a></button></span></li>` +
+        `<li><div id="copyNotification">Link copied</div></li>`;
+}
+
+function renderHeader(hero) {
+    const container = document.getElementById('headerContainer');
+    const socialHtml = hero.social.map(s =>
+        `<a href="${s.url}" target="_blank" class="social-icon"><img src="../${s.icon}" alt="${s.name}"></a>`
+    ).join('');
+    container.innerHTML = `
+        <div class="header-left">
+            <h3>Projects organized by <span class="highlight-text">AI domain</span></h3>
+            <p>1. LLM & Generative AI<br>2. ML Engineering & MLOps<br>3. Other Projects</p>
+            <p>Reach me here for more information.</p>
+            <div class="social-icons-beside">${socialHtml}</div>
+        </div>`;
+}
+
+function renderProjectSections(categories) {
+    const container = document.getElementById('projectSections');
+    container.innerHTML = categories.map(cat => {
+        const projectsHtml = cat.projects.map((proj, i) => {
+            const linkHtml = (proj.githubUrl || proj.liveUrl) ? `
+                <div class="project-link-class"><a href="${proj.githubUrl || proj.liveUrl}" target="_blank">
+                    <img src="../media/github-icon.svg" alt="Project Link" class="project-link-icon">
+                </a></div>
+                <a href="${proj.githubUrl || proj.liveUrl}" target="_blank" class="project-box-link"></a>` : '';
+            const bulletsHtml = proj.bullets.map(b =>
+                `<li><img src="../media/bullet.svg" alt="Bullet" class="project-link-icon2">${b}</li>`
+            ).join('');
+            const tagsHtml = proj.tags.map(t =>
+                `<div class="tag-box-main"><div class="tag-box">${t}</div></div>`
+            ).join('');
+            const divider = (i > 0 && i % 2 === 0) ? `<h2><span class="section-name-hidden"> Projects </span></h2><hr class="section-divider">` : '';
+            return `${divider}${linkHtml}
+                <div class="project-box"><div class="project">
+                    <div class="project-title">${proj.title}</div>
+                    <div class="project-description"><ul>${bulletsHtml}</ul></div>
+                    ${tagsHtml}
+                </div></div>`;
+        }).join('');
+        return `<section id="${cat.id}" class="projects">
+            <h2><span class="section-name">${cat.name}</span></h2>
+            <hr class="section-divider">
+            ${projectsHtml}
+        </section>`;
+    }).join('');
+}
+
+function renderFooter(social) {
+    const container = document.getElementById('footerSocial');
+    container.innerHTML = social.map(s =>
+        `<a href="${s.url}" target="_blank" class="social-icon"><img src="../${s.icon}" alt="${s.name}"></a>`
+    ).join('');
+}
+
+function initInteractivity() {
+    const modeToggle = document.getElementById('mode-toggle');
+    const modeIcon = document.getElementById('mode-icon');
+
+    modeToggle.addEventListener('click', function () {
+        setTimeout(function () {
+            document.body.classList.toggle('dark-mode');
+            modeIcon.src = document.body.classList.contains('dark-mode')
+                ? '../media/toggle-light-icon.svg'
+                : '../media/toggle-dark-icon.svg';
+        }, 800);
+    });
+
+    document.getElementById('shareButton').addEventListener('click', function () {
+        copyTextToClipboard('https://nkusharoraa.github.io/projects');
+    });
+    const mobBtn = document.getElementById('shareButtonmob');
+    if (mobBtn) {
+        mobBtn.addEventListener('click', function () {
+            copyTextToClipboard('https://nkusharoraa.github.io/projects');
+        });
+    }
+
+    const navItems = document.querySelectorAll('.nav-item');
+    const navIcons = document.querySelectorAll('.nav-icon');
+    const sections = document.querySelectorAll('section');
+
+    function setActiveNavItem(currentSectionId) {
+        navItems.forEach((item, index) => {
+            const sectionId = item.getAttribute('href').slice(1);
+            if (sectionId === currentSectionId) {
+                item.classList.add('active');
+                if (navIcons[index]) navIcons[index].classList.add('active-icon');
+            } else {
+                item.classList.remove('active');
+                if (navIcons[index]) navIcons[index].classList.remove('active-icon');
+            }
+        });
+    }
+
+    function checkNavItems() {
+        let currentSection = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+        setActiveNavItem(currentSection);
+    }
+
+    window.addEventListener('scroll', checkNavItems);
+    navIcons.forEach((icon, index) => {
+        icon.addEventListener('click', function (event) {
+            event.preventDefault();
+            const sectionId = navItems[index].getAttribute('href').slice(1);
+            const section = document.getElementById(sectionId);
+            window.scrollTo({ top: section.offsetTop, behavior: 'smooth' });
+        });
+    });
+    checkNavItems();
+}
+
+function fallbackCopyTextToClipboard(text) {
+    var textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.position = 'fixed';
     document.body.appendChild(textArea);
     textArea.focus();
     textArea.select();
-
-    try {
-        var successful = document.execCommand('copy');
-        var msg = successful ? 'successful' : 'unsuccessful';
-        console.log('Fallback: Copying text command was ' + msg);
-    } catch (err) {
-        console.error('Fallback: Oops, unable to copy', err);
-    }
-
+    try { document.execCommand('copy'); } catch (err) {}
     document.body.removeChild(textArea);
 }
 
@@ -72,77 +161,14 @@ function copyTextToClipboard(text) {
         fallbackCopyTextToClipboard(text);
         return;
     }
-    navigator.clipboard.writeText(text).then(function() {
-        console.log('Async: Copying to clipboard was successful!');
+    navigator.clipboard.writeText(text).then(function () {
         showNotification();
-    }, function(err) {
-        console.error('Async: Could not copy text: ', err);
     });
 }
 
 function showNotification() {
     var notification = document.getElementById('copyNotification');
+    if (!notification) return;
     notification.className = 'show';
-    setTimeout(function() { notification.className = notification.className.replace('show', ''); }, 3000);
+    setTimeout(function () { notification.className = notification.className.replace('show', ''); }, 3000);
 }
-
-document.getElementById('shareButton').addEventListener('click', function() {
-    copyTextToClipboard('https://nkusharoraa.github.io/projects');
-});
-document.getElementById('shareButtonmob').addEventListener('click', function() {
-    copyTextToClipboard('https://nkusharoraa.github.io/projects');
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const navItems = document.querySelectorAll(".nav-item");
-    const navIcons = document.querySelectorAll(".nav-icon");
-    const sections = document.querySelectorAll("section");
-
-    function setActiveNavItem(currentSectionId) {
-        navItems.forEach((item, index) => {
-            const sectionId = item.getAttribute("href").slice(1); // Remove '#'
-            if (sectionId === currentSectionId) {
-                item.classList.add("active");
-                navIcons[index].classList.add("active-icon");
-            } else {
-                item.classList.remove("active");
-                navIcons[index].classList.remove("active-icon");
-            }
-        });
-    }
-
-    function checkNavItems() {
-        let currentSection = "";
-
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                currentSection = section.getAttribute("id");
-            }
-        });
-
-        setActiveNavItem(currentSection);
-    }
-
-    window.addEventListener("scroll", checkNavItems);
-
-    // Click event for nav-icons
-    navIcons.forEach((icon, index) => {
-        icon.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default action
-
-            const sectionId = navItems[index].getAttribute("href").slice(1); // Remove '#'
-            const section = document.getElementById(sectionId);
-            const offsetTop = section.offsetTop;
-
-            window.scrollTo({
-                top: offsetTop,
-                behavior: "smooth" // Smooth scroll
-            });
-        });
-    });
-
-    // Initial check on page load
-    checkNavItems();
-});
