@@ -59,9 +59,11 @@ function renderProjectSections(categories) {
                 `<div class="tag-box-main"><div class="tag-box">${t}</div></div>`
             ).join('');
             const divider = (i > 0 && i % 2 === 0) ? `<h2><span class="section-name-hidden"> Projects </span></h2><hr class="section-divider">` : '';
+            const periodHtml = proj.period ? `<div class="project-period">${proj.period}</div>` : '';
             return `${divider}${linkHtml}
                 <div class="project-box"><div class="project">
                     <div class="project-title">${proj.title}</div>
+                    ${periodHtml}
                     <div class="project-description"><ul>${bulletsHtml}</ul></div>
                     ${tagsHtml}
                 </div></div>`;

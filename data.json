@@ -91,6 +91,7 @@
       "featured": [
         {
           "title": "Analytics MCP Server",
+          "period": "Mar 2026 - Present",
           "bullets": [
             { "label": "Architecture", "text": "Architected and deployed a custom Model Context Protocol server on Azure, exposing recruitment analytics (SQL queries, aggregate formula introspection, domain wiki) to AI agents." },
             { "label": "Scale", "text": "Handling 100K+ API calls/day across the centralized recruitment workspace." }
@@ -99,6 +100,7 @@
         },
         {
           "title": "Enterprise RAG Teams Chatbot",
+          "period": "Apr 2024 - Mar 2026",
           "bullets": [
             { "label": "RAG Pipeline", "text": "Built and deployed a RAG-powered Microsoft Teams chatbot for 460+ users, integrating client SOPs, benefits info, vendor lists, HR-BP mappings, state-wise labour laws, and org hierarchy." },
             { "label": "Teachable Layer", "text": "Added a per-team wiki layer enabling teams to teach the bot domain-specific knowledge without redeployment." }
@@ -107,6 +109,7 @@
         },
         {
           "title": "AI Interview Screener",
+          "period": "Mar 2026 - Present",
           "bullets": [
             { "label": "Platform", "text": "Developed an autonomous AI-driven interview bot for conducting structured technical screens, reducing recruiter screening overhead and standardizing candidate evaluation across roles." }
           ],
@@ -114,6 +117,7 @@
         },
         {
           "title": "RAG Root Cause Analysis System",
+          "period": "Apr 2024 - Feb 2026",
           "bullets": [
             { "label": "Architecture", "text": "Deployed a local RAG stack (LangChain, Llama-3 vLLM, FAISS) to mine and index a decade of vehicle test, simulation, and inference data for root cause analysis." },
             { "label": "Results", "text": "Reduced investigative turnaround time by 20% and improved FMEA closure." }
@@ -129,6 +133,7 @@
       "featured": [
         {
           "title": "ML Surrogate Models for MBD",
+          "period": "Apr 2024 - Feb 2026",
           "bullets": [
             { "label": "Approach", "text": "Built regression-based ML surrogates (scikit-learn, PyTorch) to emulate multibody dynamics outputs, accelerating parameter sweeps and DOE." },
             { "label": "Results", "text": "Enabled near-instant chassis, steering, and suspension optimization (33% faster loops)." }
@@ -137,6 +142,7 @@
         },
         {
           "title": "LLM-Driven Scripting Automation",
+          "period": "Jul 2023 - Mar 2024",
           "bullets": [
             { "label": "Fine-tuning", "text": "Fine-tuned CodeLlama using LoRA adapters on custom scripting datasets for natural-language-to-code translation." },
             { "label": "Results", "text": "Achieved 40% reduction in end-to-end simulation automation latency." }
@@ -152,6 +158,7 @@
       "featured": [
         {
           "title": "Discrete Simulation Optimization for ML HP Tuning",
+          "period": "Aug 2022 - May 2023",
           "githubUrl": "https://github.com/nkusharoraa/dissim",
           "bullets": [
             { "label": "Optimization", "text": "Developed Python-based stochastic optimizers for automated ML hyperparameter tuning, reducing simulation tuning latency by 30% in high-dimensional discrete search spaces (20+ parameters)." }
@@ -160,6 +167,7 @@
         },
         {
           "title": "Markowitz Portfolio Optimization System",
+          "period": "Jun 2021",
           "liveUrl": "https://nkusharoraa.github.io/Markowitz-Portfolio-Optimization/",
           "bullets": [
             { "label": "Optimization Engine", "text": "Designed mean-variance optimization engine using Markowitz Theory and convex programming, achieving up to 20% portfolio risk reduction at targeted returns." }
@@ -257,6 +265,7 @@
       "projects": [
         {
           "title": "Analytics MCP Server",
+          "period": "Mar 2026 - Present",
           "bullets": [
             "Architected and deployed a custom Model Context Protocol server on Azure, exposing recruitment analytics (SQL queries, aggregate formula introspection, domain wiki) to AI agents.",
             "Handling 100K+ API calls/day across the centralized recruitment workspace."
@@ -265,6 +274,7 @@
         },
         {
           "title": "Enterprise RAG Teams Chatbot",
+          "period": "Apr 2024 - Mar 2026",
           "bullets": [
             "Built and deployed a RAG-powered Microsoft Teams chatbot for 460+ users, integrating client SOPs, benefits info, vendor lists, HR-BP mappings, state-wise labour laws, and org hierarchy.",
             "Added a teachable per-team wiki layer enabling domain-specific knowledge without redeployment."
@@ -273,6 +283,7 @@
         },
         {
           "title": "AI Interview Screener",
+          "period": "Mar 2026 - Present",
           "bullets": [
             "Developed an autonomous AI-driven interview bot for conducting structured technical screens, reducing recruiter screening overhead and standardizing candidate evaluation across roles."
           ],
@@ -280,6 +291,7 @@
         },
         {
           "title": "RAG-Based Root Cause Analysis System",
+          "period": "Apr 2024 - Feb 2026",
           "bullets": [
             "Deployed a local Retrieval-Augmented stack (LangChain, Llama-3 vLLM, FAISS) to mine and index a decade of vehicle test, simulation, and inference data for Root Cause Analysis.",
             "Reduced investigative turnaround time by 20% and improved FMEA closure."
@@ -288,6 +300,7 @@
         },
         {
           "title": "LLM-Driven Scripting Automation",
+          "period": "Jul 2023 - Mar 2024",
           "bullets": [
             "Fine-tuned CodeLlama using LoRA adapters on custom Adams scripting datasets for NL-to-code translation, achieving 40% reduction in end-to-end simulation automation latency."
           ],
@@ -295,6 +308,7 @@
         },
         {
           "title": "BERT Biomedical NER & Protein Similarity",
+          "period": "May 2022 - Jul 2022",
           "bullets": [
             "Applied SBERT sentence-transformers to semantic protein similarity search, improving match accuracy by 15% over baseline sequence alignment.",
             "Fine-tuned domain-specific Hugging Face BERT, achieving precision/recall of 88%/85% on labeled biomedical text."
@@ -311,6 +325,7 @@
       "projects": [
         {
           "title": "ML Surrogate Models for MBD",
+          "period": "Apr 2024 - Feb 2026",
           "bullets": [
             "Built regression-based ML surrogates (scikit-learn, PyTorch) to emulate Adams MBD outputs, accelerating parameter sweeps and DOE.",
             "Enabled near-instant chassis, steering, and suspension optimization (33% faster loops)."
@@ -319,6 +334,7 @@
         },
         {
           "title": "Automated Outlier Detection in V&V Pipelines",
+          "period": "Jul 2023 - Mar 2024",
           "bullets": [
             "Deployed semantic similarity search (FAISS), text embeddings (Hugging Face), and RAG analytics to flag anomalous results during virtual verification.",
             "Elevated defect detectability by 18%."
@@ -327,6 +343,7 @@
         },
         {
           "title": "Candidate Matching Enhancements",
+          "period": "Mar 2026 - Present",
           "bullets": [
             "Improved the in-house AI candidate-sourcing engine by refining ranking logic, building a cost-estimation framework, and benchmarking match quality to strengthen sourcing accuracy."
           ],
@@ -334,7 +351,8 @@
         },
         {
           "title": "Discrete Simulation Optimization for ML HP Tuning",
-          "githubUrl": "https://github.com/nkusharoraa/dissim",
+          "period": "Aug 2022 - May 2023",
+          "githubUrl": "https://github.com/nkusharoraa/HPTuningSRPackage",
           "bullets": [
             "Developed Python-based stochastic optimizers for automated ML hyperparameter tuning, reducing simulation tuning latency by 30% in high-dimensional discrete search spaces (20+ parameters).",
             "Validated AHA & SR methods with statistically significant gains over baselines on WDBC (0.89 MCC, p < 0.01)."
@@ -351,6 +369,7 @@
       "projects": [
         {
           "title": "Markowitz Portfolio Optimization System",
+          "period": "Jun 2021",
           "liveUrl": "https://nkusharoraa.github.io/Markowitz-Portfolio-Optimization/",
           "bullets": [
             "Designed mean-variance optimization engine using Markowitz Theory and convex programming, achieving up to 20% portfolio risk reduction at targeted returns.",
@@ -360,6 +379,7 @@
         },
         {
           "title": "Demand Forecasting and Exponential Smoothing",
+          "period": "2021",
           "liveUrl": "https://nkusharoraa.github.io/DemandForecasting/",
           "bullets": [
             "Improved accuracy in demand forecasting leading to optimized inventory management and reduced stockouts.",
@@ -369,12 +389,61 @@
         },
         {
           "title": "4-Wheeler Steering System Design",
+          "period": "2022",
           "liveUrl": "https://nkusharoraa.github.io/SteeringDesign/",
           "bullets": [
             "Developed the kinematics of steering and suspension hard points, optimized position validating ADAMS analysis.",
             "Evaluated Kingpin moment for various contact patch geometry, transmission ratio, and steering effort."
           ],
           "tags": ["ADAMS", "Python", "Mechanical Design"]
+        },
+        {
+          "title": "Calibrator Level Optimization for Clinical Immunoassays",
+          "period": "Jun 2021 - Aug 2021",
+          "bullets": [
+            "Explored the solution space for an inverse log-logit function calibrated over 4 parameters using Levenberg-Marquardt Algorithm.",
+            "Utilized 95% confident Gaussian Haptoglobin concentrations to ensure least uncertain medical decision points."
+          ],
+          "tags": ["Optimization", "Simulation", "Statistics"]
+        },
+        {
+          "title": "Petroleum Refinery: Process Impact & Design",
+          "period": "Apr 2021 - May 2021",
+          "liveUrl": "https://drive.google.com/file/d/1PYlKBU7FTBeY8XrqooniBJfZWUL28Iw7/view?usp=share_link",
+          "bullets": [
+            "Documented a literature review of petroleum refinery functionalities supplemented with energy economics for the course MCL241.",
+            "Implemented a Refinery Linear Program to compute the margin-maximizing crude and product slate."
+          ],
+          "tags": ["Linear Programming", "Energy Systems"]
+        },
+        {
+          "title": "Automated Conveyor Segregation System",
+          "period": "Nov 2022",
+          "githubUrl": "https://github.com/nkusharoraa/ConveyorSegregation",
+          "bullets": [
+            "Built a virtual PLC-based automation system with HMI for sensing and segregating variable-length boxes across conveyors.",
+            "Designed the conveyor motion logic using SFC code in Automation Studio."
+          ],
+          "tags": ["PLC", "Automation Studio", "HMI"]
+        },
+        {
+          "title": "Improvised Vending Cart",
+          "period": "Dec 2021 - Jan 2022",
+          "bullets": [
+            "Prototyped a fabricated vending cart with economically minimal feature additions encouraging attraction and hygiene.",
+            "Designed and tested a Lift & Turn mechanism for 500+ kg loaded cart incorporating a mechanical advantage of 67."
+          ],
+          "tags": ["Mechanical Design", "Prototyping"]
+        },
+        {
+          "title": "Monolithic Rotary Cutting Tool Verification",
+          "period": "Oct 2022 - Nov 2022",
+          "liveUrl": "https://drive.google.com/file/d/1GxCVaC6W3DAIVqO7uGK9vi53HuSh4G1T/view?usp=sharing",
+          "bullets": [
+            "Documented a term paper critically reviewing a preprint on monolithic rotary cutting tools for active driven rotation machining.",
+            "Compared the proposed tool design with existing alternatives for the course MCL231."
+          ],
+          "tags": ["Manufacturing", "Research Review"]
         }
       ]
     }

@@ -478,6 +478,15 @@ body.dark-mode .nav-icon img {
     color: var(--project-title-color);
 }
 
+.project-period {
+    font-size: 0.7rem;
+    color: var(--highlight-color);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
+
 .project-link-icon {
     width: 24px;
     height: 24px;

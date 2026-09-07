@@ -131,11 +131,14 @@ function renderProjectCard(proj) {
         `;
     }
 
+    const periodHTML = proj.period ? `<div class="project-period">${proj.period}</div>` : '';
+
     return `
         ${linkHTML}
         <div class="project-box">
             <div class="project">
                 <div class="project-title">${proj.title}</div>
+                ${periodHTML}
                 <div class="project-description"><ul>${bulletItems}</ul></div>
                 ${tagsHTML}
             </div>
