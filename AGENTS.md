@@ -61,6 +61,9 @@ python3 scripts/career.py init-private
 
 # Print the reusable handoff prompt to paste into agents on other repos
 python3 scripts/career.py prompt
+
+# Rebuild public (phone-redacted) & private CV PDFs + Overleaf LaTeX source
+python3 scripts/career.py build-cv
 ```
 
 ---

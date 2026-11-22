@@ -448,6 +448,12 @@ def cmd_prompt(_args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_build_cv(_args: argparse.Namespace) -> int:
+    build_script = ROOT / "scripts" / "build_resume.py"
+    res = subprocess.run([sys.executable, str(build_script)], cwd=ROOT)
+    return res.returncode
+
+
 def cmd_init_private(_args: argparse.Namespace) -> int:
     PRIVATE_DIR.mkdir(parents=True, exist_ok=True)
     mapping = {
@@ -574,6 +580,9 @@ def main() -> int:
 
     p_prompt = sub.add_parser("prompt", help="Print the reusable repo-to-portfolio handoff prompt")
     p_prompt.set_defaults(func=cmd_prompt)
+
+    p_cv = sub.add_parser("build-cv", help="Build public (phone-redacted) and private CV PDFs + LaTeX source")
+    p_cv.set_defaults(func=cmd_build_cv)
 
     args = parser.parse_args()
     return args.func(args)
