@@ -4,146 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankush Arora - AI Engineer & Architect</title>
+    <title>Ankush Arora - AI Engineer &amp; Architect</title>
     <meta name="description" content="AI Architect with 3+ years building production LLM systems, RAG pipelines, and intelligent agents. IIT Delhi graduate. Currently leading AI initiatives at Dexian.">
+    <meta property="og:title" content="Ankush Arora - AI Engineer &amp; Architect">
+    <meta property="og:description" content="AI Architect building production LLM systems, RAG pipelines, MCP servers, and intelligent agents.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nkusharoraa.github.io/">
+    <meta property="og:image" content="https://nkusharoraa.github.io/photos/profile.jpg">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="media/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared.css">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-    <!-- ============================================ -->
-    <!-- MOBILE NAVIGATION                            -->
-    <!-- ============================================ -->
-    <nav class="navbar1">
-        <ul class="nav-links">
-            <li><span class="nav-icon1"><a href="#about"><img src="media/about-icon.svg" alt="About"> <br>
-                        About</a></span></li>
-            <li><span class="nav-icon1"><a href="#projects"><img src="media/project-icon.svg" alt="Projects">
-                        <br>Projects</a></span></li>
-            <li><span class="nav-icon1"><a href="#awards"><img src="media/achievements-icon.svg" alt="Awards"><br>
-                        Awards</a></span></li>
-            <li><span class="nav-icon1"><a href="#cv"><img src="media/cv-icon.svg" alt="CV"> <br>CV</a></span></li>
-        </ul>
+    <nav class="navbar" aria-label="Primary">
+        <div class="navbar-inner">
+            <ul class="nav-links">
+                <li><span class="nav-icon"><a href="#about" class="nav-item"><img src="media/about-icon.svg" alt="" width="24" height="24"><span class="navicon-name">About</span></a></span></li>
+                <li><span class="nav-icon"><a href="#projects" class="nav-item"><img src="media/project-icon.svg" alt="" width="24" height="24"><span class="navicon-name">Projects</span></a></span></li>
+                <li><span class="nav-icon"><a href="#cv" class="nav-item"><img src="media/cv-icon.svg" alt="" width="24" height="24"><span class="navicon-name">Background</span></a></span></li>
+                <li><span class="nav-icon"><a href="#awards" class="nav-item"><img src="media/achievements-icon.svg" alt="" width="24" height="24"><span class="navicon-name">Awards</span></a></span></li>
+            </ul>
+            <div class="nav-actions">
+                <button type="button" id="shareButton" class="share-btn" aria-label="Copy portfolio link">
+                    <img src="media/share-icon.svg" alt="" width="24" height="24">
+                </button>
+                <button type="button" id="mode-toggle" class="mode-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+                    <img id="mode-icon" src="media/toggle-dark-icon.svg" alt="" width="22" height="22">
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <!-- ============================================ -->
-    <!-- MAIN CONTAINER                               -->
-    <!-- ============================================ -->
+    <div id="copyNotification" role="status" aria-live="polite">Link copied</div>
+
     <div class="container">
-        <nav class="navbar">
-            <button id="mode-toggle" class="mode-toggle">
-                <img id="mode-icon" src="media/toggle-dark-icon.svg" alt="Toggle Mode">
-            </button>
-            <ul class="nav-links">
-                <li><span class="nav-icon"><a href="#about" class="nav-item"><img src="media/about-icon.svg"
-                                alt="About"> <br><span class="navicon-name">About</span> </a></span></li>
-                <li><span class="nav-icon"><a href="#projects" class="nav-item"><img src="media/project-icon.svg"
-                                alt="Projects"> <br> <span class="navicon-name"> Projects </span></a></span></li>
-                <li><span class="nav-icon"><a href="#cv" class="nav-item"><img src="media/cv-icon.svg" alt="CV"> <br>
-                            <span class="navicon-name"> Background </span></a></span></li>
-                <li><span class="nav-icon"><a href="#awards" class="nav-item"><img src="media/achievements-icon.svg"
-                                alt="Awards"><br> <span class="navicon-name"> Awards</span></a></span></li>
+        <header class="header">
+            <div class="profile-container" id="heroContainer"></div>
+        </header>
 
-                <li><span class="hidepp"><button id="shareButtonmob" class="share-btnmob"><a href="#"><img
-                                    src="media/share-icon.svg" alt="Share"> <br>Share </a></button></span></li>
-                <li>
-                    <div id="copyNotification">Link copied</div>
-                </li>
-            </ul>
-            <button id="shareButton" class="share-btn">
-                <a href="#"><img src="media/share-icon.svg" alt="Share"></a>
-            </button>
-        </nav>
-
-        <!-- HEADER / HERO - rendered from data.json -->
-        <div class="header">
-            <div class="profile-container" id="heroContainer">
-            </div>
-        </div>
-
-        <!-- ABOUT SECTION - rendered from data.json -->
-        <section id="about" class="about-me">
-            <div class="column">
-                <h2><span class="section-name"> About</span></h2>
-                <hr class="section-divider">
-                <div class="intro flip-container" id="introContainer">
-                    <div class="flipper">
-                        <div id="introfrontContainer" class="front">
-                            <div class="intro" id="aboutIntroContent">
+        <main id="mainContent">
+            <section id="about" class="about-me">
+                <div class="column">
+                    <h2><span class="section-name">About</span></h2>
+                    <hr class="section-divider">
+                    <div class="flip-container" id="introContainer">
+                        <div class="flipper">
+                            <div class="front">
+                                <div class="intro flip-card-face" id="aboutIntroContent"></div>
                             </div>
-                        </div>
-                        <div class="back intro-back">
-                            <div class="intro">
-                                <div id="introbackContent" class="project">
-                                    <div class="project-title">Placeholder Title</div>
-                                    <div class="project-description">Placeholder description content.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dummy">
-                            <div class="intro">
-                                <div id="intro-dummy-content" class="project">
-                                    <div class="project-title">Placeholder Title</div>
-                                    <div class="project-description">Placeholder description content.</div>
+                            <div class="back intro-back" aria-hidden="true">
+                                <div class="intro flip-card-face">
+                                    <div id="introbackContent" class="project"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="skillscolumncontainer" class="column skillscolumn">
-                <h2><span class="section-name"> Skills</span></h2>
-                <hr class="section-divider">
-                <div class="skills flip-container" id="skillsContainer">
-                    <div class="flipper">
-                        <div class="front">
-                            <div class="skills" id="skillsFrontContent">
+                <div class="column skillscolumn">
+                    <h2><span class="section-name">Skills</span></h2>
+                    <hr class="section-divider">
+                    <div class="flip-container" id="skillsContainer">
+                        <div class="flipper">
+                            <div class="front">
+                                <div class="skills flip-card-face" id="skillsFrontContent"></div>
                             </div>
-                        </div>
-                        <div class="back skill-back">
-                            <div class="skills">
-                                <div id="backContent" class="project">
-                                    <div class="project-title">Placeholder Title</div>
-                                    <div class="project-description">Placeholder description content.</div>
+                            <div class="back skill-back" aria-hidden="true">
+                                <div class="skills flip-card-face">
+                                    <div id="backContent" class="project"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- PROJECTS SECTION - rendered from data.json -->
-        <section id="projects" class="projects">
-            <h2><span class="section-name"> Projects</span></h2>
-            <hr class="section-divider">
-        </section>
+            <section id="projects" class="projects">
+                <h2><span class="section-name">Projects</span></h2>
+                <hr class="section-divider">
+                <div class="projects-columns" id="projectsContent"></div>
+            </section>
 
-        <!-- BACKGROUND / CV SECTION - rendered from data.json -->
-        <section id="cv" class="cv">
-            <h2><span class="section-name"> Background </span></h2>
-            <hr class="section-divider">
-            <div class="timeline" id="cvTimeline">
-            </div>
-        </section>
+            <section id="cv" class="cv">
+                <h2><span class="section-name">Background</span></h2>
+                <hr class="section-divider">
+                <div class="timeline" id="cvTimeline"></div>
+            </section>
 
-        <!-- AWARDS SECTION - rendered from data.json -->
-        <section id="awards" class="awards">
-            <h2><span class="section-name"> Awards and Recognitions</span></h2>
-            <hr class="section-divider">
-            <div class="timeline" id="awardsTimeline">
-            </div>
-        </section>
+            <section id="awards" class="awards">
+                <h2><span class="section-name">Awards and Recognitions</span></h2>
+                <hr class="section-divider">
+                <div class="timeline" id="awardsTimeline"></div>
+            </section>
+        </main>
 
-        <!-- FOOTER - rendered from data.json -->
-        <div class="footer">
-            <div class="social-icons" id="footerSocial">
-            </div>
-        </div>
+        <footer class="footer">
+            <div class="social-icons" id="footerSocial"></div>
+        </footer>
     </div>
 
+    <script src="shared.js"></script>
     <script src="script.js"></script>
 </body>
 

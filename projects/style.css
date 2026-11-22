@@ -1,43 +1,71 @@
 /* Projects page overrides — requires ../shared.css */
 
-.header {
-    margin-bottom: -48px;
-    margin-top: -16px;
+.projects-header {
+    min-height: auto;
+    padding: var(--space-md) 0 var(--space-sm);
 }
 
-.project-box:hover {
-    transform: scale(1.01);
+.projects-header .profile-container {
+    align-items: flex-start;
+    text-align: left;
 }
 
-.home-button-main {
-    margin-top: 8px;
+.projects-header h1 {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-xs);
 }
 
-.navbar .nav-links, .navbar1 .nav-links {
-    flex: 1;
+.projects-toc {
+    margin: var(--space-xs) 0 var(--space-sm);
+    padding-left: 20px;
+    list-style-type: decimal;
 }
 
-.navbar .nav-links li, .navbar1 .nav-links li {
-    flex: 1;
+.projects-toc li {
+    margin-bottom: 4px;
 }
 
-.nav-icon, .nav-icon1 {
-    width: auto;
+.projects-toc a {
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
-/* Mobile overrides */
+.projects-toc a:hover {
+    color: var(--highlight-color);
+}
+
+.projects-contact-hint {
+    margin: var(--space-xs) 0 0;
+    color: var(--project-desc-color);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+}
+
+.project-grid .project-box {
+    margin-bottom: 0;
+    transition: transform 0.2s ease;
+}
+
+.project-grid .project-box:hover {
+    transform: translateY(-2px);
+}
+
+@media (min-width: 841px) {
+    .projects-header h1 {
+        font-size: 2.1rem;
+    }
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-md);
+    }
+}
+
 @media (max-width: 840px) {
-    .nav-icon, .nav-icon1 {
-        width: calc(100vw / 6);
-    }
-    .header {
-        margin-bottom: -84px;
-        margin-top: 32px;
-    }
-    .header-content {
-        text-align: left;
-    }
-    .header-left {
-        text-align: left;
+    .projects-header .social-icons-beside {
+        justify-content: flex-start;
     }
 }

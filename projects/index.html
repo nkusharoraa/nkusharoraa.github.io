@@ -1,43 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ankush Arora - AI Projects</title>
+    <meta name="description" content="AI, LLM, RAG, MLOps, and engineering projects by Ankush Arora.">
+    <meta property="og:title" content="Ankush Arora - AI Projects">
+    <meta property="og:description" content="Production LLM systems, RAG pipelines, MLOps engineering, and optimization projects by Ankush Arora.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nkusharoraa.github.io/projects/">
+    <meta property="og:image" content="https://nkusharoraa.github.io/photos/profile.jpg">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="../media/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <nav class="navbar1">
-        <ul class="nav-links" id="mobileNav">
-        </ul>
-    </nav>
-    <div class="container">
-        <nav class="navbar">
-            <button id="mode-toggle" class="mode-toggle">
-                <img id="mode-icon" src="../media/toggle-dark-icon.svg" alt="Toggle Mode">
-            </button>
-            <span class="home-button-main"><a href="../index.html" class="home-button"><img src="../media/home-icon.svg" alt="Home"> <br><span class="navicon-name"></span> </a></span>
-            <ul class="nav-links" id="desktopNav">
-            </ul>
-            <button id="shareButton" class="share-btn">
-                <a href="#"><img src="../media/share-icon.svg" alt="Share"></a>
-            </button>
-        </nav>
-        <div class="header">
-            <div class="profile-container" id="headerContainer">
+    <nav class="navbar" aria-label="Project categories">
+        <div class="navbar-inner">
+            <a href="../index.html" class="home-button-main" aria-label="Back to home">
+                <img src="../media/home-icon.svg" alt="" width="24" height="24">
+                <span class="navicon-name">Home</span>
+            </a>
+            <ul class="nav-links" id="desktopNav"></ul>
+            <div class="nav-actions">
+                <button type="button" id="shareButton" class="share-btn" aria-label="Copy projects page link">
+                    <img src="../media/share-icon.svg" alt="" width="24" height="24">
+                </button>
+                <button type="button" id="mode-toggle" class="mode-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+                    <img id="mode-icon" src="../media/toggle-dark-icon.svg" alt="" width="22" height="22">
+                </button>
             </div>
         </div>
-    <div class="container" id="projectSections">
-    </div>
-<div class="footer">
-    <div class="social-icons" id="footerSocial">
-    </div>
-</div>
-</div>
-    <script src="script.js"></script>
+    </nav>
 
+    <div id="copyNotification" role="status" aria-live="polite">Link copied</div>
+
+    <div class="container">
+        <header class="header projects-header">
+            <div class="profile-container" id="headerContainer"></div>
+        </header>
+
+        <main id="projectSections"></main>
+
+        <footer class="footer">
+            <div class="social-icons" id="footerSocial"></div>
+        </footer>
+    </div>
+
+    <script src="../shared.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

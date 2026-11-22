@@ -1,50 +1,24 @@
 /* Main page overrides — requires shared.css */
 
-.more-link {
-    float: right;
-    margin-right: 8px;
-    margin-top: 0px;
-}
-
-.navbar .nav-links a:hover + .nav-icon,
-.navbar1 .nav-links a:hover,
-.here-link a:hover,
-.more-link a:hover {
-    border-bottom: 3px solid var(--highlight-color);
-}
-
-.header {
-    margin-bottom: 0px;
-    margin-top: 32px;
-}
-
-.caption-back {
-    font-weight: bold;
-    color: var(--highlight-color);
-}
-
-.skills {
-    margin-top: 0;
-}
-
-.intro {
-    margin-top: 16px;
-}
-
 .about-me {
     height: auto;
 }
 
-.project-box {
-    border-left: 3px solid var(--highlight-color);
+.about-me .column {
+    min-width: 0;
 }
 
-.project-box:hover {
-    transform: none;
+.about-me .intro,
+.about-me .skills {
+    margin-bottom: 0;
+}
+
+.projects-columns {
+    column-count: 1;
 }
 
 .project-category-title {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.95rem;
     color: var(--highlight-color);
     margin-bottom: var(--space-xs);
@@ -52,134 +26,165 @@
     letter-spacing: 0.02em;
 }
 
+.project-group:first-child .project-category-title {
+    margin-top: 0;
+}
+
 .see-more-link {
     text-align: right;
-    padding: var(--space-xs) 0;
+    padding: 4px 0;
     margin-bottom: var(--space-xs);
 }
 
 .see-more-link a {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     font-weight: 500;
     color: var(--highlight-color);
     text-decoration: none;
-    transition: opacity 0.2s;
 }
 
 .see-more-link a:hover {
-    opacity: 0.7;
+    opacity: 0.75;
+    text-decoration: underline;
 }
 
-.intro .project-title {
-    padding-top: 10px;
-}
+/* ============================================ */
+/* FLIP CARDS                                   */
+/* ============================================ */
 
-.skillscolumn {
-    position: sticky;
-    align-self: start;
-}
-
-/* Flip cards */
 .flip-container {
     perspective: 1000px;
 }
 
 .flip-container .flipper {
+    display: grid;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.6s;
+    transition: transform 0.6s ease;
 }
 
 .flip-container.flip .flipper {
     transform: rotateY(180deg);
 }
 
-.flip-container .front {
-    position: relative;
+.flip-container .front,
+.flip-container .back {
+    grid-area: 1 / 1;
     width: 100%;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flip-container .front {
+    position: relative;
 }
 
 .flip-container .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    backface-visibility: hidden;
-}
-
-.flip-container .intro-back {
     transform: rotateY(180deg);
-}
-
-.flip-container .skill-back {
-    transform: rotateY(180deg);
-}
-
-.dummy {
-    display: none;
-}
-
-#skillsContainer, #introContainer {
-    background: none;
-    margin: -20px;
-}
-
-.back:hover, .intro-back:hover, .skill-back:hover {
-    scale: 1.01;
     cursor: pointer;
+    pointer-events: none;
 }
 
-.tag-box-main:hover, .tag-box-main1:hover {
-    scale: 1.02;
+.flip-container.flip .front {
+    pointer-events: none;
+}
+
+.flip-container.flip .back {
+    pointer-events: auto;
+}
+
+.flip-card-face {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.flip-back-btn {
+    background: transparent;
+    border: 1px solid var(--divider);
+    color: var(--highlight-color);
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 999px;
     cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.flip-back-btn:hover {
+    background-color: var(--highlight-color);
+    color: #fff;
+}
+
+.flip-back-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.flip-back-media {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
 }
 
 .inside-image {
-    margin-top: 16px;
-    margin-left: 16px;
-    margin-bottom: 8px;
+    width: 150px;
     height: 150px;
-    border-radius: 6px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
 }
 
-/* Desktop overrides */
+.caption-back {
+    flex: 1 1 160px;
+    font-weight: 600;
+    color: var(--highlight-color);
+    line-height: 1.45;
+}
+
+.flip-back-text {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.skills-category + .subproject-divider {
+    margin: var(--space-sm) 0;
+}
+
+.about-intro-text {
+    margin-top: 0;
+}
+
+.about-hint {
+    font-size: 0.92rem;
+    color: var(--project-desc-color);
+    margin-bottom: 0;
+}
+
 @media (min-width: 841px) {
-    h1 {
-        font-size: 2.75rem;
+    .skillscolumn {
+        position: sticky;
+        top: 88px;
+        align-self: start;
+    }
+    .projects-columns {
+        column-count: 2;
+        column-gap: var(--space-md);
     }
 }
 
-/* Mobile overrides */
 @media (max-width: 840px) {
-    .header {
-        margin-bottom: -84px;
-        margin-top: 32px;
-    }
-    .nav-icon, .nav-icon1 {
-        width: calc(100vw / 6);
-    }
-    .header-content {
-        text-align: center;
-    }
-}
-
-@media (min-width: 1100px) {
-    .header {
-        height: 300px;
-        padding: var(--space-md);
-    }
-    .share-btn {
-        margin-top: 4px;
-    }
-    .caption-back {
-        margin-top: 15%;
-        margin-left: 50%;
-        float: right;
-        padding-left: 10px;
+    .about-me .column + .column {
+        margin-top: var(--space-md);
     }
     .inside-image {
-        height: 200px;
-        margin-top: -26%;
+        width: 120px;
+        height: 120px;
     }
 }

@@ -1,496 +1,308 @@
-const CONFIG = {
-    shareUrl: 'https://nkusharoraa.github.io/',
-    darkModeDelay: 800,
-    notificationDuration: 3000,
-    elements: {
-        modeToggle: 'mode-toggle',
-        modeIcon: 'mode-icon',
-        shareButton: 'shareButton',
-        shareButtonMob: 'shareButtonmob',
-        copyNotification: 'copyNotification',
-        skillsContainer: 'skillsContainer',
-        introContainer: 'introContainer',
-        introfrontContainer: 'introfrontContainer',
-        skillscolumncontainer: 'skillscolumncontainer',
-        backContent: 'backContent',
-        introbackContent: 'introbackContent'
-    },
-    classes: {
-        darkMode: 'dark-mode',
-        flip: 'flip',
-        show: 'show',
-        active: 'active',
-        activeIcon: 'active-icon',
-        navItem: 'nav-item',
-        navIcon: 'nav-icon',
-        tagBoxMain: 'tag-box-main',
-        tagBoxMain1: 'tag-box-main1',
-        skillBack: 'skill-back',
-        introBack: 'intro-back'
-    },
-    icons: {
-        darkMode: 'media/toggle-dark-icon.svg',
-        lightMode: 'media/toggle-light-icon.svg'
-    },
-    dataAttributes: {
-        backContent: 'data-back-content',
-        backValue: 'data-back-value'
-    }
-};
+(function () {
+    const SHARE_URL = 'https://nkusharoraa.github.io/';
+    const {
+        escapeHtml,
+        initThemeToggle,
+        initShareButton,
+        initNavigation,
+        scrollToInitialHash,
+        renderSocialLinks,
+        renderProjectCard,
+        fetchPortfolioData
+    } = window.Portfolio;
 
-// ============================================================================
-// RENDERING FROM DATA.JSON
-// ============================================================================
+    function renderHero(data) {
+        const container = document.getElementById('heroContainer');
+        if (!container || !data.hero) return;
 
-function renderHero(data) {
-    const container = document.getElementById('heroContainer');
-    if (!container || !data.hero) return;
-
-    const socialHTML = data.hero.social.map(s =>
-        `<a href="${s.url}" target="_blank" class="social-icon">
-            <img src="${s.icon}" alt="${s.name}">
-        </a>`
-    ).join('');
-
-    container.innerHTML = `
-        <img src="${data.hero.profilePic}" alt="Profile Picture" class="profile-pic">
-        <div class="header-left">
-            <h1>Hi! I'm <span class="highlight-text">${data.hero.name}</span></h1>
-            <h3>${data.hero.tagline}</h3>
-            <div class="social-icons-beside">${socialHTML}</div>
-        </div>
-    `;
-}
-
-function renderAbout(data) {
-    const container = document.getElementById('aboutIntroContent');
-    if (!container || !data.about) return;
-
-    const tagsHTML = data.about.interestTags.map(tag =>
-        `<div class="tag-box-main1" data-back-content="${tag.backTitle}" data-back-value="${tag.backContent}">
-            <div class="tag-box">${tag.label}</div>
-        </div>`
-    ).join('');
-
-    container.innerHTML = `
-        <p>${data.about.intro}</p>
-        <p>Click any tag below to see what's behind each interest.</p>
-        ${tagsHTML}
-        <br>
-    `;
-}
-
-function renderSkills(data) {
-    const container = document.getElementById('skillsFrontContent');
-    if (!container || !data.skills) return;
-
-    const categoriesHTML = data.skills.categories.map((cat, i) => {
-        const divider = i < data.skills.categories.length - 1
-            ? '<hr class="subproject-divider">' : '';
-        return `
-            <div class="project">
-                <div class="project-title">${cat.title}</div>
-                <div class="project-description">${cat.items}</div>
+        const socialHTML = renderSocialLinks(data.hero.social, '');
+        container.innerHTML = `
+            <img src="${escapeHtml(data.hero.profilePic)}" alt="Portrait of ${escapeHtml(data.hero.name)} Arora" class="profile-pic" width="220" height="220">
+            <div class="header-left">
+                <h1>Hi! I'm <span class="highlight-text">${escapeHtml(data.hero.name)}</span></h1>
+                <p class="hero-tagline">${escapeHtml(data.hero.tagline)}</p>
+                <div class="social-icons-beside">${socialHTML}</div>
             </div>
-            ${divider}
-        `;
-    }).join('');
-
-    const tagsHTML = data.skills.skillTags.map(tag =>
-        `<div class="tag-box-main" data-back-content="${tag.backTitle}" data-back-value="${tag.backContent}">
-            <div class="tag-box">${tag.label}</div>
-        </div>`
-    ).join('');
-
-    container.innerHTML = categoriesHTML + '<hr class="subproject-divider">' + tagsHTML;
-}
-
-function renderProjectCard(proj) {
-    const bulletItems = proj.bullets.map(b => {
-        const labelHTML = b.label ? `<strong>${b.label}:</strong> ` : '';
-        return `<li>
-            <img src="media/bullet.svg" alt="Bullet" class="project-link-icon2">
-            ${labelHTML}${b.text}
-        </li>`;
-    }).join('');
-
-    const tagsHTML = proj.tags.map(t =>
-        `<div class="tag-box-main"><div class="tag-box">${t}</div></div>`
-    ).join('');
-
-    let linkHTML = '';
-    if (proj.githubUrl || proj.liveUrl) {
-        const url = proj.githubUrl || proj.liveUrl;
-        linkHTML = `
-            <div class="project-link-class">
-                <a href="${url}" target="_blank">
-                    <img src="media/github-icon.svg" alt="Project Link" class="project-link-icon">
-                </a>
-            </div>
-            <a href="${url}" target="_blank" class="project-box-link"></a>
         `;
     }
 
-    return `
-        ${linkHTML}
-        <div class="project-box">
-            <div class="project">
-                <div class="project-title">${proj.title}</div>
-                <div class="project-description"><ul>${bulletItems}</ul></div>
-                ${tagsHTML}
-            </div>
-        </div>
-    `;
-}
+    function renderAbout(data) {
+        const container = document.getElementById('aboutIntroContent');
+        if (!container || !data.about) return;
 
-function renderProjects(data) {
-    const container = document.getElementById('projects');
-    if (!container || !data.projects) return;
+        const tagsHTML = data.about.interestTags.map(function (tag, index) {
+            return `<button type="button" class="tag-box-main1" data-tag-index="${index}">` +
+                `<span class="tag-box">${escapeHtml(tag.label)}</span>` +
+                `</button>`;
+        }).join('');
 
-    const html = data.projects.map(group => {
-        const cardsHTML = group.featured.map(proj => renderProjectCard(proj)).join('');
-        const seeMoreText = group.moreCount > 0
-            ? `+${group.moreCount} more`
-            : 'See all';
-        return `
-            <div class="project-group">
-                <h3 class="project-category-title">${group.category}</h3>
-                ${cardsHTML}
-                <div class="see-more-link">
-                    <a href="${group.seeMoreUrl}">${seeMoreText} &rarr;</a>
-                </div>
-            </div>
+        container.innerHTML = `
+            <p class="about-intro-text">${escapeHtml(data.about.intro)}</p>
+            <p class="about-hint">Click any tag below to see what's behind each interest.</p>
+            <div class="tag-list">${tagsHTML}</div>
         `;
-    }).join('');
+    }
 
-    container.insertAdjacentHTML('beforeend', html);
-}
+    function renderSkills(data) {
+        const container = document.getElementById('skillsFrontContent');
+        if (!container || !data.skills) return;
 
-function renderExperience(data) {
-    const container = document.getElementById('cvTimeline');
-    if (!container || !data.experience) return;
-
-    const exp = data.experience;
-
-    const industryItems = exp.industry.map((job, i) => {
-        const icon = job.hasLocationIcon ? 'media/location-icon.svg' : 'media/no-location.svg';
-        const divider = i < exp.industry.length - 1 ? '<hr class="subproject-divider">' : '';
-        return `
-            <li>
-                <a href="${job.url}" target="_blank">
-                    <img src="${icon}" alt="Location Link" class="project-link-icon">
-                </a><b>${job.company}, ${job.location}</b>
-                <span class="time-period">[${job.period}]</span><br>
-                ${job.role}
-            </li>
-            ${divider}
-        `;
-    }).join('');
-
-    const researchItems = exp.research.map((r, i) => {
-        const icon = r.hasLocationIcon ? 'media/location-icon.svg' : 'media/no-location.svg';
-        const divider = i < exp.research.length - 1 ? '<hr class="subproject-divider">' : '';
-        return `
-            <li>
-                <a href="${r.url}" target="_blank">
-                    <img src="${icon}" alt="Location Link" class="project-link-icon">
-                </a><b>${r.institution}, ${r.location}</b>
-                <span class="time-period">[${r.period}]</span><br>
-                ${r.role}
-            </li>
-            ${divider}
-        `;
-    }).join('');
-
-    const educationItems = exp.education.map((e, i) => {
-        const icon = e.hasLocationIcon ? 'media/location-icon.svg' : 'media/no-location.svg';
-        const divider = i < exp.education.length - 1 ? '<hr class="subproject-divider">' : '';
-        return `
-            <li>
-                <a href="${e.url}" target="_blank">
-                    <img src="${icon}" alt="Location Link" class="project-link-icon">
-                </a><b>${e.institution}, ${e.location}</b>
-                <span class="time-period">[${e.period}]</span><br>
-                ${e.degree}
-            </li>
-            ${divider}
-        `;
-    }).join('');
-
-    container.innerHTML = `
-        <div class="timeline-item">
-            <div class="timeline-icon"><img src="media/work-icon.svg" alt="Work Experience Icon"></div>
-            <div class="timeline-content">
-                <div class="skills">
-                    <div class="project-title">Industry Experience</div>
-                    <div class="project-description"><ul>${industryItems}</ul></div>
-                </div>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-icon"><img src="media/research-icon.svg" alt="Research Experience Icon"></div>
-            <div class="timeline-content">
-                <div class="skills">
-                    <div class="project-title">Research Experience</div>
-                    <div class="project-description"><ul>${researchItems}</ul></div>
-                </div>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-icon"><img src="media/education-icon.svg" alt="Education Icon"></div>
-            <div class="timeline-content">
-                <div class="skills">
-                    <div class="project-title">Education</div>
-                    <div class="project-description"><ul>${educationItems}</ul></div>
-                </div>
-            </div>
-        </div>
-        <p><span class="cv-drive-icon">
-            <a href="${exp.cvLinks.driveUrl}" target="_blank">
-                <img src="media/drive-icon.svg" alt="CV Link" class="project-link-icon">
-            </a> You can download my CV <span class="here-link"><a href="${exp.cvLinks.downloadUrl}" target="_blank">here</a>.</span>
-        </span></p>
-    `;
-}
-
-function renderAwards(data) {
-    const container = document.getElementById('awardsTimeline');
-    if (!container || !data.awards) return;
-
-    const html = data.awards.map(award => {
-        const certsHTML = award.certificates.map(cert => {
-            const certPeriod = cert.period
-                ? ` <span class="time-period">[${cert.period}]</span>` : '';
-            const certName = cert.name
-                ? `: ${cert.name} <br>` : '';
+        const categoriesHTML = data.skills.categories.map(function (cat, i) {
+            const divider = i < data.skills.categories.length - 1
+                ? '<hr class="subproject-divider">' : '';
             return `
-                <li>
-                    <a href="${cert.url}" target="_blank">
-                        <img src="media/certificate-icon.svg" alt="Certificate Link" class="project-link-icon">
-                    </a>
-                    <span class="mini-heading">${cert.code}</span>${certName}
-                    ${cert.description}${certPeriod}
-                </li>
+                <div class="project skills-category">
+                    <div class="project-title">${escapeHtml(cat.title)}</div>
+                    <div class="project-description">${escapeHtml(cat.items)}</div>
+                </div>
+                ${divider}
             `;
         }).join('');
 
-        const descHTML = award.description
-            ? `${award.marksUrl ? `<a href="${award.marksUrl}" target="_blank"><img src="media/numbers-icon.svg" alt="Marks Link" class="project-link-icon"></a> ` : ''}${award.description} ${award.period ? `<span class="time-period">[${award.period}]</span>` : ''}`
-            : (award.period ? `<span class="time-period">[${award.period}]</span>` : '');
+        const tagsHTML = data.skills.skillTags.map(function (tag, index) {
+            return `<button type="button" class="tag-box-main" data-tag-index="${index}">` +
+                `<span class="tag-box">${escapeHtml(tag.label)}</span>` +
+                `</button>`;
+        }).join('');
 
-        return `
+        container.innerHTML = categoriesHTML + '<hr class="subproject-divider"><div class="tag-list">' + tagsHTML + '</div>';
+    }
+
+    function renderProjects(data) {
+        const container = document.getElementById('projectsContent');
+        if (!container || !data.projects) return;
+
+        const categoryCounts = {};
+        if (Array.isArray(data.projectCategories)) {
+            data.projectCategories.forEach(function (cat) {
+                categoryCounts[cat.id] = Array.isArray(cat.projects) ? cat.projects.length : 0;
+            });
+        }
+
+        container.innerHTML = data.projects.map(function (group) {
+            const cardsHTML = group.featured.map(function (proj) {
+                return renderProjectCard(proj, '');
+            }).join('');
+
+            const catId = group.categoryId || (group.seeMoreUrl ? group.seeMoreUrl.split('#')[1] : '');
+            const totalInCategory = categoryCounts[catId];
+            const computedMore = typeof totalInCategory === 'number'
+                ? Math.max(0, totalInCategory - group.featured.length)
+                : group.moreCount;
+
+            const seeMoreText = computedMore > 0 ? `+${computedMore} more` : 'See all';
+            return `
+                <div class="project-group">
+                    <h3 class="project-category-title">${escapeHtml(group.category)}</h3>
+                    ${cardsHTML}
+                    <div class="see-more-link">
+                        <a href="${escapeHtml(group.seeMoreUrl)}">${escapeHtml(seeMoreText)} &rarr;</a>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function renderExperience(data) {
+        const container = document.getElementById('cvTimeline');
+        if (!container || !data.experience) return;
+
+        const exp = data.experience;
+
+        function buildEntries(items, titleField, detailField) {
+            return items.map(function (item, i) {
+                const icon = item.hasLocationIcon ? 'media/location-icon.svg' : 'media/no-location.svg';
+                const divider = i < items.length - 1 ? '<hr class="subproject-divider">' : '';
+                const name = item[titleField];
+                return `
+                    <li>
+                        <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" aria-label="Visit ${escapeHtml(name)} website">
+                            <img src="${icon}" alt="" class="project-link-icon">
+                        </a><strong>${escapeHtml(name)}, ${escapeHtml(item.location)}</strong>
+                        <span class="time-period">[${escapeHtml(item.period)}]</span><br>
+                        ${escapeHtml(item[detailField])}
+                    </li>
+                    ${divider}
+                `;
+            }).join('');
+        }
+
+        container.innerHTML = `
             <div class="timeline-item">
-                <div class="timeline-icon"><img src="${award.icon}" alt="Award Icon"></div>
+                <div class="timeline-icon"><img src="media/work-icon.svg" alt="" aria-hidden="true"></div>
                 <div class="timeline-content">
                     <div class="skills">
-                        <div class="project-title">
-                            ${award.title}
-                            <a href="${award.infoUrl}" target="_blank">
-                                <img src="media/info-icon.svg" alt="Information Link" class="project-link-icon">
-                            </a>
-                        </div>
-                        <div class="project-description">
-                            ${descHTML}
-                            <ul>${certsHTML}</ul>
-                        </div>
+                        <div class="project-title">Industry Experience</div>
+                        <div class="project-description"><ul>${buildEntries(exp.industry, 'company', 'role')}</ul></div>
                     </div>
                 </div>
             </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><img src="media/research-icon.svg" alt="" aria-hidden="true"></div>
+                <div class="timeline-content">
+                    <div class="skills">
+                        <div class="project-title">Research Experience</div>
+                        <div class="project-description"><ul>${buildEntries(exp.research, 'institution', 'role')}</ul></div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><img src="media/education-icon.svg" alt="" aria-hidden="true"></div>
+                <div class="timeline-content">
+                    <div class="skills">
+                        <div class="project-title">Education</div>
+                        <div class="project-description"><ul>${buildEntries(exp.education, 'institution', 'degree')}</ul></div>
+                    </div>
+                </div>
+            </div>
+            <p class="cv-download">
+                <a href="${escapeHtml(exp.cvLinks.driveUrl)}" target="_blank" rel="noopener noreferrer" aria-label="View CV on Google Drive">
+                    <img src="media/drive-icon.svg" alt="" class="project-link-icon">
+                </a>
+                <span>You can download my CV <span class="here-link"><a href="${escapeHtml(exp.cvLinks.downloadUrl)}" target="_blank" rel="noopener noreferrer">here</a></span>.</span>
+            </p>
         `;
-    }).join('');
-
-    container.innerHTML = html;
-}
-
-function renderFooter(data) {
-    const container = document.getElementById('footerSocial');
-    if (!container || !data.hero) return;
-
-    container.innerHTML = data.hero.social.map(s =>
-        `<a href="${s.url}" target="_blank" class="social-icon">
-            <img src="${s.icon}" alt="${s.name}">
-        </a>`
-    ).join('');
-}
-
-// ============================================================================
-// UTILITY FUNCTIONS
-// ============================================================================
-
-function copyToClipboard(text) {
-    if (!navigator.clipboard) {
-        return fallbackCopyTextToClipboard(text);
     }
-    return navigator.clipboard.writeText(text).then(
-        function () { showNotification(); },
-        function (err) { console.error('Could not copy text: ', err); }
-    );
-}
 
-function fallbackCopyTextToClipboard(text) {
-    const textArea = document.createElement("textarea");
-    textArea.value = text;
-    textArea.style.top = "0";
-    textArea.style.left = "0";
-    textArea.style.position = "fixed";
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    try {
-        const successful = document.execCommand('copy');
-        if (successful) showNotification();
-    } catch (err) {
-        console.error('Fallback: Unable to copy', err);
+    function renderAwards(data) {
+        const container = document.getElementById('awardsTimeline');
+        if (!container || !data.awards) return;
+
+        container.innerHTML = data.awards.map(function (award) {
+            const certsHTML = award.certificates.map(function (cert) {
+                const certPeriod = cert.period
+                    ? ` <span class="time-period">[${escapeHtml(cert.period)}]</span>` : '';
+                const certName = cert.name
+                    ? `: ${escapeHtml(cert.name)}<br>` : ' — ';
+                const certLink = cert.url
+                    ? `<a href="${escapeHtml(cert.url)}" target="_blank" rel="noopener noreferrer" aria-label="View certificate for ${escapeHtml(cert.code)}"><img src="media/certificate-icon.svg" alt="" class="project-link-icon"></a>`
+                    : '';
+                return `
+                    <li>
+                        ${certLink}
+                        <span class="mini-heading">${escapeHtml(cert.code)}</span>${certName}
+                        ${escapeHtml(cert.description)}${certPeriod}
+                    </li>
+                `;
+            }).join('');
+
+            const marksLink = award.marksUrl
+                ? `<a href="${escapeHtml(award.marksUrl)}" target="_blank" rel="noopener noreferrer" aria-label="View credential record for ${escapeHtml(award.title)}"><img src="media/numbers-icon.svg" alt="" class="project-link-icon"></a> `
+                : '';
+
+            const periodBadge = award.period
+                ? `<span class="time-period">[${escapeHtml(award.period)}]</span>` : '';
+
+            const descHTML = award.description
+                ? `<p>${marksLink}${escapeHtml(award.description)} ${periodBadge}</p>`
+                : (periodBadge ? `<p>${periodBadge}</p>` : '');
+
+            return `
+                <div class="timeline-item">
+                    <div class="timeline-icon"><img src="${escapeHtml(award.icon)}" alt="" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="skills">
+                            <div class="project-title">
+                                <span>${escapeHtml(award.title)}</span>
+                                <a href="${escapeHtml(award.infoUrl)}" target="_blank" rel="noopener noreferrer" aria-label="More information about ${escapeHtml(award.title)}">
+                                    <img src="media/info-icon.svg" alt="" class="project-link-icon">
+                                </a>
+                            </div>
+                            <div class="project-description">
+                                ${descHTML}
+                                <ul>${certsHTML}</ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
     }
-    document.body.removeChild(textArea);
-}
 
-function showNotification() {
-    const notification = document.getElementById(CONFIG.elements.copyNotification);
-    notification.className = CONFIG.classes.show;
-    setTimeout(function () {
-        notification.className = notification.className.replace(CONFIG.classes.show, '');
-    }, CONFIG.notificationDuration);
-}
+    function renderFooter(data) {
+        const container = document.getElementById('footerSocial');
+        if (!container || !data.hero) return;
+        container.innerHTML = renderSocialLinks(data.hero.social, '');
+    }
 
-function createFlipCardBackContent(title, description) {
-    return `
-        <div class="project-title">${title}</div>
-        <div class="project-description">${description}</div>
-    `;
-}
+    function buildFlipBackHtml(tag) {
+        return `
+            <div class="project-title">
+                <span>${escapeHtml(tag.backTitle)}</span>
+                <button type="button" class="flip-back-btn" aria-label="Flip card back to front">&larr; Back</button>
+            </div>
+            <div class="project-description flip-back-body">
+                <div class="flip-back-media">
+                    <img src="${escapeHtml(tag.backImage)}" alt="${escapeHtml(tag.backImageAlt)}" class="inside-image" loading="lazy">
+                    <div class="caption-back">${escapeHtml(tag.backCaption)}</div>
+                </div>
+                <p class="flip-back-text">${escapeHtml(tag.backDescription)}</p>
+            </div>
+        `;
+    }
 
-// ============================================================================
-// DARK MODE
-// ============================================================================
+    function bindFlipCard(containerId, backSelector, backContentId, buttonSelector, tags) {
+        const container = document.getElementById(containerId);
+        const backFace = container ? container.querySelector(backSelector) : null;
+        const frontFace = container ? container.querySelector('.front') : null;
+        const backContent = document.getElementById(backContentId);
+        if (!container || !backFace || !frontFace || !backContent) return;
 
-function initializeDarkMode() {
-    const modeToggle = document.getElementById(CONFIG.elements.modeToggle);
-    const modeIcon = document.getElementById(CONFIG.elements.modeIcon);
-    modeToggle.addEventListener('click', function () {
-        setTimeout(function () {
-            document.body.classList.toggle(CONFIG.classes.darkMode);
-            modeIcon.src = document.body.classList.contains(CONFIG.classes.darkMode)
-                ? CONFIG.icons.lightMode : CONFIG.icons.darkMode;
-        }, CONFIG.darkModeDelay);
-    });
-}
+        let lastTrigger = null;
 
-// ============================================================================
-// FLIP CARD INTERACTIONS
-// ============================================================================
-
-function isMobile() {
-    return window.innerWidth <= 840;
-}
-
-function initializeFlipCards() {
-    const skillsContainer = document.getElementById(CONFIG.elements.skillsContainer);
-    const introContainer = document.getElementById(CONFIG.elements.introContainer);
-    const backContentElement = document.getElementById(CONFIG.elements.backContent);
-    const introbackContentElement = document.getElementById(CONFIG.elements.introbackContent);
-
-    document.querySelectorAll('#about .' + CONFIG.classes.tagBoxMain).forEach(tagBox => {
-        tagBox.addEventListener('click', () => {
-            const backContent = tagBox.getAttribute(CONFIG.dataAttributes.backContent);
-            const backValue = tagBox.getAttribute(CONFIG.dataAttributes.backValue);
-            backContentElement.innerHTML = createFlipCardBackContent(backContent, backValue);
-            skillsContainer.classList.toggle(CONFIG.classes.flip);
-        });
-    });
-
-    document.querySelectorAll('#about .' + CONFIG.classes.tagBoxMain1).forEach(tagBox => {
-        tagBox.addEventListener('click', () => {
-            const backContent = tagBox.getAttribute(CONFIG.dataAttributes.backContent);
-            const backValue = tagBox.getAttribute(CONFIG.dataAttributes.backValue);
-            introbackContentElement.innerHTML = createFlipCardBackContent(backContent, backValue);
-            introContainer.classList.toggle(CONFIG.classes.flip);
-        });
-    });
-
-    document.querySelector('.' + CONFIG.classes.skillBack).addEventListener('click', () => {
-        skillsContainer.classList.remove(CONFIG.classes.flip);
-    });
-
-    document.querySelector('.' + CONFIG.classes.introBack).addEventListener('click', () => {
-        introContainer.classList.remove(CONFIG.classes.flip);
-    });
-}
-
-// ============================================================================
-// SHARE & NAVIGATION
-// ============================================================================
-
-function initializeShareButtons() {
-    document.getElementById(CONFIG.elements.shareButton).addEventListener('click', function () {
-        copyToClipboard(CONFIG.shareUrl);
-    });
-    document.getElementById(CONFIG.elements.shareButtonMob).addEventListener('click', function () {
-        copyToClipboard(CONFIG.shareUrl);
-    });
-}
-
-function setActiveNavItem(currentSectionId, navItems, navIcons) {
-    navItems.forEach((item, index) => {
-        const sectionId = item.getAttribute("href").slice(1);
-        if (sectionId === currentSectionId) {
-            item.classList.add(CONFIG.classes.active);
-            navIcons[index].classList.add(CONFIG.classes.activeIcon);
-        } else {
-            item.classList.remove(CONFIG.classes.active);
-            navIcons[index].classList.remove(CONFIG.classes.activeIcon);
+        function setFlipped(flipped) {
+            container.classList.toggle('flip', flipped);
+            frontFace.setAttribute('aria-hidden', String(flipped));
+            backFace.setAttribute('aria-hidden', String(!flipped));
+            if (flipped) {
+                const backBtn = backContent.querySelector('.flip-back-btn');
+                if (backBtn) backBtn.focus();
+            } else if (lastTrigger) {
+                lastTrigger.focus();
+            }
         }
-    });
-}
 
-function checkNavItems(sections, navItems, navIcons) {
-    let currentSection = "";
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
-            currentSection = section.getAttribute("id");
-        }
-    });
-    setActiveNavItem(currentSection, navItems, navIcons);
-}
-
-function initializeNavigation() {
-    const navItems = document.querySelectorAll("." + CONFIG.classes.navItem);
-    const navIcons = document.querySelectorAll("." + CONFIG.classes.navIcon);
-    const sections = document.querySelectorAll("section");
-    window.addEventListener("scroll", () => checkNavItems(sections, navItems, navIcons));
-    navIcons.forEach((icon, index) => {
-        icon.addEventListener("click", function (event) {
-            event.preventDefault();
-            const sectionId = navItems[index].getAttribute("href").slice(1);
-            const section = document.getElementById(sectionId);
-            window.scrollTo({ top: section.offsetTop, behavior: "smooth" });
+        container.querySelectorAll(buttonSelector).forEach(function (tagBtn) {
+            tagBtn.addEventListener('click', function () {
+                const idx = Number(tagBtn.getAttribute('data-tag-index'));
+                const tag = tags[idx];
+                if (!tag) return;
+                lastTrigger = tagBtn;
+                backContent.innerHTML = buildFlipBackHtml(tag);
+                setFlipped(true);
+            });
         });
+
+        backFace.addEventListener('click', function () {
+            setFlipped(false);
+        });
+
+        container.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && container.classList.contains('flip')) {
+                setFlipped(false);
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        initThemeToggle('media/');
+        initShareButton(SHARE_URL);
+
+        fetchPortfolioData('data.json', 'mainContent')
+            .then(function (data) {
+                renderHero(data);
+                renderAbout(data);
+                renderSkills(data);
+                renderProjects(data);
+                renderExperience(data);
+                renderAwards(data);
+                renderFooter(data);
+
+                bindFlipCard('introContainer', '.intro-back', 'introbackContent', 'button.tag-box-main1', data.about.interestTags);
+                bindFlipCard('skillsContainer', '.skill-back', 'backContent', 'button.tag-box-main', data.skills.skillTags);
+                initNavigation();
+                scrollToInitialHash();
+            })
+            .catch(function () {});
     });
-    checkNavItems(sections, navItems, navIcons);
-}
-
-// ============================================================================
-// INITIALIZATION
-// ============================================================================
-
-document.addEventListener('DOMContentLoaded', function () {
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            renderHero(data);
-            renderAbout(data);
-            renderSkills(data);
-            renderProjects(data);
-            renderExperience(data);
-            renderAwards(data);
-            renderFooter(data);
-
-            initializeDarkMode();
-            initializeFlipCards();
-            initializeShareButtons();
-            initializeNavigation();
-        })
-        .catch(err => console.error('Failed to load data.json:', err));
-});
+})();

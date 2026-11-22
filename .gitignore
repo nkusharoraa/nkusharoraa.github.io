@@ -1,3 +1,13 @@
 node_modules/
 package.json
 package-lock.json
+
+# Private career datastore & generated local exports (NEVER commit to public repo)
+/private/
+/exports/
+*.private.json
+*.private.yaml
+*.private.yml
+*.private.md
+.env
+.env.*

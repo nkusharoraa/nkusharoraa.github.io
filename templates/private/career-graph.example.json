@@ -1,0 +1,47 @@
+{
+  "$schema_version": "1.0",
+  "note": "Copy to private/career-graph.json (gitignored). Central mind map linking roles, projects, metrics, skills, and STAR stories.",
+  "positioning": {
+    "primaryTitle": "AI Architect & LLM Systems Engineer",
+    "targetTitles": ["AI Architect", "Lead AI Engineer", "Senior ML/LLM Engineer", "GenAI Engineer"],
+    "coreDomains": ["Generative AI & LLMs", "RAG Architectures", "Agentic AI & MCP", "LLM Fine-tuning (LoRA)", "MLOps & Cloud AI"]
+  },
+  "roles": [
+    {
+      "id": "role-example",
+      "company": "Company Name",
+      "title": "Title",
+      "employmentType": "Full-time",
+      "location": "City, Country",
+      "startDate": "YYYY-MM",
+      "endDate": "Present",
+      "domain": "Domain",
+      "summary": "One-sentence scope of ownership.",
+      "projectIds": ["proj-example"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-example",
+      "title": "Project Name",
+      "roleId": "role-example",
+      "period": "YYYY-MM to YYYY-MM",
+      "public": true,
+      "category": "LLM & Generative AI",
+      "skills": ["Python", "RAG", "LangChain"],
+      "metrics": ["Metric 1"],
+      "summary": "Short 1-2 sentence summary.",
+      "star": {
+        "situation": "Context and business problem.",
+        "task": "What you owned.",
+        "action": "Architecture, models, pipelines, and key engineering decisions.",
+        "result": "Quantified business and technical impact.",
+        "tradeoffs": "Key tradeoffs considered (useful for Mercor/system-design interviews)."
+      },
+      "links": {}
+    }
+  ],
+  "metricsBank": [
+    { "metric": "100K+ API calls/day", "projectId": "proj-example", "context": "Short context" }
+  ]
+}

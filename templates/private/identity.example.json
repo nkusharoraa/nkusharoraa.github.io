@@ -1,0 +1,50 @@
+{
+  "$schema_version": "1.0",
+  "note": "Copy to private/identity.json (gitignored). Never commit real PII.",
+  "fullName": "Full Name",
+  "preferredName": "First Name",
+  "email": "you@example.com",
+  "phone": "+91 000 000 0000",
+  "location": {
+    "city": "City",
+    "state": "State",
+    "country": "Country",
+    "timezone": "Asia/Kolkata (UTC+05:30)",
+    "openToRelocation": true,
+    "preferredWorkModes": ["Remote", "Hybrid"],
+    "preferredLocations": ["Pune", "Bengaluru", "Delhi NCR", "Remote"]
+  },
+  "links": {
+    "portfolio": "https://username.github.io/",
+    "linkedin": "https://www.linkedin.com/in/username",
+    "github": "https://github.com/username",
+    "resumeDrive": ""
+  },
+  "careerLogistics": {
+    "yearsOfExperienceFullTime": "3+",
+    "currentRole": "Role Title",
+    "currentCompany": "Company",
+    "noticePeriod": "TODO: e.g. 30 days / Immediate",
+    "currentCTC": "TODO: private only",
+    "expectedCTC": "TODO: private only",
+    "hourlyRateContractUSD": "TODO: e.g. for Mercor/Outlier",
+    "workAuthorization": {
+      "india": "Citizen",
+      "us": "Requires sponsorship",
+      "remoteGlobalContract": "Authorized (independent contractor)"
+    }
+  },
+  "educationPrivate": {
+    "university": "Indian Institute of Technology Delhi",
+    "degree": "B.Tech. in Mechanical Engineering",
+    "gpa": "8.55/10.00",
+    "startDate": "2019-07",
+    "endDate": "2023-06",
+    "class12Percentage": "TODO",
+    "class10Percentage": "TODO"
+  },
+  "languages": [
+    { "name": "English", "proficiency": "Full Professional" },
+    { "name": "Hindi", "proficiency": "Native" }
+  ]
+}
