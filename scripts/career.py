@@ -19,6 +19,7 @@ import re
 import shutil
 import subprocess
 import sys
+import zlib
 from pathlib import Path
 from typing import Any
 
@@ -472,9 +473,10 @@ def cmd_init_private(_args: argparse.Namespace) -> int:
     return 0
 
 
-def cmd_validate(_args: argparse.Namespace) -> int:
+def cmd_validate(args: argparse.Namespace) -> int:
     errors: list[str] = []
     warnings: list[str] = []
+    is_ci = bool(getattr(args, "ci", False))
 
     # 1. Validate data.json
     pub = load_json(PUBLIC_DATA)
@@ -517,7 +519,7 @@ def cmd_validate(_args: argparse.Namespace) -> int:
     for unused in sorted(all_assets_rel - refs):
         warnings.append(f"Unused asset: {unused}")
 
-    # 3. Verify gitignore protects private/ and exports/
+    # 3. Verify gitignore protects private/ and exports/ and nothing inside them is tracked
     for protected in ("private/identity.json", "exports/forms.md"):
         res = subprocess.run(
             ["git", "check-ignore", "-q", protected],
@@ -527,7 +529,16 @@ def cmd_validate(_args: argparse.Namespace) -> int:
         if res.returncode != 0:
             errors.append(f"CRITICAL: '{protected}' is NOT ignored by .gitignore!")
 
-    # 4. PII leak scan across public text files (exclude templates placeholder 000 000 0000)
+    tracked_private = subprocess.run(
+        ["git", "ls-files", "private", "exports"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if tracked_private.stdout.strip():
+        errors.append(f"CRITICAL: Private/export files are tracked by git: {tracked_private.stdout.strip()}")
+
+    # 4. PII leak scan across public text files and public PDFs (exclude placeholder +91 000...)
     phone_re = re.compile(r"\+91[\s-]?(?!000)[6-9]\d{2}[\s-]?\d{3}[\s-]?\d{4}")
     tracked_candidates = [
         p for p in ROOT.rglob("*")
@@ -542,8 +553,19 @@ def cmd_validate(_args: argparse.Namespace) -> int:
         if phone_re.search(txt):
             errors.append(f"PII LEAK: Indian mobile number detected in public file {fp.relative_to(ROOT)}")
 
-    # 5. Check private vault presence
-    if not (PRIVATE_DIR / "identity.json").exists():
+    for pdf_path in ROOT.glob("*.pdf"):
+        raw = pdf_path.read_bytes()
+        chunks = [raw.decode("latin-1", errors="ignore")]
+        for stream_match in re.finditer(rb"stream\r?\n(.*?)\r?\nendstream", raw, flags=re.DOTALL):
+            try:
+                chunks.append(zlib.decompress(stream_match.group(1)).decode("latin-1", errors="ignore"))
+            except Exception:
+                pass
+        if phone_re.search("\n".join(chunks)):
+            errors.append(f"PII LEAK: Indian mobile number detected inside public PDF {pdf_path.name}")
+
+    # 5. Check private vault presence (local mode only)
+    if not is_ci and not (PRIVATE_DIR / "identity.json").exists():
         warnings.append("Local private/identity.json not found (run: python3 scripts/career.py init-private)")
 
     for w in warnings:
@@ -554,7 +576,7 @@ def cmd_validate(_args: argparse.Namespace) -> int:
     if errors:
         print(f"\nValidation FAILED with {len(errors)} error(s).")
         return 1
-    print(f"Validation PASSED ({len(warnings)} warning(s), 0 errors, 0 PII leaks in public text files).")
+    print(f"Validation PASSED ({len(warnings)} warning(s), 0 errors, 0 PII leaks in public files & PDFs).")
     return 0
 
 
@@ -573,6 +595,7 @@ def main() -> int:
     p_export.set_defaults(func=cmd_export)
 
     p_val = sub.add_parser("validate", help="Validate data.json, assets, gitignore, and check for PII leaks")
+    p_val.add_argument("--ci", action="store_true", help="CI mode (skip local private/ presence warning)")
     p_val.set_defaults(func=cmd_validate)
 
     p_init = sub.add_parser("init-private", help="Scaffold private/ files from templates/private/")
