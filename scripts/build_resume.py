@@ -86,7 +86,7 @@ def get_resume_model() -> dict[str, Any]:
                 "period": "January 2023 – June 2023",
                 "bullets": [
                     ("Automated Regression & NLP Defect Detection", "Boosted test execution throughput by <strong>30%</strong> and reduced issue resolution time by <strong>25%</strong>, leveraging Selenium 4.x, pytest-driven automation, and <strong>spaCy</strong>-powered NLP log parsing."),
-                    ("CI/CD Pipeline Integration", "Automated Jira QA syncs via Jenkins and GitHub Actions, achieving <strong>20%</strong> DF increment."),
+                    ("CI/CD Pipeline Integration", "Automated Jira QA syncs via Jenkins and GitHub Actions CI/CD pipelines, improving release cadence."),
                 ],
             },
             {
