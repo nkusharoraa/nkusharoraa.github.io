@@ -241,6 +241,7 @@ def _collect_all_skills(pub: dict[str, Any]) -> list[str]:
 def _render_linkedin(pub: dict[str, Any], graph: dict[str, Any] | None) -> str:
     skills = _collect_all_skills(pub)
     roles_section = []
+    indep_section = []
     if graph:
         proj_by_id = {p["id"]: p for p in graph.get("projects", [])}
         for role in graph.get("roles", []):
@@ -250,6 +251,14 @@ def _render_linkedin(pub: dict[str, Any], graph: dict[str, Any] | None) -> str:
                 if p:
                     lines.append(f"- **{p['title']}**: {p['summary']}")
             roles_section.append("\n".join(lines))
+        indep_projects = [p for p in graph.get("projects", []) if p.get("roleId") is None and p.get("public", True)]
+        if indep_projects:
+            indep_lines = ["### Selected Independent AI Systems & Projects", ""]
+            for p in indep_projects:
+                live = p.get("links", {}).get("live")
+                suffix = f" ({live})" if live else ""
+                indep_lines.append(f"- **{p['title']}**{suffix}: {p['summary']}")
+            indep_section.append("\n".join(indep_lines))
 
     return f"""# LinkedIn Profile Pack — Ankush Arora
 
@@ -266,12 +275,13 @@ def _render_linkedin(pub: dict[str, Any], graph: dict[str, Any] | None) -> str:
 - **Agentic AI & MCP at Scale**: Architected a custom Azure Model Context Protocol (MCP) server exposing SQL analytics, formula introspection, and domain wiki to AI agents (**100K+ API calls/day**).
 - **Enterprise RAG**: Shipped a RAG-powered Microsoft Teams assistant for **460+ users** with a teachable per-team wiki layer, plus a local Llama-3/vLLM/FAISS root-cause analysis system (**20% faster turnaround**).
 - **LLM Fine-Tuning & ML Engineering**: Fine-tuned CodeLlama with LoRA (**40% latency reduction**), engineered PyTorch/scikit-learn surrogate models (**33% faster optimization loops**), and deployed FAISS anomaly detection (**+18% defect detectability**).
+- **Independent Agentic & Multimodal AI Systems**: Built **Captcha** (hybrid deterministic + Gemini 3.5 Flash-Lite link-verification agent, **94.4% rules / 100% agent recall**, **0/32 false alarms**, 18-source threat-intel ETL, Always-Free Cloudflare Workers + Docker/PostgreSQL stack) and an **Autonomous Multimodal AI Video Pipeline** (**~6x render speedup**, fail-closed FFmpeg + Gemini Vision QC with 3-loop self-repair).
 - **Research & Engineering Foundations**: ML Research Intern at McGill University (**+15% protein similarity accuracy**, **88%/85% P/R** biomedical NER, **500K+ records/day** bio-data ETL); B.Tech. from **IIT Delhi (8.55/10.00)**.
 
 Portfolio: https://nkusharoraa.github.io/ | GitHub: https://github.com/nkusharoraa
 
 ## Experience Bullets
-{chr(10).join(roles_section)}
+{chr(10).join(roles_section + indep_section)}
 
 ## Top Skills to Pin (Order Matters for Recruiter Search)
 1. Generative AI / Large Language Models (LLMs)
@@ -286,20 +296,22 @@ Portfolio: https://nkusharoraa.github.io/ | GitHub: https://github.com/nkusharor
 ## Featured Section Recommendations
 1. Portfolio Website: https://nkusharoraa.github.io/
 2. Projects Showcase: https://nkusharoraa.github.io/projects/
-3. Live Demo — Markowitz Portfolio Optimization: https://nkusharoraa.github.io/Markowitz-Portfolio-Optimization/
-4. GitHub — Discrete Simulation Optimization (`dissim`): https://github.com/nkusharoraa/dissim
+3. Live Demo — Captcha (Agentic Fraud-Awareness AI Platform): https://playcaptcha.ankusharora.workers.dev
+4. Live Demo — Markowitz Portfolio Optimization: https://nkusharoraa.github.io/Markowitz-Portfolio-Optimization/
+5. GitHub — Discrete Simulation Optimization (`dissim`): https://github.com/nkusharoraa/dissim
 """
 
 
 def _render_naukri(pub: dict[str, Any], identity: dict[str, Any] | None) -> str:
     notice = (identity or {}).get("careerLogistics", {}).get("noticePeriod", "Update in private/identity.json")
     naukri_skills = [
-        "Generative AI", "Large Language Models (LLM)", "RAG", "LangChain", "LlamaIndex",
-        "Model Context Protocol (MCP)", "AI Agents", "LLM Fine-tuning", "LoRA", "QLoRA",
-        "vLLM", "FAISS", "Hugging Face Transformers", "PyTorch", "TensorFlow", "scikit-learn",
-        "XGBoost", "Python", "SQL", "FastAPI", "MLOps", "Azure ML", "GCP Vertex AI",
-        "AWS SageMaker", "Docker", "Kubernetes", "MLflow", "Weights & Biases", "CI/CD",
-        "Apache Airflow", "Spark", "MongoDB", "spaCy", "Prompt Engineering", "Embeddings"
+        "Generative AI", "Large Language Models (LLM)", "Multimodal LLMs", "RAG", "LangChain", "LlamaIndex",
+        "Model Context Protocol (MCP)", "AI Agents", "Tool Calling", "LLM Evaluation", "Gemini API", "Groq",
+        "LLM Fine-tuning", "LoRA", "QLoRA", "vLLM", "FAISS", "Hugging Face Transformers", "PyTorch", "TensorFlow",
+        "scikit-learn", "XGBoost", "Python", "TypeScript", "SQL", "PostgreSQL", "FastAPI", "MLOps",
+        "Azure ML", "GCP Vertex AI", "AWS SageMaker", "Cloudflare Workers", "Docker", "Kubernetes",
+        "MLflow", "Weights & Biases", "CI/CD", "Playwright", "FFmpeg", "Apache Airflow", "Spark",
+        "MongoDB", "spaCy", "Prompt Engineering", "Embeddings"
     ]
     headline = "AI Architect | 3+ Yrs Exp | GenAI, LLMs, RAG, MCP, AI Agents, LoRA Fine-tuning, PyTorch, LangChain, vLLM, Azure/GCP/AWS, MLOps | IIT Delhi"
     return f"""# Naukri Profile Pack — Ankush Arora
@@ -343,7 +355,7 @@ def _render_mercor(pub: dict[str, Any], graph: dict[str, Any] | None) -> str:
 - **Core Niches**: Agentic AI / Tool Calling (MCP), Enterprise RAG Architectures, Parameter-Efficient Fine-Tuning (LoRA/CodeLlama), ML Benchmarking & Evaluation, Python / PyTorch Systems
 
 ## High-Signal Stack Keywords (Exact Strings for Vector Matching)
-Python, PyTorch, TensorFlow, Hugging Face Transformers, LangChain, LlamaIndex, vLLM, FAISS, LoRA, QLoRA, Model Context Protocol (MCP), FastAPI, SQL, Docker, Kubernetes, Azure ML, GCP Vertex AI, AWS SageMaker, MLflow, Weights & Biases, scikit-learn, XGBoost, spaCy, Apache Airflow, Spark, CVXPY
+Python, TypeScript, PyTorch, TensorFlow, Hugging Face Transformers, LangChain, LlamaIndex, Gemini API, Gemini Vision, Groq, vLLM, FAISS, LoRA, QLoRA, Model Context Protocol (MCP), Tool Calling, Multimodal LLMs, LLM Evaluation, FastAPI, Node.js, React, PostgreSQL, SQL, Playwright, FFmpeg, Docker, Kubernetes, Cloudflare Workers, Azure ML, GCP Vertex AI, AWS SageMaker, MLflow, Weights & Biases, scikit-learn, XGBoost, spaCy, Apache Airflow, Spark, CVXPY
 
 ## Defensible Claims Cheat Sheet (for Mercor ~20-min AI Video Interview)
 > Remember: Mercor's AI interviewer dynamically probes claims directly from your resume. Keep answers conversational, natural (no scripts/LLMs), 60–90 seconds each, leading with architectural tradeoffs you personally made.

@@ -52,19 +52,19 @@
     "categories": [
       {
         "title": "Generative AI & LLMs",
-        "items": "RAG (LangChain, LlamaIndex), Fine-tuning (LoRA, QLoRA), Prompt Engineering, Embeddings, MCP, vLLM, FAISS, ONNX"
+        "items": "RAG (LangChain, LlamaIndex), Agentic AI & Tool Calling, MCP, Multimodal LLMs (Gemini Vision, TTS), Fine-tuning (LoRA, QLoRA), Prompt Engineering, Embeddings, Groq, vLLM, FAISS, ONNX"
       },
       {
         "title": "ML/DL Frameworks & Tools",
-        "items": "PyTorch, TensorFlow, Keras, scikit-learn, XGBoost, Hugging Face Transformers, spaCy, OpenCV, Pandas, NumPy"
+        "items": "PyTorch, TensorFlow, Keras, scikit-learn, XGBoost, Hugging Face Transformers, LLM Evaluation & Benchmarking, spaCy, OpenCV, FFmpeg, Playwright, Pandas, NumPy"
       },
       {
         "title": "Cloud AI & MLOps",
-        "items": "GCP (Vertex AI), Azure ML, AWS SageMaker, Docker, Kubernetes, MLflow, Weights & Biases, CI/CD (Jenkins, GitHub Actions)"
+        "items": "GCP (Vertex AI), Azure ML, AWS SageMaker, Cloudflare Workers, OCI, Docker, Kubernetes, Caddy, Linux systemd, MLflow, Weights & Biases, CI/CD (Jenkins, GitHub Actions)"
       },
       {
         "title": "Languages, Data & Visualization",
-        "items": "Python, C++, Java, SQL, MATLAB, FastAPI, MongoDB, Apache Airflow, Spark, Matplotlib, Seaborn, Dash, Tableau"
+        "items": "Python, TypeScript, C++, Java, SQL, MATLAB, FastAPI, Node.js, React, PostgreSQL, MongoDB, Apache Airflow, Spark, Matplotlib, Seaborn, Dash, Tableau"
       }
     ],
     "skillTags": [
@@ -134,22 +134,26 @@
           "tags": ["RAG", "LangChain", "Microsoft Teams"]
         },
         {
-          "title": "AI Interview Screener",
+          "title": "Captcha — Agentic Link Verification & Bilingual Fraud-Awareness AI Platform",
+          "period": "November 2026 - Present",
+          "liveUrl": "https://playcaptcha.ankusharora.workers.dev",
           "bullets": [
-            { "label": "Platform", "text": "Developed an autonomous AI-driven interview bot capable of conducting structured technical screens, reducing recruiter screening overhead and standardizing candidate evaluation across roles." }
+            { "label": "Architecture", "text": "Built a zero-framework bounded ReAct link investigator (TypeScript, @google/genai, PSL, RDAP, Google Cloud Web Risk, local threat-feed lookup) with 768-dim EN-HI semantic matching, multimodal text/image/TTS coaching, and 5 automated data pipelines across 18 public threat/advisory/dataset sources." },
+            { "label": "Results", "text": "Achieved 94.4% deterministic recall in 115 ms (140-case eval) and 100% agent recall (30-case sample) with 0/32 official-domain false alarms, 0.967 EN-HI similarity, 23 Gemma 4 SFT traces, 55/56 API tests passing, and an Always-Free Cloudflare Workers + 736 MB Docker/PostgreSQL 16 deployment." }
           ],
-          "tags": ["LLM Agents", "Prompt Engineering"]
+          "tags": ["AI Agents", "Gemini API", "Multimodal LLMs", "PostgreSQL", "Cloudflare Workers"]
         },
         {
-          "title": "RAG-Based Root Cause Analysis System",
+          "title": "Autonomous Multimodal AI Video Production & Publishing Pipeline",
+          "period": "November 2026 - Present",
           "bullets": [
-            { "label": "Architecture", "text": "Deployed a local RAG stack (LangChain, Llama-3 vLLM, FAISS) to mine and index a decade of vehicle test, simulation, and inference data for root cause analysis." },
-            { "label": "Results", "text": "Reduced investigative turnaround time by 20% and improved FMEA closure." }
+            { "label": "Architecture", "text": "Orchestrated Groq structured-JSON script/storyboard synthesis (40-lesson System Design curriculum), Edge-TTS word-timestamped audio with EBU R128 mastering (-14 LUFS), single-session Playwright HTML5/SVG/GSAP rendering, and fail-closed FFmpeg + 4-model Gemini Vision QC with 3-loop self-repair." },
+            { "label": "Results", "text": "Cut 1080x1920 30fps render latency ~6x (~18 min to ~3 min), lifted Lesson 1 multimodal QC rubric scores from 70/100 to 99/100, published 8 videos cleanly on a 4x/day quota-guarded systemd autopilot (blocking 5/5 low-score runs), and verified across 28 CI unit/FFmpeg tests." }
           ],
-          "tags": ["Llama-3", "vLLM", "FAISS"]
+          "tags": ["Multimodal LLMs", "Gemini Vision", "Groq API", "Playwright", "FFmpeg"]
         }
       ],
-      "moreCount": 2
+      "moreCount": 4
     },
     {
       "categoryId": "ml",
@@ -302,6 +306,25 @@
             "Added a teachable per-team wiki layer enabling domain-specific knowledge without redeployment."
           ],
           "tags": ["RAG", "LangChain", "Microsoft Teams"]
+        },
+        {
+          "title": "Captcha — Agentic Link Verification & Bilingual Fraud-Awareness AI Platform",
+          "period": "November 2026 - Present",
+          "liveUrl": "https://playcaptcha.ankusharora.workers.dev",
+          "bullets": [
+            "Architected a hybrid deterministic-floor + bounded multi-turn LLM link-verification agent (TypeScript, @google/genai, Gemini 3.5 Flash-Lite with URL context, Public Suffix List, RDAP, Google Cloud Web Risk, and local threat-indicator lookup), achieving 94.4% deterministic recall in 115 ms (140-case synthetic eval, 0/32 official-domain false alarms) and 100% agent recall on a 30-case stratified sample (~6.1 s, 2.83 calls/case) while eliminating false alarms on newly launched .bank.in domains.",
+            "Engineered a bilingual (EN/HI) multimodal PWA (25k+ LOC, React 18, Express, 768-dim gemini-embedding-001 semantic feed matching at 0.967 EN-HI cosine similarity, multimodal text/image/TTS coaching, and 23 human-reviewed traces exported for Gemma 4 SFT distillation) plus 5 automated ingestion pipelines across 18 public threat, advisory, and dataset sources (19/19 live runs, 195 defanged phishing indicators, 851 PII-scrubbed reference messages) deployed on Cloudflare Workers + Dockerized PostgreSQL 16/Express/Caddy within a 736 MB container budget (55/56 API tests passing)."
+          ],
+          "tags": ["AI Agents", "Gemini API", "Multimodal LLMs", "PostgreSQL", "Cloudflare Workers"]
+        },
+        {
+          "title": "Autonomous Multimodal AI Video Production & Publishing Pipeline",
+          "period": "November 2026 - Present",
+          "bullets": [
+            "Architected an end-to-end multimodal LLM video production system (14.5k+ LOC Python) orchestrating Groq structured-JSON script/storyboard synthesis across a 40-lesson System Design curriculum, Microsoft Edge-TTS word-boundary audio with broadcast EBU R128 mastering (-14 LUFS), and two offline Playwright Chromium HTML5/SVG/GSAP rendering engines—achieving a ~6x render speedup (~18 min to ~3 min for 67s 1080x1920 30fps masters) with lossless PNG-to-H.264 CRF 14 and zero-reencode stream-copy mastering.",
+            "Built a fail-closed two-tier QC gate pairing deterministic FFmpeg QA (loudness, A/V sync, black/freeze detection) with a 4-model Gemini Vision critic (lifting Lesson 1 rubric scores from 70/100 to 99/100) and a 3-loop autonomous self-repair loop, orchestrated via a quota-guarded 4x/day Linux systemd autopilot (6,400/10,000 daily YouTube API units) that published 8 videos cleanly while blocking 5/5 low-score runs, with Meta Graph API Instagram Reels cross-posting and 28 passing unit/FFmpeg integration tests in GitHub Actions CI."
+          ],
+          "tags": ["Multimodal LLMs", "Gemini Vision", "Groq API", "Playwright", "FFmpeg"]
         },
         {
           "title": "AI Interview Screener",
